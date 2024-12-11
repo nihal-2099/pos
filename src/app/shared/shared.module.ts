@@ -5,6 +5,8 @@ import { FooterComponent } from './footer/footer.component';
 import { RouterModule } from '@angular/router';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { TableComponent } from './table/table.component';
+import { EmailDirective } from '../directives/email.directive';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -13,17 +15,24 @@ import { TableComponent } from './table/table.component';
     HeaderComponent,
     FooterComponent,
     SidebarComponent,
-    TableComponent
+    TableComponent,
+    
   ],
   imports: [
     CommonModule,
-    RouterModule
+    RouterModule,
+    EmailDirective,
+    FormsModule,
+    ReactiveFormsModule
   ],
   exports:[
     HeaderComponent,
     FooterComponent,
     SidebarComponent,
-    TableComponent
+    TableComponent,
+    EmailDirective,
+    FormsModule,
+    ReactiveFormsModule
   ]
 })
 export class SharedModule { }

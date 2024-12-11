@@ -25,6 +25,7 @@
         }
     }
     .login_form{
+        height: 100vh;
        img{
         max-height: 50px;
        }
@@ -55,8 +56,9 @@
         
         }
      .mailImg, .passImg{
-            position: relative !important;
-            margin-left: -40px;
+            position: absolute !important;
+            margin-right: 10px;
+            margin-top: 8px;
             color: $text_color;
         }
         
@@ -72,7 +74,7 @@
     .copyright{
         color: $text_color;
         font-weight: 400;
-        font-size: smaller;
+        font-size: 1em;
     }
       
     }
