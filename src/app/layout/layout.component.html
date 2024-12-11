@@ -1,7 +1,12 @@
-<app-header />
-<app-sidebar />
+<div class="side-container position-fixed end-0 start-0">
+  <app-header />
+  <app-sidebar />
 
-<router-outlet />
+  
 
+  <!-- <app-footer /> -->
+</div>
 
-<app-footer />
+<main class="position-absolute end-0 px-4 py-3">
+    <router-outlet />
+  </main>
