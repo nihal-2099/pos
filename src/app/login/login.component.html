@@ -1,46 +1,99 @@
 <div class="fulllogin_form">
     <div class="row">
         <div class="col-lg-6 col-12  ">
-            <div class="blurImg w-100 d-flex justify-content-center align-items-center">
+    
+            <div class="blurImg w-100 ">
                 <div class="container">
-                    <div class="login_form px-4 px-lg-0">
-                        <div class="d-flex justify-content-center my-5"> <img src="../../assets/images/pos_logo.png"
+                    <form [formGroup]="loginUser">
+                    <div class="login_form px-4 px-lg-0 d-flex justify-content-center align-items-start flex-column">
+                        <div class="d-flex justify-content-center  align-items-center my-5 w-100"> <img src="../../assets/images/pos_logo.png"
                                 alt=""> </div>
                         <h4 class="my-2">Sign In</h4>
                         <p class=" mb-4">Access the Dreamspos panel using your email and passcode.</p>
                         <div class="w-100">
                             <div class="input w-100 ">
                                 <label for="">Email Address</label>
+<<<<<<< HEAD
                                 <input type="email" class="w-100 ps-3 mt-2 mb-3">
+=======
+                                <div class="d-flex justify-content-end align-items-center ">
+                                <input type="text" class="w-100 ps-3 mt-2 form-control"    formControlName="identifier"
+                                appEmail>
+                              
+>>>>>>> 958b570952472afddd11273bce12e730de5effbe
                                 <img class="mailImg" src="../../assets/images/mailicon.svg" width="15px" height="15px" alt="">
+                                </div>
                             </div>
+                            <div
+                            *ngIf="
+                              loginUser?.controls?.identifier?.touched &&
+                              loginUser?.controls?.identifier?.errors?.required
+                            "
+                          >
+                            <div
+                              *ngIf="loginUser?.controls?.identifier?.errors?.required"
+                              class="text-danger"
+                            >
+                              <b>Email is Required</b>
+                            </div>
+                          </div>
+                          <div
+                            *ngIf="
+                              loginUser?.controls?.identifier?.touched &&
+                              loginUser?.controls?.identifier?.errors?.invalidEmail
+                            "
+                          >
+                            <div
+                              *ngIf="loginUser?.controls?.identifier?.errors?.invalidEmail"
+                              class="text-danger"
+                            >
+                              <b>Invalid email Address</b>
+                            </div>
+                          </div>
                         </div>
-                        <div>                      
-                            <div class="input w-100">
+                        <div class="w-100">                      
+                            <div class="input w-100 pt-3">
                                 <label for="">Password</label>
-                                <input type="password" class="w-100 ps-3 mt-2 ">
-                                <i class='bx bx-low-vision fs-5 passImg'></i>
+                                <div class="d-flex justify-content-end align-items-center">
+                                <input [type]="showHidePassword ? 'text' : 'password'" class="w-100 ps-3 mt-2 form-control"  formControlName="password">
+                              
+                                <i class='bx bx-low-vision fs-5 passImg' (click)="showHidePassword = !showHidePassword"></i>
+                                </div>
                             </div>
-
+                            <div
+                            *ngIf="
+                              loginUser?.controls?.password?.touched &&
+                              loginUser?.controls?.password?.errors?.required
+                            "
+                          >
+                            <div
+                              *ngIf="loginUser?.controls?.password?.errors?.required"
+                              class="text-danger"
+                            >
+                              <b>Password is Required</b>
+                            </div>
+                          </div>
                         </div>
-                        <div class="d-flex justify-content-between my-3 ">
+                        <div class="d-flex justify-content-between my-3 w-100">
                             <span class="checkbox">
                                 <span> <input type="checkbox"> </span>
                                 <span class="mx-2">Remember me</span>
                             </span>
                             <span class="forgot_color">Forgot Password ?</span>
                         </div>
-                        <button type="button" class="btn btn-primary btn-lg mb-3 w-100 fs-6 fw-bold" routerLink="/layout/dashboard">Sign In</button>
+                        <button type="button" class="btn btn-primary btn-lg mb-3 w-100 fs-6 fw-bold" (click)=" ValidateForm()">Sign In</button>
                         
                         <div class="copyright text-center mt-4 ">
                           Copyright © 2023 DreamsPOS. All rights
                                 reserved 
                         </div>
                     </div>
+                </form>
                 </div>
             </div>
+    
         </div>
-        <div class="col-lg-6 col-12"></div>
+     
 
     </div>
 
