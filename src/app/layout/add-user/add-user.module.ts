@@ -5,6 +5,7 @@ import { AddUserComponent } from '../add-user/add-user.component';
 import { AddComponent } from './add/add.component';
 import { EditComponent } from './edit/edit.component';
 import { RouterOutlet } from '@angular/router';
+import { ListComponent } from './list/list.component';
 
 
 
@@ -12,7 +13,8 @@ import { RouterOutlet } from '@angular/router';
   declarations: [
     AddUserComponent,
     AddComponent,
-    EditComponent
+    EditComponent,
+    ListComponent
   ],
   imports: [
     CommonModule,

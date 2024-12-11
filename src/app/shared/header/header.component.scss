@@ -4,6 +4,13 @@
 }
 
 .navbar {
+    border-bottom: 1px solid #dbe0e6;
+
+    .logo-section{
+        border-right: 1px solid #dbe0e6;
+    }
+
+
     ul {
         li {
             img {
