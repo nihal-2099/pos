@@ -1,4 +1,17 @@
-.pradeep{
+.pradeep {
     display: flex !important;
     justify-content: center !important;
 }
+
+.navbar {
+    ul {
+        li {
+            img {
+                width: 20px;
+                height: 20px; border-radius: 50%;
+            }
+        }
+
+    }
+}
+

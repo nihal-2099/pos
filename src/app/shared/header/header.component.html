@@ -2,18 +2,18 @@
 
 <nav class="navbar navbar-expand-lg navbar-light bg-light px-3">
   <div class="container-fluid">
-    
+
     <a class="navbar-brand d-flex align-items-center" href="#">
       <img src="" alt="Dreams POS Logo">
-      
+
     </a>
 
-   
+
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent">
       <span class="navbar-toggler-icon"></span>
     </button>
 
-    
+
     <div class="collapse navbar-collapse" id="navbarContent">
       <div class="d-flex w-100 justify-content-between align-items-center">
         <!-- Sidebar Toggle Button -->
@@ -71,7 +71,9 @@
           <ul class="dropdown-menu dropdown-menu-end">
             <li><a class="dropdown-item" href="#">Profile</a></li>
             <li><a class="dropdown-item" href="#">Settings</a></li>
-            <li><hr class="dropdown-divider"></li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
             <li><a class="dropdown-item" href="#">Logout</a></li>
           </ul>
         </div>
@@ -87,14 +89,17 @@
     <!-- <a class="navbar-brand" href="#">Responsive offcanvas navbar</a> -->
     <div class="d-flex justify-content-center" style="width: 250px;">
       <a class="navbar-brand" href="#">
-       <img src="../../../assets/images/logo.png" alt="Logo" width="140" height="42" class="d-inline-block align-text-top">
-       
-     </a>
-   </div>
-    <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar2" aria-controls="offcanvasNavbar2" aria-label="Toggle navigation">
+        <img src="../../../assets/images/logo.png" alt="Logo" width="140" height="42"
+          class="d-inline-block align-text-top">
+
+      </a>
+    </div>
+    <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar2"
+      aria-controls="offcanvasNavbar2" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="offcanvas offcanvas-end text-bg-dark" tabindex="-1" id="offcanvasNavbar2" aria-labelledby="offcanvasNavbar2Label">
+    <div class="offcanvas offcanvas-end text-bg-dark" tabindex="-1" id="offcanvasNavbar2"
+      aria-labelledby="offcanvasNavbar2Label">
       <div class="offcanvas-header">
         <h5 class="offcanvas-title" id="offcanvasNavbar2Label">Offcanvas</h5>
         <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
@@ -106,10 +111,64 @@
         </form>
         <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">Home</a>
+            <div class="store-dropdown dropdown me-3">
+              <button class="btn btn-outline-secondary dropdown-toggle d-flex justify-content-center align-items-center"
+               type="button" data-bs-toggle="dropdown">
+                <img src="../../../assets/images/store-01.png" alt="Store">
+                Select Store
+              </button>
+              <ul class="dropdown-menu">
+                <li class="d-flex justify-content-center align-items-center px-3">
+                  <img src="../../../assets/images/store-01.png" alt="Store">
+                  <a class="dropdown-item" href="#">Grocery Alpha</a>
+                </li>
+
+                <li class="d-flex justify-content-center align-items-center px-3">
+                  <img src="../../../assets/images/store-02.png" alt="Store">
+                  <a class="dropdown-item" href="#">Grocery Apex </a>
+                </li>
+
+                <li class="d-flex justify-content-center align-items-center px-3">
+                  <img src="../../../assets/images/store-03.png" alt="Store">
+                  <a class="dropdown-item" href="#">Grocery Bevy</a>
+                </li>
+
+                <li class="d-flex justify-content-center align-items-center px-3">
+                  <img src="../../../assets/images/store-04.png" alt="Store">
+                  <a class="dropdown-item" href="#">Grocery Eden</a>
+                </li>
+              </ul>
+            </div>
+            <!-- <a class="nav-link active" aria-current="page" href="#">Home</a> -->
           </li>
+          
           <li class="nav-item">
-            <a class="nav-link" href="#">Link</a>
+            <div class="store-dropdown dropdown me-3">
+              <button class="btn btn-outline-secondary d-flex justify-content-center align-items-center " 
+              type="button" data-bs-toggle="dropdown">
+                <img src="../../../assets/images/us.png" alt="I">
+                <!-- Select Store -->
+              </button>
+              <ul class="dropdown-menu">
+                <li class="d-flex justify-content-center align-items-center px-3">
+                  <img src="../../../assets/images/us.png" alt="Store">
+                  <a class="dropdown-item" href="#">English</a>
+                </li>
+                <li class="d-flex justify-content-center align-items-center px-3">
+                  <img src="../../../assets/images/fr.png" alt="Store">
+                  <a class="dropdown-item" href="#">French</a>
+                </li>
+                <li class="d-flex justify-content-center align-items-center px-3">
+                  <img src="../../../assets/images/es.png" alt="Store">
+                  <a class="dropdown-item" href="#">Spanish</a>
+                </li>
+                <li class="d-flex justify-content-center align-items-center px-3">
+                  <img src="../../../assets/images/de.png" alt="Store">
+                  <a class="dropdown-item" href="#">German</a>
+                </li>
+              </ul>
+            </div>
+            <!-- <a class="nav-link" href="#">Link</a> -->
           </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -125,7 +184,7 @@
             </ul>
           </li>
         </ul>
-        
+
       </div>
     </div>
   </div>
