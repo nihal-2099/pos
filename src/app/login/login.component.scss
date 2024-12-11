@@ -1,0 +1,66 @@
+
+@import '../../assets/scss/custom.scss';
+.fulllogin_form{
+    background-image: url('../../assets/images/pos_login_background.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    overflow: hidden;
+    p{
+        color: $text_color;
+    
+    }
+    .blurImg{
+        background-color:$blur_background_color;
+        backdrop-filter: blur(17px);
+        height: 100vh;
+        .container{
+            width: max-content;
+            @media screen and (max-width:720px) {
+                width: auto
+            }
+        }
+    }
+    .login_form{
+       img{
+        max-height: 50px;
+       }
+       
+       button{
+    
+        min-height: 40px;
+        border: none;
+        background-color: $orangered_color;
+       }
+       button:hover{
+        cursor: pointer;
+        background-color:$white_color;
+        color: $orangered_color ;
+        border: 1px solid $orangered_color;
+       }
+
+       .input{
+        input{
+            min-height: 40px;
+            border: 1px solid $text_color;
+            border-radius: 5px;
+        }
+     .mailImg, .passImg{
+            position: absolute !important;
+            margin-left: -40px;
+            margin-top: 10px;
+            color: $text_color;
+        }
+        
+       }
+
+       .checkbox{
+        color: $text_color;
+    }
+    .forgot_color{
+        color:$red_color;
+        font-weight: 600;
+    }
+      
+    }
+}
