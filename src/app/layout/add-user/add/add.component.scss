@@ -1,14 +1,26 @@
  @import "../../../../assets/scss/custom.scss";
 .add_section{
-// background-color: $add_component_bgcolor;
   height: max-content;
+  p{
+    color: $text_color;
+  }
 
 .top_header{
-    color: $add_component_buttoncolor;
+    position: relative;
+    top: -10px;
     div{
         h5{
-            font-size: 1rem;
-            margin-top: -2rem;
+           font-size: 18px;
+           color: $add_component_buttoncolor;
+           font-weight: 600;
+        }
+        p{
+            font-size: 14px;
+            font-weight: 400;
+            color: $text_color;
+        }
+        button{
+            font-weight: 600;
         }
     }
     button{
@@ -20,8 +32,23 @@
     }
 }
 .body_section{
+    h5{
+        font-size: 16px;
+        color: $add_component_buttoncolor;
+        font-weight: 500;
+     }
     .accordion-button{
         background: none;
+    }
+    input::placeholder{
+       color: $placeholder_color;
+    }
+    .selective{
+        option{
+            p{
+            color: $placeholder_color;
+            }
+        }
     }
 
 }
