@@ -15,6 +15,9 @@ const routes: Routes = [
       { path: 'edit', component: EditComponent },
       {
         path:'list', component:ListComponent
+      },
+      {
+        path:'', component:ListComponent
       }
       // {path:'aboutus', component:AboutUsComponent},
       // {path:'services', component:ServicesComponent}

@@ -6,6 +6,7 @@ import { AddComponent } from './add/add.component';
 import { EditComponent } from './edit/edit.component';
 import { RouterOutlet } from '@angular/router';
 import { ListComponent } from './list/list.component';
+import { SharedModule } from '../../shared/shared.module';
 
 
 
@@ -19,7 +20,8 @@ import { ListComponent } from './list/list.component';
   imports: [
     CommonModule,
     AddUserRoutingModule,
-    RouterOutlet
+    RouterOutlet,
+    SharedModule
   ]
 })
 export class AddUserModule { }
