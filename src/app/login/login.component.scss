@@ -8,7 +8,6 @@
     // overflow: hidden;
     // overflow-y: scroll;
     overflow-x:hidden ;
-    overflow-y: scroll;
     p{
         color: $text_color;
     
@@ -17,6 +16,7 @@
         background-color:$blur_background_color;
         backdrop-filter: blur(17px);
         height: 100vh;
+        overflow-y: auto;
         .container{
             width: max-content;
             @media screen and (max-width:720px) {
