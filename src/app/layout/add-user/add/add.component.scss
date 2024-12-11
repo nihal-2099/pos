@@ -1,0 +1,30 @@
+ @import "../../../../assets/scss/custom.scss";
+.add_section{
+// background-color: $add_component_bgcolor;
+  height: max-content;
+
+.top_header{
+    color: $add_component_buttoncolor;
+    div{
+        h5{
+            font-size: 1rem;
+            margin-top: -2rem;
+        }
+    }
+    button{
+        background-color: $add_component_buttoncolor; 
+        
+    } 
+    p{
+        font-size: 16px;     // color: $text_color;
+    }
+}
+.body_section{
+    .accordion-button{
+        background: none;
+    }
+
+}
+
+
+}
