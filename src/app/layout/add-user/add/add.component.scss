@@ -29,21 +29,35 @@
     } 
 }
 .body_section{
-    h5{
+    .fill_icons{
+        color: $orangered_color;
+       width: 3rem;
+    }
+    h5{ 
         font-size: 16px;
         color: $add_component_buttoncolor;
         font-weight: 500;
      }
-     p{
-        font-size: 14px;
-        font-weight: 500;
-     }
+
+  
     .accordion-button{
         background: none;
     }
     input::placeholder{
        color: $placeholder_color;
     }
+
+    .toggle{
+        .toggle_button{
+            .form-check-input:checked {
+                background-color: $orangered_color;
+                border-color: $orangered_color;
+                height: 1.5rem;
+                width: 3rem;      
+            }
+        }
+    }
+    
     .last_button{
         .cancel_button{
            button{
