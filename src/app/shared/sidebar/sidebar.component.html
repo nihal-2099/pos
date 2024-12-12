@@ -2,16 +2,39 @@
   <!-- Main Section -->
   <div>
     <h2 class="section-title">Main</h2>
-    <div class="accordion" id="mainAccordion">
-      <div class="accordion-item ">
+    <ul class="list-unstyled">
+      <li>
+        <a routerLink="/layout/dashboard" routerLinkActive="active">
+          <div class="d-flex justify-content-start align-items-center">
+            <i-feather name="grid" class="icons"></i-feather>
+            <span> Dashboard</span>
+          </div>
+          </a>
+      </li>
+    </ul>
+    <!-- <div class="accordion" id="mainAccordion">
+      <div class="accordion-item">
         <h2 class="accordion-header" id="headingDashboard">
-          <button class="accordion-button collapsed cust-accordian" type="button" data-bs-toggle="collapse"
-            data-bs-target="#dashboardCollapse" aria-expanded="true" aria-controls="dashboardCollapse">
-            Dashboard
+          <button
+            class="accordion-button collapsed cust-accordian"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#dashboardCollapse"
+            aria-expanded="true"
+            aria-controls="dashboardCollapse"
+          >
+            <div class="d-flex justify-content-center align-items-center">
+              <i-feather name="grid" class="icons"></i-feather>
+              <span> Dashboard</span>
+            </div>
           </button>
         </h2>
-        <div id="dashboardCollapse" class="accordion-collapse collapse hide list-unstyled"
-          aria-labelledby="headingDashboard" data-bs-parent="#mainAccordion">
+        <div
+          id="dashboardCollapse"
+          class="accordion-collapse collapse hide list-unstyled"
+          aria-labelledby="headingDashboard"
+          data-bs-parent="#mainAccordion"
+        >
           <div class="accordion-body">
             <ul class="list-unstyled ps-3">
               <li><a href="#">Submenu 1</a></li>
@@ -22,13 +45,23 @@
       </div>
       <div class="accordion-item">
         <h2 class="accordion-header" id="headingApplication">
-          <button class="accordion-button collapsed cust-accordian" type="button" data-bs-toggle="collapse"
-            data-bs-target="#applicationCollapse" aria-expanded="false" aria-controls="applicationCollapse">
+          <button
+            class="accordion-button collapsed cust-accordian"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#applicationCollapse"
+            aria-expanded="false"
+            aria-controls="applicationCollapse"
+          >
             Application
           </button>
         </h2>
-        <div id="applicationCollapse" class="accordion-collapse collapse" aria-labelledby="headingApplication"
-          data-bs-parent="#mainAccordion">
+        <div
+          id="applicationCollapse"
+          class="accordion-collapse collapse"
+          aria-labelledby="headingApplication"
+          data-bs-parent="#mainAccordion"
+        >
           <div class="accordion-body">
             <ul class="list-unstyled ps-3">
               <li><a href="#">Submenu 1</a></li>
@@ -37,32 +70,48 @@
           </div>
         </div>
       </div>
-    </div>
+    </div> -->
   </div>
 
   <div class="cust-hr">
-    <hr>
+    <hr />
   </div>
 
   <!-- User Section -->
   <div>
     <h2 class="section-title">Users</h2>
     <ul class="list-unstyled">
-      <li><a href="#">Add Users</a></li>
-      <li><a href="#">List Users</a></li>
+      <li>
+        <a routerLink="/layout/add/new" routerLinkActive="active">
+          <div class="d-flex justify-content-start align-items-center">
+            <i-feather name="user-plus" class="icons"></i-feather>
+            <span>Add Users</span>
+          </div>
+        </a>
+      </li>
+      <li><a routerLink="/layout/add/list" routerLinkActive="active">
+        <div class="d-flex justify-content-start align-items-center">
+          <i-feather name="users" class="icons"></i-feather>
+
+          <span>List Users</span>
+        </div>
+
+
+      </a></li>
     </ul>
   </div>
 
-
   <div class="cust-hr">
-    <hr>
+    <hr />
   </div>
 
   <!-- Inventory Section -->
   <div>
     <h2 class="section-title">Inventory</h2>
     <ul class="list-unstyled">
-      <li><a href="#">Products</a></li>
+      <li>
+        <a href="#"><i data-feather="circle"></i> Products</a>
+      </li>
       <li><a href="#">Create Product</a></li>
       <li><a href="#">Expired Products</a></li>
       <li><a href="#">Low Stocks</a></li>
@@ -78,7 +127,7 @@
   </div>
 
   <div class="cust-hr">
-    <hr>
+    <hr />
   </div>
 
   <!-- Stock Section -->
@@ -92,7 +141,7 @@
   </div>
 
   <div class="cust-hr">
-    <hr>
+    <hr />
   </div>
 
   <!-- Sales Section -->

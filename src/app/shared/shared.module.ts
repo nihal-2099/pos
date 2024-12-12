@@ -8,7 +8,8 @@ import { TableComponent } from './table/table.component';
 import { EmailDirective } from '../directives/email.directive';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
-
+import { FeatherModule } from 'angular-feather';
+import {  allIcons} from 'angular-feather/icons';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     RouterModule,
     EmailDirective,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    FeatherModule.pick(allIcons)
   ],
   exports:[
     HeaderComponent,
@@ -32,7 +34,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     TableComponent,
     EmailDirective,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    FeatherModule
   ]
 })
 export class SharedModule { }
