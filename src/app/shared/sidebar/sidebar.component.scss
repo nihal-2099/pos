@@ -1,97 +1,112 @@
 @import "../../../assets/scss/custom.scss";
 
 .sidebar {
-  width: 258px;
-  background-color: #f8f9fa;
-  border-right: 1px solid #ddd;
-  height: 100vh;
-  overflow-y: auto; /* Enable vertical scrolling */
-  position: fixed; /* Keeps the sidebar fixed */
-
-  .accordion-item {
-    border: none;
-    background: transparent;
-  }
-
-  .accordion-button {
+    width: 258px;
+    z-index: 999;
     background-color: #f8f9fa;
-    color: #000;
-    padding: 10px 35px;
+    border-right: 1px solid #ddd;
+    height: 100vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+    /* Enable vertical scrolling */
+    position: fixed;
+    /* Keeps the sidebar fixed */
 
-    &:focus {
-      box-shadow: none;
+
+    .logo-section {
+        border-bottom: 1px solid #dbe0e6;
+        display: flex;
+        align-items: center;
+        padding: 0 15px;
     }
-  }
 
-  .cust-accordian {
-    // padding-left: 20px !important;
-    color: #5b6670;
-
-  }
-
-  .section-title {
-    font-weight: 600;
-    
-    color: #1b2950;
-    margin: 0 0 14px;
-    background-color: #f8f9fa;
-    // border-bottom: 1px solid #ddd;
-    margin-bottom: 0;
-  }
-
-  .cust-hr {
-    display: flex;
-    justify-content: center;
-
-    hr {
-      width: 80%;
+    .accordion-item {
+        border: none;
+        background: transparent;
     }
-  }
 
-  ul {
-    list-style: none;
-    padding: 0px 15px;
-    margin: 0;
+    .accordion-button {
+        background-color: #f8f9fa;
+        color: #000;
+        padding: 10px 35px;
 
-    li {
-      a {
-        display: block;
-        padding: 10px 20px;
-        text-decoration: none;
-        font-size: 0.9em;
+        &:focus {
+            box-shadow: none;
+        }
+    }
+
+    .cust-accordian {
+        // padding-left: 20px !important;
         color: #5b6670;
-      }
+
     }
-  }
 
-  /* Optional: Custom Scrollbar */
-  &::-webkit-scrollbar {
-    width: 4px;
-  }
+    .section-title {
+        font-weight: 600;
 
-  &::-webkit-scrollbar-thumb {
-    background-color: #ccc;
-    border-radius: 4px;
-  }
+        color: #1b2950;
+        margin: 0 0 14px;
+        background-color: #f8f9fa;
+        // border-bottom: 1px solid #ddd;
+        margin-bottom: 0;
+    }
 
-  &::-webkit-scrollbar-thumb:hover {
-    background-color: #aaa;
-  }
+    .cust-hr {
+        display: flex;
+        justify-content: center;
+
+        hr {
+            width: 80%;
+        }
+    }
+
+    ul {
+        list-style: none;
+        padding: 0px 15px;
+        margin: 0;
+
+        li {
+            a {
+                display: block;
+                padding: 10px 20px;
+                text-decoration: none;
+                font-size: 0.9em;
+                color: #5b6670;
+            }
+        }
+    }
+
+    /* Optional: Custom Scrollbar */
+    &::-webkit-scrollbar {
+        width: 4px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background-color: #ccc;
+        border-radius: 4px;
+    }
+
+    &::-webkit-scrollbar-thumb:hover {
+        background-color: #aaa;
+    }
 }
 
 .active {
-  background: $activeMenuside;
-  border-radius: 5px;
-  color: $orangered_color !important;
-  font-weight: 800;
+    background: $activeMenuside;
+    border-radius: 5px;
+    color: $orangered_color !important;
+    font-weight: 800;
 }
 
-a:not(.active):hover{
+a:not(.active):hover {
     background-color: transparent !important;
     font-weight: 500;
     color: $orangered_color !important;
 }
+
 .accordion-button:not(.collapsed) {
-  border: none; /* Removes border when the accordion is open */
-  box-shadow: none; /* Removes the default box shadow */
+    border: none;
+    /* Removes border when the accordion is open */
+    box-shadow: none;
+    /* Removes the default box shadow */
 }

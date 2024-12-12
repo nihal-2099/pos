@@ -14,6 +14,14 @@ import { PageheadersComponent } from './pageheaders/pageheaders.component';
 import {MatSelectModule} from '@angular/material/select';
 import {MatFormFieldModule} from '@angular/material/form-field';
 
+import {MatTableModule} from '@angular/material/table';
+
+import {MatPaginator, MatPaginatorModule} from '@angular/material/paginator';
+import {MatSort, MatSortModule} from '@angular/material/sort';
+import {MatTableDataSource} from '@angular/material/table';
+import {MatInputModule} from '@angular/material/input';
+import {MatFormFieldModule} from '@angular/material/form-field';
+
 @NgModule({
   declarations: [
     HeaderComponent,
@@ -30,8 +38,18 @@ import {MatFormFieldModule} from '@angular/material/form-field';
     FormsModule,
     ReactiveFormsModule,
     FeatherModule.pick(allIcons),
+<<<<<<< HEAD
+    MatTableModule,
+    MatPaginator,
+    MatPaginatorModule,
+    MatSort, MatSortModule,
+    MatFormFieldModule,
+    MatInputModule
+    
+=======
     MatSelectModule,
     MatFormFieldModule
+>>>>>>> fbe83757d2c6961259b6df083f1d63b53ca611bd
   ],
   exports:[
     HeaderComponent,
