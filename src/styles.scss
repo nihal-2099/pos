@@ -2,11 +2,16 @@
 
 
 @import "./assets/scss/custom.scss";
+
+@font-face {
+    font-family: "NunitoSans";
+    src: url('./assets/fonts/NunitoSans.ttf');
+  }
 // body{
 //     // font-family: myFirstFont !important;
 // }
 html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+body { margin: 0; font-family: "NunitoSans" !important }
 
 
 
@@ -22,4 +27,9 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 .icons{
 
 padding-right: 10px !important;
+}
+
+.custom-icons{
+    width: 28px !important;
+    height: 28px !important;
 }

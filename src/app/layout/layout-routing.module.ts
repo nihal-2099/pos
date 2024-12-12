@@ -9,10 +9,14 @@ const routes: Routes = [
     path: '', component: LayoutComponent, children: [
 
       {  path:'add',  loadChildren:() => import('./add-user/add-user.module').then(m => m.AddUserModule)},
-      {  path:'dashboard',  loadChildren:() => import('./dashboard/dashboard.module').then(m => m.DashboardModule)}
+      {  path:'dashboard',  loadChildren:() => import('./dashboard/dashboard.module').then(m => m.DashboardModule)},
+      {  path:'catalogue',  loadChildren:() => import('./catalogue/catalogue.module').then(m => m.CatalogueModule)}
+
       // { path: 'home', component: HomeComponent },
       // {path:'aboutus', component:AboutUsComponent},
       // {path:'services', component:ServicesComponent}
+
+      
     ]
   }
 ];
