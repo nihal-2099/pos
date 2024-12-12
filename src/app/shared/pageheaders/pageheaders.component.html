@@ -1,0 +1,16 @@
+<div class="product-wrapper mb-3">
+    <div class="product-header d-flex justify-content-between align-items-center">
+        <div class="product-left">
+            <strong>{{topHeadingContent?.heading}}</strong><br>
+            <small>{{topHeadingContent?.subitems}}</small>
+        </div>
+        <div class="d-flex">
+        <ng-content></ng-content>
+        <button
+        class="btn btn-outline-secondary d-flex justify-content-center align-items-center icon-button ms-3"
+        type="button" >
+        <i-feather name="chevron-down"></i-feather>
+    </button>
+</div>
+    </div>
+</div>

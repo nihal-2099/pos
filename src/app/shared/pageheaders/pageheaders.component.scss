@@ -1,0 +1,22 @@
+@import "../../../assets/scss/custom.scss";
+
+.product{
+    
+    
+    &-wrapper{
+    
+        .btn-outline-secondary{
+            border-color:  $lightgrey;
+            &:hover{
+                background-color: $lightgrey;
+                color: $black;
+            }
+        }
+        
+    }
+    
+    
+
+
+
+}
