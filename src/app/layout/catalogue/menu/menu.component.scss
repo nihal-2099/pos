@@ -1,0 +1,26 @@
+@import "../../../../assets/scss/custom.scss";
+.accordion-button{
+    background: none;
+    // box-shadow: none;
+}
+.last_button{
+    .cancel_button{
+       button{
+        background-color: $cancel_button_color;
+        color: $white_color;
+       }
+       button:hover{
+        background-color: $cancel_button_color_hover;
+       }
+    }
+    
+    .submit_button{
+        button{
+    background-color: $orangered_color;
+    color: $white_color;
+        }
+        button:hover{
+            background-color: $submit_button_color_hover;
+        }
+    }
+}
