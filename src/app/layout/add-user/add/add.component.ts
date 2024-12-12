@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-add',
@@ -8,5 +9,6 @@ import { Component } from '@angular/core';
   styleUrl: './add.component.scss'
 })
 export class AddComponent {
-
+  toppings = new FormControl('');
+  toppingList: string[] = ['Extra cheese', 'Mushroom', 'Onion', 'Pepperoni', 'Sausage', 'Tomato'];
 }
