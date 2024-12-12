@@ -12,7 +12,6 @@ import { FeatherModule } from 'angular-feather';
 import {  allIcons} from 'angular-feather/icons';
 import { PageheadersComponent } from './pageheaders/pageheaders.component';
 import {MatSelectModule} from '@angular/material/select';
-import {MatFormFieldModule} from '@angular/material/form-field';
 
 import {MatTableModule} from '@angular/material/table';
 
@@ -38,18 +37,15 @@ import {MatFormFieldModule} from '@angular/material/form-field';
     FormsModule,
     ReactiveFormsModule,
     FeatherModule.pick(allIcons),
-<<<<<<< HEAD
     MatTableModule,
     MatPaginator,
     MatPaginatorModule,
     MatSort, MatSortModule,
     MatFormFieldModule,
-    MatInputModule
+    MatInputModule,
     
-=======
     MatSelectModule,
     MatFormFieldModule
->>>>>>> fbe83757d2c6961259b6df083f1d63b53ca611bd
   ],
   exports:[
     HeaderComponent,
