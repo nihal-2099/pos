@@ -1,0 +1,21 @@
+
+
+.product-wrapper{
+    .product-right{
+        a{
+            text-decoration: none;
+        }
+
+        button {
+            outline: none !important;
+        }
+        .add-button{
+            background-color: orange;
+            outline-width: 0;
+        }
+
+        .import-buton{
+            background-color: navy;
+        }
+    }
+}
