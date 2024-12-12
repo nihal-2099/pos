@@ -5,29 +5,7 @@
     color: $text_color;
   }
 
-.top_header{
-    position: relative;
-    top: -10px;
-    .top_header_text{
-        h5{
-           font-size: 18px;
-           color: $add_component_buttoncolor;
-           font-weight: 600;
-        }
-        p{
-            font-size: 14px;
-            font-weight: 400;
-            color: $text_color;
-        }
-        .top_header_button{
-            font-weight: 600;
-        }
-    }
-    button{
-        background-color: $add_component_buttoncolor; 
-        
-    } 
-}
+
 .body_section{
     .fill_icons{
         color: $orangered_color;
@@ -49,11 +27,15 @@
 
     .toggle{
         .toggle_button{
-            .form-check-input:checked {
-                background-color: $orangered_color;
-                border-color: $orangered_color;
+            .form-check-input {
+       
                 height: 1.5rem;
                 width: 3rem;      
+
+                &:checked{
+                    background-color: $orangered_color;
+                    border-color: $orangered_color;
+                }
             }
         }
     }
@@ -81,3 +63,14 @@
     }
 }
 }
+
+.top_header{
+
+    &_button{ button{
+       background-color: $add_component_buttoncolor; 
+       
+   } }
+      
+   }
+
+   

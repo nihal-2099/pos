@@ -10,6 +10,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { FeatherModule } from 'angular-feather';
 import {  allIcons} from 'angular-feather/icons';
+import { PageheadersComponent } from './pageheaders/pageheaders.component';
+import {MatSelectModule} from '@angular/material/select';
+import {MatFormFieldModule} from '@angular/material/form-field';
 
 @NgModule({
   declarations: [
@@ -17,6 +20,7 @@ import {  allIcons} from 'angular-feather/icons';
     FooterComponent,
     SidebarComponent,
     TableComponent,
+    PageheadersComponent,
     
   ],
   imports: [
@@ -25,7 +29,9 @@ import {  allIcons} from 'angular-feather/icons';
     EmailDirective,
     FormsModule,
     ReactiveFormsModule,
-    FeatherModule.pick(allIcons)
+    FeatherModule.pick(allIcons),
+    MatSelectModule,
+    MatFormFieldModule
   ],
   exports:[
     HeaderComponent,
@@ -35,7 +41,10 @@ import {  allIcons} from 'angular-feather/icons';
     EmailDirective,
     FormsModule,
     ReactiveFormsModule,
-    FeatherModule
+    FeatherModule,
+    PageheadersComponent,
+    MatSelectModule,
+    MatFormFieldModule
   ]
 })
 export class SharedModule { }
