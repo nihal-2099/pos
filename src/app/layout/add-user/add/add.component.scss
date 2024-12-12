@@ -54,8 +54,11 @@
         .cancel_button{
             background-color: $text_color;
         }
+        .cancel_button:hover{
+            background-color: none;
+        }
         .submit_button{
-        
+        background-color: $orangered_color;
         }
     }
 
