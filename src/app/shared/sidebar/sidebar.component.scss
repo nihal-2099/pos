@@ -1,3 +1,5 @@
+@import "../../../assets/scss/custom.scss";
+
 .sidebar {
     width: 258px;
     background-color: #f8f9fa;
@@ -59,7 +61,7 @@
                 display: block;
                 padding: 10px 20px;
                 text-decoration: none;
-                font-size: 14px;
+                font-size: 0.8em;
                 color: #5b6670;
 
                 &:hover {
@@ -91,4 +93,14 @@
     &::-webkit-scrollbar-thumb:hover {
         background-color: #aaa;
     }
+}
+
+
+.active{
+  
+        background: $activeMenuside;
+        border-radius: 5px;
+        color: $orangered_color !important;
+        font-weight: 500;
+  
 }
