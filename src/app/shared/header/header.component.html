@@ -18,12 +18,12 @@
         <h5 class="offcanvas-title" id="offcanvasNavbar2Label">Offcanvas</h5>
         <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
       </div>
-      <div class="offcanvas-body">
-        <form class="d-flex mt-3 mt-lg-0 mx-3" role="search">
+      <div class="offcanvas-body align-items-center">
+        <form class="d-flex mx-3 nav-search-bar" role="search">
           <input class="form-control" type="search" placeholder="Search" aria-label="Search">
           <!-- <button class="btn btn-outline-success" type="submit">Search</button> -->
         </form>
-        <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+        <ul class="navbar-nav align-items-center justify-content-end flex-grow-1 pe-3">
           <li class="nav-item">
             <div class="store-dropdown dropdown me-3">
               <button class="btn btn-outline-secondary dropdown-toggle d-flex justify-content-center align-items-center"
@@ -97,9 +97,13 @@
 
           <li class="nav-item me-3">
             <a href="#">
-              <button class="btn btn-outline-secondary d-flex justify-content-center align-items-center icon-button" type="button"
+              <button class="btn btn-outline-secondary d-flex justify-content-center align-items-center icon-button position-relative" type="button"
                 data-bs-toggle="dropdown">
-                <img src="../../../assets/images/mail2.png" alt="I">
+                <img src="../../../assets/images/mail-second.png" alt="">
+                <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                  1
+                  <span class="visually-hidden">unread messages</span>
+                </span>
 
               </button>
             </a>
@@ -107,9 +111,13 @@
 
           <li class="nav-item me-3">
             <a href="#">
-              <button class="btn btn-outline-secondary d-flex justify-content-center align-items-center icon-button" type="button"
+              <button class="btn btn-outline-secondary d-flex justify-content-center align-items-center icon-button position-relative" type="button"
                 data-bs-toggle="dropdown">
                 <img src="../../../assets/images/bell.svg" alt="I">
+                <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                  0
+                  <span class="visually-hidden">unread messages</span>
+                </span>
 
               </button>
             </a>
@@ -128,11 +136,11 @@
           <!-- Profile Dropdown -->
           <li class="nav-item ">
             <div class="dropdown">
-              <button class="btn btn-light d-flex align-items-center" type="button" data-bs-toggle="dropdown">
+              <button class="btn btn-light d-flex align-items-center cust-profile" type="button" data-bs-toggle="dropdown">
                 <img src="../../../assets/images/avator1.jpg" alt="Profile" class="profile-img me-2">
                 <div>
                   <strong>John Smilga</strong><br>
-                  <!-- <small>Super Admin</small> -->
+                  <small>Super Admin</small>
                 </div>
               </button>
               <ul class="dropdown-menu dropdown-menu-end">
