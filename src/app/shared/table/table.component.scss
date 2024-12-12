@@ -34,3 +34,10 @@
         }
     }
 }
+
+
+::ng-deep{
+    .mat-mdc-table{
+        background-color: transparent !important;
+    }
+}

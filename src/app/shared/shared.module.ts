@@ -11,6 +11,14 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FeatherModule } from 'angular-feather';
 import {  allIcons} from 'angular-feather/icons';
 
+import {MatTableModule} from '@angular/material/table';
+
+import {MatPaginator, MatPaginatorModule} from '@angular/material/paginator';
+import {MatSort, MatSortModule} from '@angular/material/sort';
+import {MatTableDataSource} from '@angular/material/table';
+import {MatInputModule} from '@angular/material/input';
+import {MatFormFieldModule} from '@angular/material/form-field';
+
 @NgModule({
   declarations: [
     HeaderComponent,
@@ -25,7 +33,14 @@ import {  allIcons} from 'angular-feather/icons';
     EmailDirective,
     FormsModule,
     ReactiveFormsModule,
-    FeatherModule.pick(allIcons)
+    FeatherModule.pick(allIcons),
+    MatTableModule,
+    MatPaginator,
+    MatPaginatorModule,
+    MatSort, MatSortModule,
+    MatFormFieldModule,
+    MatInputModule
+    
   ],
   exports:[
     HeaderComponent,
