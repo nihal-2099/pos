@@ -1,17 +1,51 @@
-.pradeep {
-    display: flex !important;
-    justify-content: center !important;
-}
-
 .navbar {
+   
+    border-bottom: 1px solid #dbe0e6;
+    height: 66px;
+    margin: 0;
+    padding: 0;
+    background-color: white !important;
+
+    .nav-wrapper {
+        padding: 0 !important;
+    }
+
+    .logo-section {
+        border-right: 1px solid #dbe0e6;
+        display: flex;
+        align-items: center;
+        padding: 0 15px;
+    }
+
+    .nav-search-bar{
+        width: 300px;
+    }
+
+
     ul {
         li {
             img {
                 width: 20px;
-                height: 20px; border-radius: 50%;
+                height: auto !important;
+                border-radius: 50%;
             }
         }
 
     }
-}
 
+    .icon-button{
+        border: none;
+        background-color: #f3f6f9;
+        height: 100%;
+    }
+    .cust-profile{
+        line-height: 1;
+
+        img{
+            width: 34px !important;
+            height: 34px !important;
+            border-radius: 5px !important;
+            outline: 2px solid #f3f6f9;
+        }
+    }
+}
