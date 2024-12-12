@@ -8,7 +8,7 @@
 .top_header{
     position: relative;
     top: -10px;
-    div{
+    .top_header_text{
         h5{
            font-size: 18px;
            color: $add_component_buttoncolor;
@@ -19,7 +19,7 @@
             font-weight: 400;
             color: $text_color;
         }
-        button{
+        .top_header_button{
             font-weight: 600;
         }
     }
@@ -27,14 +27,15 @@
         background-color: $add_component_buttoncolor; 
         
     } 
-    p{
-        font-size: 16px;     // color: $text_color;
-    }
 }
 .body_section{
     h5{
         font-size: 16px;
         color: $add_component_buttoncolor;
+        font-weight: 500;
+     }
+     p{
+        font-size: 14px;
         font-weight: 500;
      }
     .accordion-button{
@@ -43,23 +44,26 @@
     input::placeholder{
        color: $placeholder_color;
     }
-    .selective{
-        option{
-            p{
-            color: $placeholder_color;
+    .last_button{
+        .cancel_button{
+           button{
+            background-color: $cancel_button_color;
+            color: $white_color;
+           }
+           button:hover{
+            background-color: $cancel_button_color_hover;
+           }
+        }
+        
+        .submit_button{
+            button{
+        background-color: $orangered_color;
+        color: $white_color;
+            }
+            button:hover{
+                background-color: $submit_button_color_hover;
             }
         }
     }
-    .last_button{
-        .cancel_button{
-            background-color: $text_color;
-        }
-        .submit_button{
-        
-        }
-    }
-
 }
-
-
 }
