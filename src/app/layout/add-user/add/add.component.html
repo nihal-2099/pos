@@ -1,8 +1,8 @@
 <section>
     <div class="add_section">
-        <div class="top_header d-flex justify-content-between">
+        <div class="top_header d-flex justify-content-between mt-0">
             <div>
-                <h5 class="fs-5 mb-1 mt-0">New Product</h5>
+                <h5 class="mb-1 mt-0">New Product</h5>
                 <p>Create New Product</p>
             </div>
             <div> <button type="button" class="btn btn-secondary"> <span class="left_arrow"> &larr; </span> Back
@@ -11,7 +11,7 @@
                 <div class="body_section ">
                     <!-- Accordion used here -->
                     <div class="accordion" id="accordionExample">
-                        <div class="accordion-item">
+                      <div class="accordion-item">
                             <h2 class="accordion-header" id="headingOne">
                                 <button class="accordion-button" type="button" data-bs-toggle="collapse"
                                     data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
@@ -22,30 +22,60 @@
                                 data-bs-parent="#accordionExample">
                                 <div class="accordion-body">
                                     <!-- fill here accordion -->
-
                                     <div class="row">
+                                    <div  class="col-12 col-lg-4">
+                               <div class="my-2">
+                              <label for="exampleFormControlInput1" class="form-label fs-6"><p class="mb-0">Your Name :</p></label>
+                                <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Enter Your Name">
+                                  </div>     
+                                     </div> 
 
-                                    <div
- class="col-12 col-lg-4">
-
-<div class="mb-3">
-  <label for="exampleFormControlInput1" class="form-label">Email address</label>
-  <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
-</div>
-       
+                                       <div  class="col-12 col-lg-4">
+                                        <div class="my-2">
+                                          <label for="exampleFormControlInput1" class="form-label"><p class="mb-0">Mobile No. :</p></label>
+                                          <input type="number" class="form-control" id="exampleFormControlInput1" placeholder="Enter Your Contact">
+                                        </div>     
+                                          </div>
+                                  <div  class="col-12 col-lg-4">
+                                  <div class="my-2">
+                                   <label for="exampleFormControlInput1" class="form-label"><p class="mb-0">Email address :</p></label>
+                                   <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+                                    </div>     
+                                     </div>
+                                     <!-- Selective -->
+                                      <div class="col-lg-4 col-12 my-2">
+                                        <div class="selective">
+                                            <p class="mb-2">Your Designation :</p>
+                                        <select class="form-select" aria-label="Default select example">
+                                            <option selected></option>
+                                            <option value="1">One</option>
+                                            <option value="2">Two</option>
+                                            <option value="3">Three</option>
+                                          </select>
+                                        </div>
                                     </div>
-
+                                    <!-- Multiple select option -->
+                                    <div class="col-lg-4 col-12 my-2">
+                                        <div class="selective">
+                                            <p class="mb-2">Your Responsibility :</p>
+                                        <select class="form-select" aria-label="Default select example">
+                                            <option selected></option>
+                                            <option value="1">One</option>
+                                            <option value="2">Two</option>
+                                            <option value="3">Three</option>
+                                          </select>
+                                        </div>
+                                    </div>                   
                                 </div>
-
-
+                                <div class="last_button d-flex justify-content-end">
+                             <div class="cancel_button mx-2">   <button type="button" class="btn btn-outline-secondary">Cancel</button> </div>
+                              <div class="submit_button mx-2">  <button type="button" class="btn btn-outline-warning">Save Product</button></div>
+                            </div>
                                 </div>
                             </div>
                         </div>
-
+                        
                     </div> <!-- Accordion used end here -->
-
-                </div>
-
-        
+                </div>   
     </div>
 </section>
