@@ -12,6 +12,7 @@ import { FeatherModule } from 'angular-feather';
 import {  allIcons} from 'angular-feather/icons';
 import { PageheadersComponent } from './pageheaders/pageheaders.component';
 import {MatSelectModule} from '@angular/material/select';
+import {MatFormFieldModule} from '@angular/material/form-field';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import {MatSelectModule} from '@angular/material/select';
     FormsModule,
     ReactiveFormsModule,
     FeatherModule.pick(allIcons),
-    MatSelectModule
+    MatSelectModule,
+    MatFormFieldModule
   ],
   exports:[
     HeaderComponent,
@@ -41,7 +43,8 @@ import {MatSelectModule} from '@angular/material/select';
     ReactiveFormsModule,
     FeatherModule,
     PageheadersComponent,
-    MatSelectModule
+    MatSelectModule,
+    MatFormFieldModule
   ]
 })
 export class SharedModule { }
