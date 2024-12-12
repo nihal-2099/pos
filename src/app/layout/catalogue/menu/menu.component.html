@@ -82,11 +82,15 @@
     </div>  
   </div> -->
   <!-- 2nd times -->
+
+  <!-- Accordion  -->
+   <div class="catelogue_online">
   <div class="accordion" id="accordionPanelsStayOpenExample">
     <div class="accordion-item">
       <h2 class="accordion-header" id="panelsStayOpen-headingOne">
         <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
-        Main Heading
+
+<i-feather name="alert-circle" class="icons icon_color"></i-feather>          <h5> Main Heading </h5>
         </button>
       </h2>
       <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show" aria-labelledby="panelsStayOpen-headingOne">
@@ -94,7 +98,7 @@
           <div class="row">
             <div class="col-lg-4 col-12 my-2">
                 <div class="selective">
-                  <p class="mb-2">Your Designation :</p>
+                  <p class="mb-2">Heading : </p>
                   <select
                     class="form-select"
                     aria-label="Default select example"
@@ -106,10 +110,10 @@
                   </select>
                 </div>
               </div>
-         
+
                 <div class="col-lg-4 col-12 my-2">
                     <div class="selective">
-                      <p class="mb-2">Your Designation :</p>
+                      <p class="mb-2">Sub Heading :</p>
                       <select
                         class="form-select"
                         aria-label="Default select example"
@@ -120,54 +124,57 @@
                         <option value="3">Three</option>
                       </select>
                     </div>
-                  </div>
-            
+                  </div>   
           </div>
         </div>
       </div>
     </div>
+    <!-- Accordion 2nd -->
     <div class="accordion-item">
       <h2 class="accordion-header" id="panelsStayOpen-headingTwo">
         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false" aria-controls="panelsStayOpen-collapseTwo">
-       Items Name
+            <i-feather name="alert-circle" class="icons icon_color"></i-feather>  <h5>Items Name</h5>
         </button>
       </h2>
       <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingTwo">
         <div class="accordion-body">
           <div class="row">
-            <div class="col-lg-4 col-12 ">
-                <select class="form-select" aria-label="Default select example">
-                    <option selected>Name</option>
-                    <option value="1">One</option>
-                    <option value="2">Two</option>
-                    <option value="3">Three</option>
-                  </select>
-            </div>
+      
+                <div class="col-lg-4 col-12 my-2">
+                    
+                        <p>Name :</p>
+                        <div class="input-group mb-3">
+                        
+                         <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                       </div>
+                    
+                  </div>
+           
 
             <div class="text_area">
                 <div class="col-lg-6 col-12 my-3">
                     <div class="form-floating">
+                        <p>Items Description :</p>
                         <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea"></textarea>
-                        <label for="floatingTextarea">Items Description</label>
+                       
+                        <label for="floatingTextarea"></label>
                       </div>        
                 </div>
             </div>
 
             <div class="col-lg-4 col-12">
-                <select class="form-select" aria-label="Default select example">
-                    <option selected>Half Plate Rate</option>
-                    <option value="1">One</option>
-                    <option value="2">Two</option>
-                    <option value="3">Three</option>
-                  </select>
+                <p>Half Plate :</p>
+                <div class="input-group mb-3">
+                    
+                    <input type="number" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                  </div>
             </div>
             <div class="col-lg-4 col-12">
-                <select class="form-select" aria-label="Default select example">
-                    <option selected>Full Plate Rate</option>
-                    <option value="1">One</option>
-                    <option value="2">Two</option>
-                    <option value="3">Three</option>
-                  </select>
+               <p>Full Plate :</p>
+               <div class="input-group mb-3">
+               
+                <input type="number" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+              </div>
             </div>
 
             <div class="last_button d-flex justify-content-end">
@@ -181,3 +188,4 @@
     </div>
     
   </div>
+</div>
