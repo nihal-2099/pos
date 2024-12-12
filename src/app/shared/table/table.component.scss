@@ -1,21 +1,36 @@
-
+@import "../../../assets/scss/custom.scss";
 
 .product-wrapper{
     .product-right{
+        
         a{
             text-decoration: none;
         }
 
-        button {
-            outline: none !important;
+        .icon-button{
+            width: 38px;
+            border: 1px solid $table-button-border;
         }
+        
         .add-button{
-            background-color: orange;
-            outline-width: 0;
+            font-size: 14px !important;
+            background-color: $orangered_color;
+            border: none;
+            color: white;
+
+            &:hover{
+                background-color: $add_component_buttoncolor;
+            }
         }
 
         .import-buton{
-            background-color: navy;
+            font-size: 14px !important;
+            background-color: $add_component_buttoncolor;
+            border: none;
+
+            &:hover{
+                background-color: $orangered_color;
+            }
         }
     }
 }
