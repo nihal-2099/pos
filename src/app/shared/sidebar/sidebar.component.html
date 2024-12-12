@@ -1,156 +1,76 @@
 <div class="sidebar">
-  <!-- Main Section -->
-  <div>
-    <h2 class="section-title">Main</h2>
-    <ul class="list-unstyled">
-      <li>
-        <a routerLink="/layout/dashboard" routerLinkActive="active">
-          <div class="d-flex justify-content-start align-items-center">
-            <i-feather name="grid" class="icons"></i-feather>
-            <span> Dashboard</span>
-          </div>
-          </a>
-      </li>
-    </ul>
-    <!-- <div class="accordion" id="mainAccordion">
-      <div class="accordion-item">
-        <h2 class="accordion-header" id="headingDashboard">
-          <button
-            class="accordion-button collapsed cust-accordian"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#dashboardCollapse"
-            aria-expanded="true"
-            aria-controls="dashboardCollapse"
-          >
-            <div class="d-flex justify-content-center align-items-center">
-              <i-feather name="grid" class="icons"></i-feather>
-              <span> Dashboard</span>
+  <div class="pt-3 ">
+    @for (item of sideMenuItems; track $index) {
+    <div>
+      @if(item?.items?.length > 0){
+
+      <ul class="list-unstyled">
+        @for (subitems of item?.items; track $index) {
+        <li>
+          <a [routerLink]="subitems?.link" routerLinkActive="active">
+            <div class="d-flex justify-content-start align-items-center">
+              <i-feather [name]="subitems?.icons" class="icons"></i-feather>
+              <span> {{ subitems?.name }}</span>
             </div>
-          </button>
-        </h2>
-        <div
-          id="dashboardCollapse"
-          class="accordion-collapse collapse hide list-unstyled"
-          aria-labelledby="headingDashboard"
-          data-bs-parent="#mainAccordion"
-        >
-          <div class="accordion-body">
-            <ul class="list-unstyled ps-3">
-              <li><a href="#">Submenu 1</a></li>
-              <li><a href="#">Submenu 2</a></li>
-            </ul>
-          </div>
-        </div>
-      </div>
-      <div class="accordion-item">
-        <h2 class="accordion-header" id="headingApplication">
-          <button
-            class="accordion-button collapsed cust-accordian"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#applicationCollapse"
-            aria-expanded="false"
-            aria-controls="applicationCollapse"
+          </a>
+        </li>
+        }
+      </ul>
+      } @if(item?.submenu?.length > 0){
+
+      <div class="accordion" [id]="item?.main">
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="headingOne" routerLinkActive="active">
+            <button
+              class="accordion-button cust-accordian collapsed "
+              type="button"
+              data-bs-toggle="collapse"
+              [attr.data-bs-target]="'#' + item?.main + $index"
+              aria-expanded="true"
+              aria-controls="collapseOne"
+            >
+              <div class="d-flex justify-content-center align-items-center">
+                <i-feather [name]="item?.icon" class="icons"></i-feather>
+                <span> {{ item?.main }}</span>
+              </div>
+            </button>
+          </h2>
+          <div
+            [id]="item?.main + $index"
+            class="accordion-collapse collapse "
+            aria-labelledby="headingOne"
+            [attr.data-bs-parent]="'#' + item?.main"
           >
-            Application
-          </button>
-        </h2>
-        <div
-          id="applicationCollapse"
-          class="accordion-collapse collapse"
-          aria-labelledby="headingApplication"
-          data-bs-parent="#mainAccordion"
-        >
-          <div class="accordion-body">
-            <ul class="list-unstyled ps-3">
-              <li><a href="#">Submenu 1</a></li>
-              <li><a href="#">Submenu 2</a></li>
-            </ul>
+            <div class="accordion-body py-0">
+              <ul class="list-unstyled ps-3">
+                @for (subitems of item?.submenu; track $index) {
+                <li>
+                  <a [routerLink]="subitems?.link" routerLinkActive="active">
+                    <div
+                      class="d-flex justify-content-start align-items-center"
+                    >
+                      <i-feather
+                        [name]="subitems?.icons"
+                        class="icons"
+                      ></i-feather>
+                      <span> {{ subitems?.name }}</span>
+                    </div></a
+                  >
+                </li>
+                }
+              </ul>
+            </div>
           </div>
         </div>
       </div>
-    </div> -->
-  </div>
 
-  <div class="cust-hr">
+      }
+    </div>
+
+    <!-- <div class="cust-hr">
     <hr />
-  </div>
+  </div> -->
 
-  <!-- User Section -->
-  <div>
-    <h2 class="section-title">Users</h2>
-    <ul class="list-unstyled">
-      <li>
-        <a routerLink="/layout/add/new" routerLinkActive="active">
-          <div class="d-flex justify-content-start align-items-center">
-            <i-feather name="user-plus" class="icons"></i-feather>
-            <span>Add Users</span>
-          </div>
-        </a>
-      </li>
-      <li><a routerLink="/layout/add/list" routerLinkActive="active">
-        <div class="d-flex justify-content-start align-items-center">
-          <i-feather name="users" class="icons"></i-feather>
-
-          <span>List Users</span>
-        </div>
-
-
-      </a></li>
-    </ul>
-  </div>
-
-  <div class="cust-hr">
-    <hr />
-  </div>
-
-  <!-- Inventory Section -->
-  <div>
-    <h2 class="section-title">Inventory</h2>
-    <ul class="list-unstyled">
-      <li>
-        <a href="#"><i data-feather="circle"></i> Products</a>
-      </li>
-      <li><a href="#">Create Product</a></li>
-      <li><a href="#">Expired Products</a></li>
-      <li><a href="#">Low Stocks</a></li>
-      <li><a href="#">Category</a></li>
-      <li><a href="#">Sub Category</a></li>
-      <li><a href="#">Brands</a></li>
-      <li><a href="#">Units</a></li>
-      <li><a href="#">Variant Attributes</a></li>
-      <li><a href="#">Warranties</a></li>
-      <li><a href="#">Print Barcode</a></li>
-      <li><a href="#">Print QR Code</a></li>
-    </ul>
-  </div>
-
-  <div class="cust-hr">
-    <hr />
-  </div>
-
-  <!-- Stock Section -->
-  <div>
-    <h2 class="section-title">Stock</h2>
-    <ul class="list-unstyled">
-      <li><a href="#">Manage Stock</a></li>
-      <li><a href="#">Stock Adjustment</a></li>
-      <li><a href="#">Stock Transfer</a></li>
-    </ul>
-  </div>
-
-  <div class="cust-hr">
-    <hr />
-  </div>
-
-  <!-- Sales Section -->
-  <div>
-    <h2 class="section-title">Sales</h2>
-    <ul class="list-unstyled">
-      <li><a href="#">Sales</a></li>
-      <li><a href="#">Sales Return</a></li>
-      <li><a href="#">Quotation</a></li>
-    </ul>
+    }
   </div>
 </div>
