@@ -1,11 +1,11 @@
-<div class="sidebar slide-left" [class.show]="!isSlide">
-  <div class="logo-section ps-4 bg-white" style="width: 258px; height: 66px">
+<div class="sidebar slide-left" [class.show]="!isSlide" [ngStyle]="{ 'width' : !isSlide ? '258px' :'110px' }">
+  <div class="logo-section ps-4 bg-white d-flex justify-content-center align-items-center" style=" height: 66px" [ngStyle]="{ 'width' : !isSlide ? '258px' :'110px' }">
     <a class="navbar-brand">
       <img
-        src="assets/images/logo.png"
+        [src]="isSlide ? 'assets/images/logo-small.png' :'assets/images/logo.png'"
         alt="Logo"
-        width="110"
-        height="35"
+        [width]="!isSlide ? '110' : '30'"
+        [height]="!isSlide ? '35' : '25'"
         class="d-inline-block align-text-top"
       />
     </a>
@@ -16,13 +16,15 @@
     <div>
       @if(item?.items?.length > 0){
 
-      <ul class="list-unstyled">
+      <ul class="list-unstyled" [class.px-4]="isSlide">
         @for (subitems of item?.items; track $index) {
         <li>
-          <a [routerLink]="subitems?.link" routerLinkActive="active">
+          <a [routerLink]="subitems?.link"  [routerLinkActive]="isSlide ? 'active-close-side' : 'active'">
             <div class="d-flex justify-content-start align-items-center">
               <i-feather [name]="subitems?.icons" class="icons"></i-feather>
-              <span> {{ subitems?.name }}</span>
+       @if(!isSlide){
+        <span> {{ subitems?.name }}</span>
+       }       
             </div>
           </a>
         </li>
@@ -31,7 +33,7 @@
       } @if(item?.submenu?.length > 0){
 
       <div class="accordion" [id]="item?.main">
-        <div class="accordion-item">
+        <div class="accordion-item" [class.px-2]="isSlide ">
           <h2
             class="accordion-header"
             id="headingOne"
@@ -47,7 +49,7 @@
             >
               <div class="d-flex justify-content-center align-items-center">
                 <i-feather [name]="item?.icon" class="icons"></i-feather>
-                <span> {{ item?.main }}</span>
+                @if(!isSlide){    <span> {{ item?.main }}</span>}
               </div>
             </button>
           </h2>
@@ -61,7 +63,7 @@
               <ul class="list-unstyled ps-3">
                 @for (subitems of item?.submenu; track $index) {
                 <li>
-                  <a [routerLink]="subitems?.link" routerLinkActive="active">
+                  <a [routerLink]="subitems?.link" [routerLinkActive]="isSlide ? 'active-close-side' : 'active'" [class.p-0]="isSlide">
                     <div
                       class="d-flex justify-content-start align-items-center"
                     >
@@ -69,7 +71,9 @@
                         [name]="subitems?.icons"
                         class="icons"
                       ></i-feather>
+                      @if(!isSlide){
                       <span> {{ subitems?.name }}</span>
+                      }
                     </div></a
                   >
                 </li>
@@ -90,6 +94,6 @@
     }
   </div>
 </div>
-<div class="show-sidebar" (click)="isSlide = !isSlide">
+<div class="show-sidebar d-flex justify-content-center align-items-center m-0" (click)="updateHeader()"   [ngStyle]="{ 'left': isSlide ? '65px' : '' }" >
   <i-feather name="chevrons-left"></i-feather>
 </div>
