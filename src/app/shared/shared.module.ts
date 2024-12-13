@@ -20,6 +20,7 @@ import {MatSort, MatSortModule} from '@angular/material/sort';
 import {MatTableDataSource} from '@angular/material/table';
 import {MatInputModule} from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field';
+import { ButtonsComponent } from './buttons/buttons.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import {MatFormFieldModule} from '@angular/material/form-field';
     SidebarComponent,
     TableComponent,
     PageheadersComponent,
+    ButtonsComponent,
     
   ],
   imports: [
@@ -58,7 +60,8 @@ import {MatFormFieldModule} from '@angular/material/form-field';
     FeatherModule,
     PageheadersComponent,
     MatSelectModule,
-    MatFormFieldModule
+    MatFormFieldModule,
+    ButtonsComponent
   ]
 })
 export class SharedModule { }
