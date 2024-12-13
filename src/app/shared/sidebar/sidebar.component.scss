@@ -110,3 +110,23 @@ a:not(.active):hover {
     box-shadow: none;
     /* Removes the default box shadow */
 }
+
+
+.slide-left {
+    transform: translateX(-80%);
+    opacity: 0;
+    transition:  transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+    &.show {
+      transform: translateX(0);
+      opacity: 1;
+   
+    }
+  }
+.show-sidebar
+  {
+    position: absolute;
+    left: 247px;
+    top: 20px;
+    bottom: 25%;
+    z-index: 999;
+  }

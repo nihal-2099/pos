@@ -54,9 +54,9 @@
 
 
 .slide-up {
-    transform: translateY(100%);
+    transform: translateY(-100%);
     opacity: 0;
-    transition:  transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+    transition:  transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
     &.show {
       transform: translateY(0);
       opacity: 1;

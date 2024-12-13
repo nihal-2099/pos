@@ -53,4 +53,6 @@ sideMenuItems:Array<any> =[
 
 ]
 
+isSlide:boolean = false
+
 }

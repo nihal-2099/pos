@@ -1,4 +1,4 @@
-<div class="sidebar">
+<div class="sidebar slide-left" [class.show]="!isSlide">
   
   <div class="logo-section ps-4 bg-white" style="width: 258px ; height: 66px; ">
     <a class="navbar-brand " >
@@ -6,10 +6,7 @@
         class="d-inline-block align-text-top">
 
     </a>
-    <!-- <div class="show-sidebar">
-      <i-feather name="chevrons-left"></i-feather>
-  
-    </div> -->
+ 
   </div>
 
   
@@ -88,4 +85,8 @@
 
     }
   </div>
+</div>
+<div class="show-sidebar" (click)="isSlide = !isSlide">
+  <i-feather name="chevrons-left"></i-feather>
+
 </div>

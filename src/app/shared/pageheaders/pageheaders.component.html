@@ -9,7 +9,7 @@
         <button
         class="btn btn-outline-secondary d-flex justify-content-center align-items-center icon-button ms-3"
         type="button"  (click)="updateHeader()">
-        <i-feather name="chevron-{{isHide ? 'up':'down'}}"></i-feather>
+        <i-feather name="chevron-up" [class.rotate-arrow]="!isHide" [class.rotate-arrow-normal]="isHide" ></i-feather>
     </button>
 </div>
     </div>
