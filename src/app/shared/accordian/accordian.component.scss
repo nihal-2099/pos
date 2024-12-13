@@ -1,0 +1,47 @@
+@import '../../../assets/scss/custom.scss';
+
+.add_section{
+    height: max-content;
+    p{
+      color: $text_color;
+    }
+  
+  
+  .body_section{
+      .fill_icons{
+          color: $orangered_color;
+         width: 3rem;
+      }
+      h5{ 
+          font-size: 16px;
+          color: $add_component_buttoncolor;
+          font-weight: 500;
+       }
+  
+    
+      .accordion-button{
+          background: none;
+      }
+      input::placeholder{
+         color: $placeholder_color;
+      }
+  
+      .toggle{
+          .toggle_button{
+              .form-check-input {
+         
+                  height: 1.5rem;
+                  width: 3rem;      
+  
+                  &:checked{
+                      background-color: $orangered_color;
+                      border-color: $orangered_color;
+                  }
+              }
+          }
+      }
+      
+   
+  }
+  }
+  
