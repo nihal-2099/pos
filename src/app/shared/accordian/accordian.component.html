@@ -1,0 +1,42 @@
+<div class="add_section">
+    <div class="body_section">
+      <!-- Accordion used here -->
+      <div class="accordion" [id]="accordianItems?.id + 1">
+        <div class="accordion-item">
+          <h2 class="accordion-header mb-0" [id]="'headingOne'">
+            <button
+              class="accordion-button d-flex justify-content-center align-items-center"
+              type="button"
+              data-bs-toggle="collapse"
+              [attr.data-bs-target]="'#' + accordianItems?.id"
+              aria-expanded="true"
+              [attr.aria-controls]="'collapseOne'"
+            >
+              <h5 class="mb-0">
+                <span class="fill_icons"
+                  ><i-feather
+                    name="alert-circle"
+                    class="icons"
+                  ></i-feather></span
+                >{{accordianItems?.heading}}
+              </h5>
+            </button>
+          </h2>
+          <div
+            [id]="accordianItems?.id"
+            class="accordion-collapse collapse show"
+            aria-labelledby="headingOne"
+            [attr.data-bs-parent]="'#' + accordianItems?.id + 1"
+          >
+            <div class="accordion-body">
+      
+
+                <ng-content></ng-content>
+  
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Accordion used end here -->
+    </div>
+  </div>

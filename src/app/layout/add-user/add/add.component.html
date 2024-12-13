@@ -3,8 +3,6 @@
     [topHeadingContent]="{
       heading: 'New Product',
       subitems: 'Create New Product',
-      backto: '/layout/add/list',
-      backHeading: 'Product'
     }"
   >
     <div class="top_header">
@@ -20,158 +18,114 @@
       </div>
     </div>
   </app-pageheaders>
+
+  <app-accordian
+  [accordianItems]="{ heading: 'Fill their details', id: 'filltheirdetails' }"
+>
   <div class="add_section">
     <div class="body_section">
-      <!-- Accordion used here -->
-      <div class="accordion" id="accordionExample">
-        <div class="accordion-item">
-          <h2 class="accordion-header mb-0" id="headingOne">
-            <button
-              class="accordion-button d-flex justify-content-center align-items-center"
-              type="button"
-              data-bs-toggle="collapse"
-              data-bs-target="#collapseOne"
-              aria-expanded="true"
-              aria-controls="collapseOne"
+      <!-- fill here accordion -->
+      <div class="row">
+        <div class="col-12 col-lg-4">
+          <div class="my-2">
+            <label for="exampleFormControlInput1" class="form-label fs-6"
+              ><p class="mb-0">Your Name :</p></label
             >
-              <h5 class="mb-0">
-                <span class="fill_icons"
-                  ><i-feather
-                    name="alert-circle"
-                    class="icons"
-                  ></i-feather></span
-                >Fill their details
-              </h5>
-            </button>
-          </h2>
-          <div
-            id="collapseOne"
-            class="accordion-collapse collapse show"
-            aria-labelledby="headingOne"
-            data-bs-parent="#accordionExample"
-          >
-            <div class="accordion-body">
-              <!-- fill here accordion -->
-              <div class="row">
-                <div class="col-12 col-lg-4">
-                  <div class="my-2">
-                    <label
-                      for="exampleFormControlInput1"
-                      class="form-label fs-6"
-                      ><p class="mb-0">Your Name :</p></label
-                    >
-                    <input
-                      type="text"
-                      class="form-control"
-                      id="exampleFormControlInput1"
-                      placeholder="Enter Your Name"
-                    />
-                  </div>
-                </div>
+            <input
+              type="text"
+              class="form-control"
+              id="exampleFormControlInput1"
+              placeholder="Enter Your Name"
+            />
+          </div>
+        </div>
 
-                <div class="col-12 col-lg-4">
-                  <div class="my-2">
-                    <label for="exampleFormControlInput1" class="form-label"
-                      ><p class="mb-0">Mobile No. :</p></label
-                    >
-                    <input
-                      type="number"
-                      class="form-control"
-                      id="exampleFormControlInput1"
-                      placeholder="Enter Your Contact"
-                    />
-                  </div>
-                </div>
-                <div class="col-12 col-lg-4">
-                  <div class="my-2">
-                    <label for="exampleFormControlInput1" class="form-label"
-                      ><p class="mb-0">Email address :</p></label
-                    >
-                    <input
-                      type="email"
-                      class="form-control"
-                      id="exampleFormControlInput1"
-                      placeholder="name@example.com"
-                    />
-                  </div>
-                </div>
-                <!-- Selective -->
-                <div class="col-lg-4 col-12 my-2">
-                  <div class="selective">
-                    <p class="mb-2">Your Designation :</p>
-                    <select
-                      class="form-select"
-                      aria-label="Default select example"
-                    >
-                      <option selected disabled>Select One</option>
-                      <option value="1">One</option>
-                      <option value="2">Two</option>
-                      <option value="3">Three</option>
-                    </select>
-                  </div>
-                </div>
-                <!-- Multiple select option -->
-                <div class="col-lg-4 col-12 my-2">
-                  <div class="selective">
-                    <p class="mb-2">Your Responsibility :</p>
-                    <select
-                      class="form-select"
-                      aria-label="Default select example"
-                    >
-                      <option selected disabled>Select One</option>
-                      <option value="1">One</option>
-                      <option value="2">Two</option>
-                      <option value="3">Three</option>
-                    </select>
+        <div class="col-12 col-lg-4">
+          <div class="my-2">
+            <label for="exampleFormControlInput1" class="form-label"
+              ><p class="mb-0">Mobile No. :</p></label
+            >
+            <input
+              type="number"
+              class="form-control"
+              id="exampleFormControlInput1"
+              placeholder="Enter Your Contact"
+            />
+          </div>
+        </div>
+        <div class="col-12 col-lg-4">
+          <div class="my-2">
+            <label for="exampleFormControlInput1" class="form-label"
+              ><p class="mb-0">Email address :</p></label
+            >
+            <input
+              type="email"
+              class="form-control"
+              id="exampleFormControlInput1"
+              placeholder="name@example.com"
+            />
+          </div>
+        </div>
+        <!-- Selective -->
+        <div class="col-lg-4 col-12 my-2">
+          <div class="selective">
+            <p class="mb-2">Your Designation :</p>
+            <select class="form-select" aria-label="Default select example">
+              <option selected disabled>Select One</option>
+              <option value="1">One</option>
+              <option value="2">Two</option>
+              <option value="3">Three</option>
+            </select>
+          </div>
+        </div>
+        <!-- Multiple select option -->
+        <div class="col-lg-4 col-12 my-2">
+          <div class="selective">
+            <p class="mb-2">Your Responsibility :</p>
+            <select class="form-select" aria-label="Default select example">
+              <option selected disabled>Select One</option>
+              <option value="1">One</option>
+              <option value="2">Two</option>
+              <option value="3">Three</option>
+            </select>
 
-                    <!-- <mat-form-field appearance="outline" class="w-100 bootstrap-select">
-                      <mat-label>Toppings</mat-label>
-                      <mat-select [formControl]="toppings" multiple>
-                        @for (topping of toppingList; track topping) {
-                          <mat-option [value]="topping">{{topping}}</mat-option>
-                        }
-                      </mat-select>
-                    </mat-form-field> -->
-                  </div>
-                </div>
+            <!-- <mat-form-field appearance="outline" class="w-100 bootstrap-select">
+                  <mat-label>Toppings</mat-label>
+                  <mat-select [formControl]="toppings" multiple>
+                    @for (topping of toppingList; track topping) {
+                      <mat-option [value]="topping">{{topping}}</mat-option>
+                    }
+                  </mat-select>
+                </mat-form-field> -->
+          </div>
+        </div>
 
-                <!-- Toggle button -->
-                <div class="col-lg-4 col-12 my-2">
-                  <div class="toggle">
-                    <p class="mb-2">Status :</p>
-                    <div class="toggle_button">
-                      <div class="form-check form-switch">
-                        <input
-                          class="form-check-input"
-                          type="checkbox"
-                          role="switch"
-                          id="flexSwitchCheckChecked"
-                          checked
-                        />
-                        <label
-                          class="form-check-label"
-                          for="flexSwitchCheckChecked"
-                        >
-                        </label>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <!-- last button -->
-              <div class="last_button d-flex justify-content-end">
-                <div class="cancel_button mx-2">
-                  <button type="button" class="btn">Cancel</button>
-                </div>
-                <div class="submit_button mx-2">
-                  <button type="button" class="btn">Save Product</button>
-                </div>
+        <!-- Toggle button -->
+        <div class="col-lg-4 col-12 my-2">
+          <div class="toggle">
+            <p class="mb-2">Status :</p>
+            <div class="toggle_button">
+              <div class="form-check form-switch">
+                <input
+                  class="form-check-input"
+                  type="checkbox"
+                  role="switch"
+                  id="flexSwitchCheckChecked"
+                  checked
+                />
+                <label class="form-check-label" for="flexSwitchCheckChecked">
+                </label>
               </div>
             </div>
           </div>
         </div>
       </div>
-      <!-- Accordion used end here -->
     </div>
   </div>
+  <!-- last button -->
+
+  <app-buttons [buttonText]="{ cancel: 'Cancel', save: 'Save Product' }" />
+</app-accordian>
 </section>
+
+

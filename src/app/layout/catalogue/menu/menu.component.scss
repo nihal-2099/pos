@@ -1,0 +1,40 @@
+@import "../../../../assets/scss/custom.scss";
+.catelogue_online{
+.accordion-button{
+    background: none;
+    // box-shadow: none;
+}
+.last_button{
+    .cancel_button{
+       button{
+        background-color: $cancel_button_color;
+        color: $white_color;
+       }
+       button:hover{
+        background-color: $cancel_button_color_hover;
+       }
+    }   
+    .submit_button{
+        button{
+    background-color: $orangered_color;
+    color: $white_color;
+        }
+        button:hover{
+            background-color: $submit_button_color_hover;
+        }
+    }
+}
+    h5{ 
+        font-size: 16px;
+        color: $add_component_buttoncolor;
+        font-weight: 500;
+     }
+    //  .icon_color{
+    //     color: $orangered_color;
+    //     // position: relative;
+    //     // top: -.2rem;
+    //  }
+     label{
+        color: $text_color;
+     }
+    }
