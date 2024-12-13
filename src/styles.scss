@@ -34,6 +34,10 @@ padding-right: 10px !important;
     height: 28px !important;
 }
 
+.icon_color{
+    color: $orangered_color;
+}
+
 ::ng-deep {
     .mat-mdc-select-panel-above{
         background-color: white;
