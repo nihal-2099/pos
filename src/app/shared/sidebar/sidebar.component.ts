@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ShowHideBarService } from '../../services/show-hide-bar.service';
 @Component({
   selector: 'app-sidebar',
   standalone: false, 
@@ -72,4 +73,21 @@ sideMenuItems:Array<any> =[
 
 isSlide:boolean = false
 
+
+constructor (public showHideBarService:ShowHideBarService){
+  // Subscribe to the shared message
+  this.showHideBarService.updateSideClose.subscribe(
+    (message) => this.isSlide = message
+  );
+
+
+}
+
+ngOnInit() {
+  // Subscribe to the message
+ this.isSlide=  this.showHideBarService.getSideCurrentValue()
+}
+updateHeader() {
+  this.showHideBarService.sideMenuClose(this.isSlide = !this.isSlide);
+}
 }

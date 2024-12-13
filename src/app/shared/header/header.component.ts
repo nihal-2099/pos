@@ -12,19 +12,22 @@ export class HeaderComponent {
 // component.ts
 imagePath: any = 'assets/icon/SiteLogo.png';
 isShow:boolean = false
-
+isSide:boolean = true
 constructor (public showHideBarService:ShowHideBarService){
   // Subscribe to the shared message
   this.showHideBarService.updateClose.subscribe(
     (message) => this.isShow = message
   );
-console.log(this.isShow)
+  this.showHideBarService.updateSideClose.subscribe(
+    (sideupdate) => this.isSide = sideupdate
+  )
 
 }
 
 ngOnInit() {
   // Subscribe to the message
  this.isShow=  this.showHideBarService. getCurrentValue()
+ this.isSide = this.showHideBarService.getSideCurrentValue()
 }
 
 }

@@ -7,6 +7,6 @@
   <!-- <app-footer /> -->
 </div>
 
-<main class="position-absolute end-0 px-4 py-3"  [class.isShow]="!isShow">
+<main class="position-absolute end-0 px-4 py-3"  [class.isShow]="!isShow" [ngStyle]="{'left' : !isSide ? '258px' : '100px' }">
     <router-outlet />
   </main>
