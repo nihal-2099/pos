@@ -10,7 +10,8 @@ const routes: Routes = [
 
       {  path:'add',  loadChildren:() => import('./add-user/add-user.module').then(m => m.AddUserModule)},
       {  path:'dashboard',  loadChildren:() => import('./dashboard/dashboard.module').then(m => m.DashboardModule)},
-      {  path:'catalogue',  loadChildren:() => import('./catalogue/catalogue.module').then(m => m.CatalogueModule)}
+      {  path:'catalogue',  loadChildren:() => import('./catalogue/catalogue.module').then(m => m.CatalogueModule)},
+      {  path:'inventory',  loadChildren:() => import('./inventory/inventory.module').then(m => m.InventoryModule)}
 
       // { path: 'home', component: HomeComponent },
       // {path:'aboutus', component:AboutUsComponent},
