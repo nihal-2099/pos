@@ -13,8 +13,7 @@
        button:hover{
         background-color: $cancel_button_color_hover;
        }
-    }
-    
+    }   
     .submit_button{
         button{
     background-color: $orangered_color;
@@ -25,19 +24,17 @@
         }
     }
 }
-
-p{
-    color: $text_color;
-}
-
     h5{ 
         font-size: 16px;
         color: $add_component_buttoncolor;
         font-weight: 500;
      }
-     .icon_color{
-        color: $orangered_color;
-        position: relative;
-        top: -.2rem;
+    //  .icon_color{
+    //     color: $orangered_color;
+    //     // position: relative;
+    //     // top: -.2rem;
+    //  }
+     label{
+        color: $text_color;
      }
     }
