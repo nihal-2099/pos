@@ -2,6 +2,11 @@ main{
     left: 258px;
     padding-bottom: 2em;
     top: 90px;
+    transition:  transform 1s ease-in-out, opacity 1s ease-in-out;
+    &.isShow{
+        top: 0px;
+        transition:  transform 1s ease-in-out, opacity 1s ease-in-out;
+    }
 }
 
 .side-container{
