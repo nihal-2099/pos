@@ -58,8 +58,10 @@ const NAMES: string[] = [
 })
 
 
+// 'id', 'name', 'progress', 'fruit' (displayed columns)
+
 export class TableComponent {
-  displayedColumns: string[] = ['id', 'name', 'progress', 'fruit'];
+  displayedColumns: string[] = ['checkbox','product','sku','category','brand','price','unit','qty','createdby','action'];
   dataSource: MatTableDataSource<UserData>;
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
