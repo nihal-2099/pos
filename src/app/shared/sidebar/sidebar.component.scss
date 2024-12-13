@@ -113,12 +113,12 @@ a:not(.active):hover {
 
 
 .slide-left {
-    transform: translateX(-80%);
-    opacity: 0;
+    transform: translateX(-90%);
+    left: 70px;
     transition:  transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
     &.show {
       transform: translateX(0);
-      opacity: 1;
+    left: 0px;
    
     }
   }
@@ -129,4 +129,24 @@ a:not(.active):hover {
     top: 20px;
     bottom: 25%;
     z-index: 999;
+    background-color: $orangered_color;
+    height: 25px;
+    width: 25px;
+    border-radius: 50%;
+    cursor: pointer;
+    i-feather{
+        height: 22px !important;
+        width: 18px !important;
+        color: white;
+        text-align: center;
+        font-size: 0.9em;
+
+    }
+  }
+
+  .active-close-side{
+    color: $orangered_color !important;
+    font-weight: 800;
+
+    
   }
