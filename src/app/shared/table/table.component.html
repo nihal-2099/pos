@@ -1,6 +1,81 @@
 <!-- <p>table works!</p> -->
 <div class="product-wrapper mb-3">
-    <div class="product-header d-flex justify-content-between align-items-center">
+
+    <app-pageheaders
+    [topHeadingContent]="{
+      heading: 'Product List',
+      subitems: 'Manage your products',
+    }"
+  >
+    <div class="top_header">
+        <div class="product-right d-flex align-items-center">
+
+            <div class="me-3">
+                <a href="#">
+                    <button
+                        class="btn btn-outline-secondary d-flex justify-content-center align-items-center icon-button"
+                        type="button" data-bs-toggle="dropdown">
+                        <img src="../../../assets/images/pdf.svg" alt="I">
+                    </button>
+                </a>
+            </div>
+
+            <div class="me-3">
+                <a href="#">
+                    <button
+                        class="btn btn-outline-secondary d-flex justify-content-center align-items-center icon-button"
+                        type="button" data-bs-toggle="dropdown">
+                        <img src="../../../assets/images/excel.svg" alt="I">
+                    </button>
+                </a>
+            </div>
+
+            <div class="me-3">
+                <a href="#">
+                    <button
+                        class="btn btn-outline-secondary d-flex justify-content-center align-items-center icon-button"
+                        type="button" data-bs-toggle="dropdown">
+                        <img src="../../../assets/images/printer.svg" alt="I">
+                    </button>
+                </a>
+            </div>
+
+            <div class="me-3">
+                <a href="#">
+                    <button
+                        class="btn btn-outline-secondary d-flex justify-content-center align-items-center icon-button"
+                        type="button" data-bs-toggle="dropdown">
+                        <img src="../../../assets/images/refresh.svg" alt="I">
+                    </button>
+                </a>
+            </div>
+
+            <div class="me-3 ">
+                <button class="btn btn-secondary d-flex justify-content-center align-items-center add-button"
+                    type="button" data-bs-toggle="dropdown">
+                    <!-- <img class="me-2" src="../../../assets/images/plus.svg" alt="I"> -->
+                    <i-feather name="plus-circle" class="me-2"></i-feather>
+                    Add New Product
+                </button>
+            </div>
+
+            <div class="me-3 ">
+                <button class="btn btn-secondary d-flex justify-content-center align-items-center import-buton"
+                    type="button" data-bs-toggle="dropdown">
+                    <!-- <img class="me-2" src="../../../assets/images/download.svg" alt="I"> -->
+                    <i-feather name="download" class="me-2"></i-feather>
+                    Import Product
+                </button>
+            </div>
+
+
+
+        </div>
+    </div>
+  </app-pageheaders>
+
+
+    <!-- <div class="product-header d-flex justify-content-between align-items-center">
         <div class="product-left">
             <strong>Product List</strong><br>
             <small>Manage your products</small>
@@ -60,7 +135,6 @@
             <div class="me-3 ">
                 <button class="btn btn-secondary d-flex justify-content-center align-items-center add-button"
                     type="button" data-bs-toggle="dropdown">
-                    <!-- <img class="me-2" src="../../../assets/images/plus.svg" alt="I"> -->
                     <i-feather name="plus-circle" class="me-2"></i-feather>
                     Add New Product
                 </button>
@@ -69,7 +143,6 @@
             <div class="me-3 ">
                 <button class="btn btn-secondary d-flex justify-content-center align-items-center import-buton"
                     type="button" data-bs-toggle="dropdown">
-                    <!-- <img class="me-2" src="../../../assets/images/download.svg" alt="I"> -->
                     <i-feather name="download" class="me-2"></i-feather>
                     Import Product
                 </button>
@@ -78,7 +151,9 @@
 
 
         </div>
-    </div>
+    </div> -->
+
+
 </div>
 
 
@@ -286,7 +361,7 @@
 
     </div>
 
-    <div class="mat-elevation-z8 table-wrapper">
+    <div class="mat-elevation-z8 ">
         <table mat-table [dataSource]="dataSource" matSort>
 
             <!-- checkboox -->
