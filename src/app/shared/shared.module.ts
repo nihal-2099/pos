@@ -21,6 +21,7 @@ import {MatTableDataSource} from '@angular/material/table';
 import {MatInputModule} from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import { ButtonsComponent } from './buttons/buttons.component';
+import { AccordianComponent } from './accordian/accordian.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import { ButtonsComponent } from './buttons/buttons.component';
     TableComponent,
     PageheadersComponent,
     ButtonsComponent,
+    AccordianComponent,
     
   ],
   imports: [
@@ -61,7 +63,8 @@ import { ButtonsComponent } from './buttons/buttons.component';
     PageheadersComponent,
     MatSelectModule,
     MatFormFieldModule,
-    ButtonsComponent
+    ButtonsComponent,
+    AccordianComponent
   ]
 })
 export class SharedModule { }
