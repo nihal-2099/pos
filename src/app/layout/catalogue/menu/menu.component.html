@@ -1,94 +1,98 @@
+<section>
+  <div class="catelogue_online">
+    <!-- Top Header -->
+  <app-pageheaders
+  [topHeadingContent]="{
+    heading: 'New Catalogue',
+    subitems: 'Create New Catalogue',
+  }"
+>
+  <div class="top_header">
+    <div class="top_header_button">
+      <button
+        type="button"
+        class="btn btn-secondary d-flex justify-content-between align-items-center"
+        routerLink="/layout/add/list"
+      >
+      <div class="d-flex align-items-center">
+        <i-feather name="arrow-left" class="icons custom-icons"></i-feather> Back to online Menu
+      </div>
+      </button>
+    </div>
+  </div>
+</app-pageheaders>
 
   <!-- Accordion 1st  -->
-   <div class="catelogue_online">
-  <div class="accordion" id="accordionPanelsStayOpenExample">
-    <div class="accordion-item">
-      <h2 class="accordion-header" id="panelsStayOpen-headingOne">
-        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
-   <div class="d-flex"><i-feather name="alert-circle" class="icons icon_color"></i-feather> <h5> Main Heading </h5></div>
-        </button>
-      </h2>
-      <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show" aria-labelledby="panelsStayOpen-headingOne">
-        <div class="accordion-body">
-          <div class="row">
-            <div class="col-lg-4 col-12 my-2">
-                <!-- <div class="selective"> -->
-                   <label for="" class="mb-2">Heading</label>
-                  <select
-                    class="form-select"
-                    aria-label="Default select example">
-                    <option selected disabled>Select One</option>  
-                    <option value="1">One</option>
-                    <option value="2">Two</option>
-                    <option value="3">Three</option>
-                  </select>
-                <!-- </div> -->
-              </div>
-                <div class="col-lg-4 col-12 my-2">
-                    <!-- <div class="selective"> -->
-                      <label for="" class="mb-2"> Sub Heading</label>
-                      <select
-                        class="form-select"
-                        aria-label="Default select example">
-                        <option selected disabled>Select One</option>
-                        <option value="1">One</option>
-                        <option value="2">Two</option>
-                        <option value="3">Three</option>
-                      </select>
-                    <!-- </div> -->
-                  </div>   
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- Accordion 2nd -->
-    <div class="accordion-item">
-      <h2 class="accordion-header" id="panelsStayOpen-headingTwo">
-        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false" aria-controls="panelsStayOpen-collapseTwo">
-          <div class="d-flex"><i-feather name="alert-circle" class="icons icon_color"></i-feather> <h5> Items Name </h5></div>
-        </button>
-      </h2>
-      <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingTwo">
-        <div class="accordion-body">
-          <div class="row">
-                <div class="col-lg-4 col-12 my-2">
-                  <label for="" class="mb-2">Name :</label>
-                        <div class="input-group mb-3">
-                         <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
-                       </div>
-                  </div>
-
-                  <div class="col-lg-4 col-12 my-2">
-                    <label for="" class="mb-2">Half plate :</label>
-                      <div class="input-group mb-3">
-                          <input type="number" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
-                        </div>
-                  </div>
-                  <div class="col-lg-4 col-12 my-2">
-                    <label for="" class="mb-2">Full Plate :</label>
-                     <div class="input-group mb-3">
-                     
-                      <input type="number" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
-                    </div>
-                  </div>
-           
-            <!-- <div class="text_area"> -->
-                <div class="col-lg-6 col-12 ">
-                    <div >
-                       <label for="" class="pb-2">Items Description :</label>
-                        <textarea class="form-control" placeholder="About Items" id="floatingTextarea"></textarea>
-                       
-                        <label for="floatingTextarea"></label>
-                      </div>        
-                </div>
-            <!-- </div> -->
-            <div class="last_button d-flex justify-content-end">
-                <div class="cancel_button mx-2"> <button type="button" class="btn ">Cancel</button> </div>
-                 <div class="submit_button mx-2">  <button type="button" class="btn">Save Product</button></div>
-               </div>
-          </div>
-        </div>
-      </div>
-    </div>  
+ 
+    <app-accordian
+  [accordianItems]="{ heading: 'Heading', id: 'heading' }">
+  <div class="row">
+    <div class="col-lg-4 col-12 my-2"> 
+       
+           <label for="" class="mb-2">Heading</label>
+          <select
+            class="form-select"
+            aria-label="Default select example">
+            <option selected disabled>Select One</option>  
+            <option value="1">One</option>
+            <option value="2">Two</option>
+            <option value="3">Three</option>
+          </select> 
+       
+       </div>
+        <div class="col-lg-4 col-12 my-2"> 
+            
+               <label for="" class="mb-2"> Sub Heading</label>
+              <select
+                class="form-select"
+                aria-label="Default select example">
+                <option selected disabled>Select One</option>
+                <option value="1">One</option>
+                <option value="2">Two</option>
+                <option value="3">Three</option>
+              </select> 
+          
+           </div>   
   </div>
+  </app-accordian>
+
+    <!-- Accordion 2nd -->
+     
+    <app-accordian
+    [accordianItems]="{ heading: 'Items Name', id: 'itemsname' }">
+    <div class="row">
+      <div class="col-lg-4 col-12 my-2">
+        <label for="" class="mb-2">Name :</label>
+              <div class="input-group mb-3">
+               <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+             </div>
+        </div>
+
+        <div class="col-lg-4 col-12 my-2">
+          <label for="" class="mb-2">Half plate :</label>
+            <div class="input-group mb-3">
+                <input type="number" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+              </div>
+        </div>
+        <div class="col-lg-4 col-12 my-2">
+          <label for="" class="mb-2">Full Plate :</label>
+           <div class="input-group mb-3">
+           
+            <input type="number" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+          </div>
+        </div>
+      <div class="col-lg-6 col-12 ">
+          <div >
+             <label for="" class="pb-2">Items Description :</label>
+              <textarea class="form-control" placeholder="About Items" id="floatingTextarea"></textarea>
+             
+              <label for="floatingTextarea"></label>
+            </div>        
+      </div>
+<!-- Buttons -->
+      <app-buttons [buttonText]="{ cancel: 'Cancel', save: 'Save Product' }" />
 </div>
+</app-accordian>
+
+  </div>
+</section>
