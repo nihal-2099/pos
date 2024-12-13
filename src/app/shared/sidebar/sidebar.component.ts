@@ -49,6 +49,23 @@ sideMenuItems:Array<any> =[
         link:"/layout/catalogue/offline"
       }
     ]
+  },
+  ,
+  {
+    main:"Inventory",
+    icon:"Pocket",
+    submenu:[
+      {
+        icons:"FilePlus",
+        name:"Add Raw Material",
+        link:"/layout/inventory/addraw"
+      },
+      // {
+      //   icons:"Monitor",
+      //   name:"Offline Menu",
+      //   link:"/layout/catalogue/offline"
+      // }
+    ]
   }
 
 ]

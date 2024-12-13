@@ -16,7 +16,7 @@
             font-size: 14px !important;
             background-color: $orangered_color;
             border: none;
-            color: white;
+            color: $white_color;
 
             &:hover{
                 background-color: $add_component_buttoncolor;
@@ -36,8 +36,53 @@
 }
 
 
+.table-wrapper{
+    border: 1px solid $table-button-border;
+    padding: 16px;
+
+    .cust-search-bar{
+        width: 300px;
+    }
+    
+    .filtr-button{
+        background-color: $orangered_color;
+        border: none;
+        color: $white_color;
+
+        img{
+            width: 20px;
+        }
+    }
+
+    .table-dropdown{
+       button{
+        border: 1px solid $table-button-border;
+       }
+        img{
+            width: 20px;
+        }
+    }
+}
+
 ::ng-deep{
     .mat-mdc-table{
         background-color: transparent !important;
+        border-spacing: 50px 150px;
+    }
+
+    .mat-mdc-header-cell{
+        border-bottom-color: $table-button-border !important;
+    }
+
+    .mat-mdc-cell{
+        border-bottom-color: $table-button-border !important;
+    }
+
+    .mdc-data-table__cell, .mdc-data-table__header-cell {
+        padding: 25px !important;
+    }
+
+    .mat-mdc-paginator-container{
+        background-color: $white_color;
     }
 }

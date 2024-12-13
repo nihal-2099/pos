@@ -1,17 +1,17 @@
 <div class="sidebar slide-left" [class.show]="!isSlide">
-  
-  <div class="logo-section ps-4 bg-white" style="width: 258px ; height: 66px; ">
-    <a class="navbar-brand " >
-      <img src="assets/images/logo.png" alt="Logo" width="110" height="35"
-        class="d-inline-block align-text-top">
-
+  <div class="logo-section ps-4 bg-white" style="width: 258px; height: 66px">
+    <a class="navbar-brand">
+      <img
+        src="assets/images/logo.png"
+        alt="Logo"
+        width="110"
+        height="35"
+        class="d-inline-block align-text-top"
+      />
     </a>
- 
   </div>
 
-  
-
-  <div class="pt-3 ">
+  <div class="pt-3">
     @for (item of sideMenuItems; track $index) {
     <div>
       @if(item?.items?.length > 0){
@@ -32,9 +32,13 @@
 
       <div class="accordion" [id]="item?.main">
         <div class="accordion-item">
-          <h2 class="accordion-header" id="headingOne" routerLinkActive="active">
+          <h2
+            class="accordion-header"
+            id="headingOne"
+            routerLinkActive="active"
+          >
             <button
-              class="accordion-button cust-accordian collapsed "
+              class="accordion-button cust-accordian collapsed"
               type="button"
               data-bs-toggle="collapse"
               [attr.data-bs-target]="'#' + item?.main + $index"
@@ -49,7 +53,7 @@
           </h2>
           <div
             [id]="item?.main + $index"
-            class="accordion-collapse collapse "
+            class="accordion-collapse collapse"
             aria-labelledby="headingOne"
             [attr.data-bs-parent]="'#' + item?.main"
           >
@@ -88,5 +92,4 @@
 </div>
 <div class="show-sidebar" (click)="isSlide = !isSlide">
   <i-feather name="chevrons-left"></i-feather>
-
 </div>
