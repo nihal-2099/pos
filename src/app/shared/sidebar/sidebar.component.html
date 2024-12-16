@@ -21,7 +21,7 @@
         <li>
           <a [routerLink]="subitems?.link"  [routerLinkActive]="isSlide ? 'active-close-side' : 'active'">
             <div class="d-flex justify-content-start align-items-center">
-              <i-feather [name]="subitems?.icons" class="icons"></i-feather>
+              <i-feather [name]="subitems?.icons" class="icons" [ngStyle]="{'paddingRight': isSlide ? '5px' :'10px'}"></i-feather>
        @if(!isSlide){
         <span> {{ subitems?.name }}</span>
        }       
@@ -48,7 +48,7 @@
               aria-controls="collapseOne"
             >
               <div class="d-flex justify-content-center align-items-center">
-                <i-feather [name]="item?.icon" class="icons"></i-feather>
+                <i-feather [name]="item?.icon" class="icons" [ngStyle]="{'paddingRight': isSlide ? '5px' :'10px'}"></i-feather>
                 @if(!isSlide){    <span> {{ item?.main }}</span>}
               </div>
             </button>
@@ -70,6 +70,7 @@
                       <i-feather
                         [name]="subitems?.icons"
                         class="icons"
+                        [ngStyle]="{'paddingRight': isSlide ? '5px' :'10px'}"
                       ></i-feather>
                       @if(!isSlide){
                       <span> {{ subitems?.name }}</span>

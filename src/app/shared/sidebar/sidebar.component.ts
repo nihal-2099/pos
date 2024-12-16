@@ -57,7 +57,7 @@ sideMenuItems:Array<any> =[
     icon:"Pocket",
     submenu:[
       {
-        icons:"FilePlus",
+        icons:"plus",
         name:"Add Raw Material",
         link:"/layout/inventory/addraw"
       },
