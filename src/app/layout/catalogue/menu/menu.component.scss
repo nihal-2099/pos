@@ -8,6 +8,20 @@
      label{
         color: $text_color;
      }
+     .toggle{
+        .toggle_button{
+            .form-check-input {
+       
+                height: 1.5rem;
+                width: 3rem;      
+
+                &:checked{
+                    background-color: $orangered_color;
+                    border-color: $orangered_color;
+                }
+            }
+        }
+    }
     }
 
     
