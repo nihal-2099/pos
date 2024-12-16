@@ -1,8 +1,8 @@
 <section>
   <app-pageheaders
     [topHeadingContent]="{
-      heading: 'New Product',
-      subitems: 'Create New Product',
+      heading: 'New User',
+      subitems: 'Create New User',
     }"
   >
     <div class="top_header">
@@ -13,7 +13,7 @@
           routerLink="/layout/add/list"
         >
           <i-feather name="arrow-left" class="icons custom-icons"></i-feather>
-          <span>Back to Product</span>
+          <span>Back to List</span>
         </button>
       </div>
     </div>
@@ -81,12 +81,12 @@
         <!-- Multiple select option -->
         <div class="col-lg-4 col-12 my-2">
           <div class="selective">
-            <p class="mb-2">Your Responsibility :</p>
+            <p class="mb-2">Location :</p>
             <select class="form-select" aria-label="Default select example">
               <option selected disabled>Select One</option>
-              <option value="1">One</option>
-              <option value="2">Two</option>
-              <option value="3">Three</option>
+              <option value="1">Branch 1</option>
+              <option value="2">Branch 2</option>
+              <option value="3">Branch 3</option>
             </select>
 
             <!-- <mat-form-field appearance="outline" class="w-100 bootstrap-select">
@@ -123,7 +123,7 @@
     </div>
   </div>
   <!-- last button -->
-  <app-buttons [buttonText]="{ cancel: 'Cancel', save: 'Save Product' }" />
+  <app-buttons [buttonText]="{ cancel: 'Reset', save: 'Add User' }" />
 </app-accordian>
 </section>
 

@@ -5,6 +5,8 @@ import { LocationsComponent } from './locations/locations.component';
 import { SharedModule } from '../../shared/shared.module';
 import { MatsersComponent } from './matsers.component';
 import { CategoryComponent } from './category/category.component';
+import { FoodTypeComponent } from './food-type/food-type.component';
+import { DesignationComponent } from './designation/designation.component';
 
 
 
@@ -12,7 +14,9 @@ import { CategoryComponent } from './category/category.component';
   declarations: [
     LocationsComponent,
     MatsersComponent,
-    CategoryComponent
+    CategoryComponent,
+    FoodTypeComponent,
+    DesignationComponent
   ],
   imports: [
     CommonModule,

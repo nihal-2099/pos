@@ -11,23 +11,26 @@ import { Component } from '@angular/core';
 
 
 export class ListComponent {
-  dataSourceOption = [
-    { name: "User", value:  [
-      {
-        "2020/01/01": null,
-        "2020/01/02": null,
-        "2020/01/03": null,
-        "2020/01/04": 10,
-        name: "Collin"
-      },
-      {
-        "2020/01/01": null,
-        "2020/01/02": null,
-        "2020/01/03": null,
-        "2020/01/04": 100,
-        name: "Peter"
-      }
-    ] }
-  ];
+// Dynamic column definitions
+columns = [
+  { key: 'id', label: 'ID' },
+  { key: 'name', label: 'Name' },
+  { key: 'designation', label: 'Designation' },
+  { key: 'location', label: 'Location' },
+  { key: 'status', label: 'Status' },
+  { key: 'action', label: 'Action' }
+];
+
+// Dynamic table data
+tableData = [
+  { id: 1, name: 'Ritin', designation:'Manager', location:"Branch 1",status:"Active" , action:['edit', 'view'] , mainId:'nmansajkjk12'},
+  { id: 2, name: 'Sanjeev',  designation:'Operator', location:"Branch 2", status:"Disabled" , action:['edit', 'view'] , mainId:'nmansajkjk13'},
+  { id: 2, name: 'Rohit',  designation:'Admin', location:"Branch 1", status:"Active" , action:['edit', 'view'] , mainId:'nmansajkjk13'},
+];
+
+
+tableAction(event:any){
+  console.log(event)
+}
 
 }
