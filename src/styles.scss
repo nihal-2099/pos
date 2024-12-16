@@ -49,3 +49,31 @@ padding-right: 10px ;
     }
 }
 
+<<<<<<< HEAD
+=======
+.top_header{
+
+    &_button{ button{
+       background-color: $add_component_buttoncolor; 
+       
+   } }
+      
+   }
+
+   label{
+    color: $text_color;
+ }
+ .toggle{
+    
+        .form-check-input {
+   
+            height: 1.5rem;
+            width: 3rem !important;      
+
+            &:checked{
+                background-color: $orangered_color;
+                border-color: $orangered_color;
+            }
+        }
+    }
+>>>>>>> 524fb31c659d62fb3f09a9c5d2250b2f2bae6831

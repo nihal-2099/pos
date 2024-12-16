@@ -1,0 +1,81 @@
+<section>
+  <app-pageheaders
+    [topHeadingContent]="{
+        heading: 'Location',
+        subitems: 'Create/List Location',
+      }"
+  >
+  </app-pageheaders>
+
+  <app-accordian
+    [accordianItems]="{
+      heading: 'Add New Location Details',
+      id: 'filllocationdetails'
+    }"
+  >
+    <div class="row">
+      <div class="col-12 col-lg-4">
+        <div class="mb-3">
+          <label for="locatonname" class="form-label">Location Name :</label>
+          <input
+            type="text"
+            class="form-control"
+            id="locatonname"
+            placeholder="Location Name"
+          />
+        </div>
+      </div>
+      <div class="col-12 col-lg-4">
+        <div class="mb-3">
+          <label for="state" class="form-label">State :</label>
+          <select class="form-select" aria-label="State">
+            <option selected>State</option>
+            <option value="1">One</option>
+            <option value="2">Two</option>
+            <option value="3">Three</option>
+          </select>
+        </div>
+      </div>
+      <div class="col-12 col-lg-4">
+        <div class="mb-3">
+          <label for="district" class="form-label">District :</label>
+          <select class="form-select" aria-label="district">
+            <option selected>District</option>
+            <option value="1">One</option>
+            <option value="2">Two</option>
+            <option value="3">Three</option>
+          </select>
+        </div>
+      </div>
+      <div class="col-12 col-lg-4">
+        <div class="mb-3">
+          <label for="block" class="form-label">Block :</label>
+          <select class="form-select" aria-label="block">
+            <option selected>Block</option>
+            <option value="1">One</option>
+            <option value="2">Two</option>
+            <option value="3">Three</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="col-12 col-lg-4">
+        <div class="toggle my-1">
+          <label for="locatonname" class="form-label">Status :</label>
+          <div class="form-check form-switch">
+            <input
+              class="form-check-input"
+              type="checkbox"
+              id="flexSwitchCheckChecked"
+              checked
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <app-buttons [buttonText]="{ cancel: 'Cancel', save: 'Save Location' }" />
+  </app-accordian>
+
+  <app-table [columns]="columns" [tableData]="tableData" (actionType)="tableAction($event)"/>
+</section>
