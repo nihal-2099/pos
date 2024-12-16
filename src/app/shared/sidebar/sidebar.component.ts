@@ -43,7 +43,14 @@ sideMenuItems:Array<any> =[
         icons:"map",
         name:"Location",
         link:"/layout/master/location"
-      }
+      },
+      {
+        icons:"layers",
+        name:"Category",
+        link:"/layout/master/category"
+      },
+
+      
     ]
   },
   {
