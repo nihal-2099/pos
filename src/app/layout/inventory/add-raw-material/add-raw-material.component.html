@@ -1,1 +1,23 @@
-<p>add-raw-material works!</p>
+<!-- <p>add-raw-material works!</p> -->
+<section>
+    <app-pageheaders
+    [topHeadingContent]="{
+      heading: 'Bill of Meterial',
+      subitems: 'Edit Bill of Meterial',
+    }"
+  >
+    <div class="top_header">
+      <div class="top_header_button">
+        <button
+          type="button"
+          class="btn btn-secondary d-flex justify-content-between align-items-center"
+          routerLink="/layout/add/list"
+        >
+          <i-feather name="arrow-left" class="icons custom-icons"></i-feather>
+          <span>Back to Product</span>
+        </button>
+      </div>
+    </div>
+  </app-pageheaders>
+
+</section>
