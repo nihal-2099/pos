@@ -49,8 +49,6 @@ padding-right: 10px ;
     }
 }
 
-<<<<<<< HEAD
-=======
 .top_header{
 
     &_button{ button{
@@ -76,4 +74,10 @@ padding-right: 10px ;
             }
         }
     }
->>>>>>> 524fb31c659d62fb3f09a9c5d2250b2f2bae6831
+    fieldset, legend {
+        all: revert !important;
+        border-radius: 10px !important;
+        border-color: $orangered_color !important;
+        margin-bottom: 1rem !important;
+        outline: none !important;
+     }
