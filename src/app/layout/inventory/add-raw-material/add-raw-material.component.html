@@ -18,7 +18,8 @@
 
   <div class="raw-material-wrapper">
     <div class="body_section">
-      <div class="row">
+
+      <div class="row mb-5">
 
         <!-- Multiple select option -->
         <div class="col-lg-4 col-12 my-2">
@@ -56,13 +57,90 @@
             <label for="exampleFormControlInput1" class="form-label">
               <p class="mb-0">Date :</p>
             </label>
-            <input type="date" class="form-control" id="exampleFormControlInput1"
-              />
+            <input type="date" class="form-control" id="exampleFormControlInput1" />
           </div>
         </div>
 
 
       </div>
+
+      <div class="card mb-3">
+        <div class="card-body">
+          <span><strong>CAKEMON CAKE - Regular </strong> </span>
+          <span class="ps-5">Config Qty - 100</span>
+          <span class="ps-5">Quantity - 100</span>
+        </div>
+      </div>
+
+
+      <!-- Accordian Works Below -->
+      <app-accordian [accordianItems]="{ heading: 'Add Items   ', id: 'filltheirdetails' }">
+
+        <div class="row">
+
+          <!-- Multiple select option -->
+          <div class="col-lg-2 col-12 my-2">
+            <div class="selective">
+              <p class="mb-2">Select Item :</p>
+              <select class="form-select" aria-label="Default select example">
+                <option selected disabled>Select Item</option>
+                <option value="1">One</option>
+                <option value="2">Two</option>
+                <option value="3">Three</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- option -->
+          <div class="col-lg-2 col-12 my-2">
+            <div class="">
+              <p class="mb-2">Select Varient :</p>
+              <input type="number" class="form-control" id="exampleFormControlInput1" placeholder="Select Varient" />
+            </div>
+          </div>
+
+          <!-- option -->
+          <div class="col-lg-2 col-12 my-2">
+            <div class="">
+              <p class="mb-2">Select IJOM :</p>
+              <input type="number" class="form-control" id="exampleFormControlInput1" placeholder="Select IJOM" />
+            </div>
+          </div>
+
+          <!-- option -->
+          <div class="col-lg-2 col-12 my-2">
+            <div class="">
+              <p class="mb-2">Quantity :</p>
+              <input type="number" class="form-control" id="exampleFormControlInput1" placeholder="Quantity" />
+            </div>
+          </div>
+
+          <!-- option -->
+          <div class="col-lg-2 col-12 my-2">
+            <div class="">
+              <p class="mb-2">Stock :</p>
+              <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Stock" />
+            </div>
+          </div>
+
+          <!-- Add button option -->
+          <div class="col-lg-2 col-12 my-2 d-flex align-items-end ">
+            <div class="w-100">
+             
+              <button
+                class="btn btn-outline-secondary w-100 pe-2 cust-raw-mat-btn-one "
+                type="button">
+                <i-feather name="plus" class="cust-raw-mat-icon me-1"></i-feather>
+                Add
+              </button>
+            </div>
+          </div>
+
+
+        </div>
+
+      </app-accordian>
+
     </div>
   </div>
 
