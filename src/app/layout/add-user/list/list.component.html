@@ -70,4 +70,6 @@
 </app-pageheaders>
 
 
-<app-table />
+<app-table [columns]="columns" [tableData]="tableData" (actionType)="tableAction($event)">
+  
+</app-table>

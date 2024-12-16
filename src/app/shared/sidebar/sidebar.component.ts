@@ -19,6 +19,34 @@ sideMenuItems:Array<any> =[
       }
     ]
   },
+
+  {
+    main:"Masters",
+    icon:"cloud",
+    submenu:[
+      {
+        icons:"map",
+        name:"Location",
+        link:"/layout/master/location"
+      },
+      {
+        icons:"layers",
+        name:"Category",
+        link:"/layout/master/category"
+      },
+      {
+        icons:"flag",
+        name:"Food Type",
+        link:"/layout/master/foodtype"
+      },
+      {
+        icons:"bookmark",
+        name:"Designation",
+        link:"/layout/master/designation"
+      },
+      
+    ]
+  },
   {
     main:"Users",
     icon:"User",
@@ -36,37 +64,20 @@ sideMenuItems:Array<any> =[
     ]
   },
   {
-    main:"Masters",
-    icon:"cloud",
-    submenu:[
-      {
-        icons:"map",
-        name:"Location",
-        link:"/layout/master/location"
-      },
-      {
-        icons:"layers",
-        name:"Category",
-        link:"/layout/master/category"
-      },
-
-      
-    ]
-  },
-  {
     main:"Catalogue",
     icon:"menu",
     submenu:[
       {
-        icons:"hash",
-        name:"Online Menu",
+        icons:"file-plus",
+        name:"Add",
         link:"/layout/catalogue/online"
       },
       {
-        icons:"Monitor",
-        name:"Offline Menu",
-        link:"/layout/catalogue/offline"
+        icons:"list",
+        name:"List",
+        link:"/layout/catalogue/menulist"
       }
+      
     ]
   },
   {

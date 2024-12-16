@@ -1,8 +1,13 @@
 <div class="last_button d-flex justify-content-end">
+  @if(buttonText?.cancel){
     <div class="cancel_button mx-2">
       <button type="button" class="btn">{{buttonText.cancel}}</button>
     </div>
-    <div class="submit_button mx-2">
-      <button type="button" class="btn">{{buttonText.save}}</button>
+  }
+  @if(buttonText?.save){
+    <div class="submit_button mx-2" >
+      <button type="button" class="btn" [ngClass]="background">{{buttonText.save}}</button>
     </div>
+  }
+
   </div>

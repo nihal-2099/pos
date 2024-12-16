@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { CatalogueComponent } from './catalogue.component';
 import { MenuComponent } from './menu/menu.component';
+import { MenuListComponent } from './menu-list/menu-list.component';
 
 
 
@@ -12,6 +13,7 @@ const routes: Routes = [
 
       { path: 'offline', component: MenuComponent },
       { path: 'online', component: MenuComponent },
+      {path:'menulist', component:MenuListComponent}
     
       // {path:'aboutus', component:AboutUsComponent},
       // {path:'services', component:ServicesComponent}

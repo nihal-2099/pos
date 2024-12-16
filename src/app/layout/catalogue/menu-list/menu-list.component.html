@@ -1,0 +1,16 @@
+<section>
+    <app-pageheaders
+      [topHeadingContent]="{
+          heading: 'Menu List',
+          subitems: 'List Menu',
+        }"
+    >
+    </app-pageheaders>
+  
+ 
+  
+    <app-table [columns]="columns" [tableData]="tableData" (actionType)="tableAction($event)">
+  
+      </app-table>
+  </section>
+  
