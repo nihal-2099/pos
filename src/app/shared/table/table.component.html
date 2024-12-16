@@ -24,7 +24,7 @@
     </form>
 
     <div class="d-flex">
-      <div class="me-3">
+      <!-- <div class="me-3">
         <button
           class="btn btn-outline-secondary d-flex justify-content-center align-items-center filtr-button"
           type="button"
@@ -32,7 +32,7 @@
         >
           <i-feather name="filter"></i-feather>
         </button>
-      </div>
+      </div> -->
 
       <div class="dropdown me-3 table-dropdown">
         <button
@@ -68,155 +68,11 @@
     </div>
   </div>
 
-  <!-- filter -->
-  <div
-    class="d-flex justify-content-between align-items-center table-filter-cust"
-  >
-    <div class="d-flex">
-      <div class="dropdown m-3 table-dropdown">
-        <button
-          class="btn btn-outline-secondary dropdown-toggle d-flex justify-content-center align-items-center"
-          type="button"
-          data-bs-toggle="dropdown"
-        >
-          <i-feather name="box" class="me-2"></i-feather>
-          Choose Product
-        </button>
-        <ul class="dropdown-menu">
-          <li class="d-flex justify-content-center align-items-center px-3">
-            <a class="dropdown-item" href="#">Grocery Alpha</a>
-          </li>
 
-          <li class="d-flex justify-content-center align-items-center px-3">
-            <a class="dropdown-item" href="#">Grocery Apex </a>
-          </li>
+  <ng-container>
+    <ng-content />
+  </ng-container>
 
-          <li class="d-flex justify-content-center align-items-center px-3">
-            <!-- <img src="../../../assets/images/store-03.png" alt="Store"> -->
-            <a class="dropdown-item" href="#">Grocery Bevy</a>
-          </li>
-        </ul>
-      </div>
-
-      <div class="dropdown m-3 table-dropdown">
-        <button
-          class="btn btn-outline-secondary dropdown-toggle d-flex justify-content-center align-items-center"
-          type="button"
-          data-bs-toggle="dropdown"
-        >
-          <i-feather name="stop-circle" class="me-2"></i-feather>
-          Choose Category
-        </button>
-        <ul class="dropdown-menu">
-          <li class="d-flex justify-content-center align-items-center px-3">
-            <!-- <img src="../../../assets/images/store-01.png" alt="Store"> -->
-            <a class="dropdown-item" href="#">Grocery Alpha</a>
-          </li>
-
-          <li class="d-flex justify-content-center align-items-center px-3">
-            <!-- <img src="../../../assets/images/store-02.png" alt="Store"> -->
-            <a class="dropdown-item" href="#">Grocery Apex </a>
-          </li>
-
-          <li class="d-flex justify-content-center align-items-center px-3">
-            <!-- <img src="../../../assets/images/store-03.png" alt="Store"> -->
-            <a class="dropdown-item" href="#">Grocery Bevy</a>
-          </li>
-        </ul>
-      </div>
-
-      <div class="dropdown m-3 table-dropdown">
-        <button
-          class="btn btn-outline-secondary dropdown-toggle d-flex justify-content-center align-items-center"
-          type="button"
-          data-bs-toggle="dropdown"
-        >
-          <i-feather name="git-merge" class="me-2"></i-feather>
-          Choose Sub Category
-        </button>
-        <ul class="dropdown-menu">
-          <li class="d-flex justify-content-center align-items-center px-3">
-            <!-- <img src="../../../assets/images/store-01.png" alt="Store"> -->
-            <a class="dropdown-item" href="#">Grocery Alpha</a>
-          </li>
-
-          <li class="d-flex justify-content-center align-items-center px-3">
-            <!-- <img src="../../../assets/images/store-02.png" alt="Store"> -->
-            <a class="dropdown-item" href="#">Grocery Apex </a>
-          </li>
-
-          <li class="d-flex justify-content-center align-items-center px-3">
-            <!-- <img src="../../../assets/images/store-03.png" alt="Store"> -->
-            <a class="dropdown-item" href="#">Grocery Bevy</a>
-          </li>
-        </ul>
-      </div>
-
-      <div class="dropdown m-3 table-dropdown">
-        <button
-          class="btn btn-outline-secondary dropdown-toggle d-flex justify-content-center align-items-center"
-          type="button"
-          data-bs-toggle="dropdown"
-        >
-          <i-feather name="stop-circle" class="me-2"></i-feather>
-          All Brand
-        </button>
-        <ul class="dropdown-menu">
-          <li class="d-flex justify-content-center align-items-center px-3">
-            <!-- <img src="../../../assets/images/store-01.png" alt="Store"> -->
-            <a class="dropdown-item" href="#">Grocery Alpha</a>
-          </li>
-
-          <li class="d-flex justify-content-center align-items-center px-3">
-            <!-- <img src="../../../assets/images/store-02.png" alt="Store"> -->
-            <a class="dropdown-item" href="#">Grocery Apex </a>
-          </li>
-
-          <li class="d-flex justify-content-center align-items-center px-3">
-            <!-- <img src="../../../assets/images/store-03.png" alt="Store"> -->
-            <a class="dropdown-item" href="#">Grocery Bevy</a>
-          </li>
-        </ul>
-      </div>
-
-      <div class="dropdown m-3 table-dropdown">
-        <button
-          class="btn btn-outline-secondary dropdown-toggle d-flex justify-content-center align-items-center"
-          type="button"
-          data-bs-toggle="dropdown"
-        >
-          <i-feather name="dollar-sign" class="me-2"></i-feather>
-          Price
-        </button>
-        <ul class="dropdown-menu">
-          <li class="d-flex justify-content-center align-items-center px-3">
-            <a class="dropdown-item" href="#">Grocery Alpha</a>
-          </li>
-
-          <li class="d-flex justify-content-center align-items-center px-3">
-            <a class="dropdown-item" href="#">Grocery Apex </a>
-          </li>
-
-          <li class="d-flex justify-content-center align-items-center px-3">
-            <a class="dropdown-item" href="#">Grocery Bevy</a>
-          </li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="d-flex">
-      <div class="me-3">
-        <button
-          class="btn btn-outline-secondary d-flex justify-content-center align-items-center filtr-button"
-          type="button"
-          data-bs-toggle="dropdown"
-        >
-          <i-feather name="search"></i-feather>
-          Search
-        </button>
-      </div>
-    </div>
-  </div>
 
   <div class="mat-elevation-z8">
     <table mat-table [dataSource]="dataSource" matSort>

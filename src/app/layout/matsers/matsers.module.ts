@@ -4,13 +4,15 @@ import { MastersRoutingModule } from './masters-routing.module';
 import { LocationsComponent } from './locations/locations.component';
 import { SharedModule } from '../../shared/shared.module';
 import { MatsersComponent } from './matsers.component';
+import { CategoryComponent } from './category/category.component';
 
 
 
 @NgModule({
   declarations: [
     LocationsComponent,
-    MatsersComponent
+    MatsersComponent,
+    CategoryComponent
   ],
   imports: [
     CommonModule,
