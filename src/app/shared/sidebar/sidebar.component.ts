@@ -36,6 +36,17 @@ sideMenuItems:Array<any> =[
     ]
   },
   {
+    main:"Masters",
+    icon:"cloud",
+    submenu:[
+      {
+        icons:"map",
+        name:"Location",
+        link:"/layout/master/location"
+      }
+    ]
+  },
+  {
     main:"Catalogue",
     icon:"menu",
     submenu:[
@@ -51,7 +62,6 @@ sideMenuItems:Array<any> =[
       }
     ]
   },
-  ,
   {
     main:"Inventory",
     icon:"Pocket",
@@ -60,14 +70,10 @@ sideMenuItems:Array<any> =[
         icons:"plus",
         name:"Add Raw Material",
         link:"/layout/inventory/addraw"
-      },
-      // {
-      //   icons:"Monitor",
-      //   name:"Offline Menu",
-      //   link:"/layout/catalogue/offline"
-      // }
+      }
     ]
-  }
+  },
+
 
 ]
 

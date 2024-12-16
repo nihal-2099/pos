@@ -1,7 +1,8 @@
-import { Component, ViewChild } from '@angular/core';
+import { Component, EventEmitter, Input, OnChanges, Output, SimpleChanges, ViewChild } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
+import Common from '../../common/common';
 
 
 
@@ -60,19 +61,35 @@ const NAMES: string[] = [
 
 // 'id', 'name', 'progress', 'fruit' (displayed columns)
 
-export class TableComponent {
-  displayedColumns: string[] = ['checkbox','product','sku','category','brand','price','unit','qty','createdby','action'];
-  dataSource: MatTableDataSource<UserData>;
+export class TableComponent implements OnChanges  {
+
+  dataSource: MatTableDataSource<any>;
+
+  @Input() columns: any[] = []; // Column definitions
+  @Input() tableData: any[] = []; // Dynamic data for the table
+  @Output() actionType: any = new EventEmitter()
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
-
+  displayedColumns: string[] = []; // Property to store keys of columns
+  iconList:any = Common
   constructor() {
     // Create 100 users
     const users = Array.from({length: 100}, (_, k) => createNewUser(k + 1));
 
     // Assign the data to the data source for the table to render
     this.dataSource = new MatTableDataSource(users);
+  }
+
+  ngOnInit(): void {
+    this.dataSource.data = this.tableData; // Initialize data on component load
+    this.displayedColumns = this.columns.map(c => c.key); // Extract keys from columns
+  }
+
+  ngOnChanges(changes: SimpleChanges): void {
+    if (changes['tableData']) {
+      this.dataSource.data = changes['tableData'].currentValue; // Update data when input changes
+    }
   }
 
   ngAfterViewInit() {
@@ -88,6 +105,13 @@ export class TableComponent {
       this.dataSource.paginator.firstPage();
     }
   }
+
+  performAction(details:any, data:any){
+    this.actionType.emit({type:details, data:data})
+  }
+
+
+  
 }
 
 /** Builds and returns a new User. */

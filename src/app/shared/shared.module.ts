@@ -22,7 +22,10 @@ import {MatInputModule} from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import { ButtonsComponent } from './buttons/buttons.component';
 import { AccordianComponent } from './accordian/accordian.component';
-
+import { FieldsComponent } from './fields/fields.component';
+import {MatIconModule} from '@angular/material/icon';
+import {MatMenuModule} from '@angular/material/menu';
+import {MatButtonModule} from '@angular/material/button';
 @NgModule({
   declarations: [
     HeaderComponent,
@@ -32,6 +35,7 @@ import { AccordianComponent } from './accordian/accordian.component';
     PageheadersComponent,
     ButtonsComponent,
     AccordianComponent,
+    FieldsComponent,
     
   ],
   imports: [
@@ -49,7 +53,10 @@ import { AccordianComponent } from './accordian/accordian.component';
     MatInputModule,
     
     MatSelectModule,
-    MatFormFieldModule
+    MatFormFieldModule,
+    MatMenuModule,
+    MatIconModule,
+    MatButtonModule
   ],
   exports:[
     HeaderComponent,
@@ -64,7 +71,8 @@ import { AccordianComponent } from './accordian/accordian.component';
     MatSelectModule,
     MatFormFieldModule,
     ButtonsComponent,
-    AccordianComponent
+    AccordianComponent,
+    FieldsComponent,
   ]
 })
 export class SharedModule { }
