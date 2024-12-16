@@ -1,0 +1,15 @@
+@import '../../../../assets/scss/custom.scss';
+
+.raw-material-wrapper{
+    .cust-raw-mat-btn-one{
+        border: none;
+        background-color: $green_color;
+        color: $white_color;
+        padding: auto 100px !important;
+    }
+
+    .cust-raw-mat-icon{
+        width: 20px;
+    }
+
+}
