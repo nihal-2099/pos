@@ -1,0 +1,60 @@
+@import '../../../../assets/scss/custom.scss';
+
+
+.card{
+    -webkit-box-shadow: 10px 10px 18px 0px rgba(240,228,240,1);
+-moz-box-shadow: 10px 10px 18px 0px rgba(240,228,240,1);
+box-shadow: 10px 10px 18px 0px rgba(240,228,240,1);
+    cursor: pointer;
+    &.white{
+        border-color: $card_border;
+
+       .card-body{
+    
+            .wrapper-icon{
+                height: 45px;
+                border-radius: 50%;
+                width: 45px;
+                padding-bottom: 8px;
+     
+                .icons{
+                    height: 18px !important;
+                    width: 18px !important;
+                    text-align: center;
+                    padding-bottom: 10px !important;
+                }
+        
+            }
+            p{
+              color:  $cancel_button_color
+            }
+         
+        }
+    }
+
+    &.colored{
+       
+        p{
+            color: $white_color;
+        }
+        b{
+            color: $white_color;
+        }
+        .wrapper-icon {
+            transform: scale(1);
+            transition: 1s ease-in-out;
+          }
+        &:hover{
+        .wrapper-icon{
+       
+        
+                transform: scale(1.4);
+                transition: 1s ease-in-out;
+            }
+        
+        }
+       
+
+    }
+  
+}

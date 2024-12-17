@@ -1,1 +1,97 @@
-<p>dashboard works!</p>
+<app-pageheaders [topHeadingContent]="{
+    heading: 'Dashboard',
+    subitems: 'View Dashboard',
+  }">
+
+</app-pageheaders>
+
+@for (item of topCards; track $index) {
+<div class="row">
+    @for (cardItem of item.items; track $index) {
+    <div class="col-12 col-lg-3">
+        <app-cards [cardsData]="cardItem" [type]="item.type" />
+    </div>
+    }
+</div>
+}
+
+
+<div class="row">
+    <div class="col-12 col-lg-6">
+
+        <div class="card">
+            <div class="card-body">
+
+                <div class="d-flex justify-content-between align-items-center mb-4">
+
+                    <h5><b>Sales Analytics</b></h5>
+                    <div class=" d-flex justify-content-end ">
+                        <div class="selective me-3">
+                            <select class="form-select" aria-label="Default select example" [value]="1">
+                              <option selected >Select Branch</option>
+                              <option value="1">Branch 1</option>
+                              <option value="2">Branch 2</option>
+                              <option value="3">Branch 3</option>
+                            </select>
+                            </div>
+            
+                            <div class="selective">
+                                <select class="form-select" aria-label="Default select example"  [value]="1">
+                                  <option selected disabled>Select Year</option>
+                                  <option value="1">2024</option>
+                                  <option value="2">2023</option>
+                                  <option value="3">2024</option>
+                                </select>
+                                </div>
+                    </div>
+                </div>
+                
+
+                <app-charts />
+            </div>
+          </div>
+      
+
+     
+    </div>
+
+    <div class="col-12 col-lg-6">
+
+        <div class="card">
+            <div class="card-body">
+                <div class="d-flex justify-content-between align-items-center mb-4">
+
+                    <h5><b>Recent Orders</b></h5>
+                <div class=" d-flex justify-content-end ">
+                    <div class="selective me-3">
+                        <select class="form-select" aria-label="Default select example">
+                          <option selected >Select Branch</option>
+                          <option value="1">Branch 1</option>
+                          <option value="2">Branch 2</option>
+                          <option value="3">Branch 3</option>
+                        </select>
+                        </div>
+        
+                        <div class="selective">
+                            <select class="form-select" aria-label="Default select example"  [value]="1">
+                              <option selected disabled>Select Year</option>
+                              <option value="1">2024</option>
+                              <option value="2">2023</option>
+                              <option value="3">2024</option>
+                            </select>
+                            </div>
+                </div>
+                </div>
+                <app-table
+                [columns]="columns"
+                [tableData]="tableData"
+                (actionType)="tableAction($event)"
+              >
+              </app-table>
+            </div>
+          </div>
+      
+
+     
+    </div>
+</div>
