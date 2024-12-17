@@ -1,19 +1,20 @@
 <section>
-    <app-pageheaders
-      [topHeadingContent]="{
+  <app-pageheaders
+    [topHeadingContent]="{
           heading: 'Designation',
           subitems: 'Create/List Designation',
         }"
-    >
-    </app-pageheaders>
-  
+  >
+  </app-pageheaders>
+
+  <form [formGroup]="designationform">
     <app-accordian
       [accordianItems]="{
         heading: 'Add Designation',
         id: 'filldesignation'
       }"
     >
-      <div class="row">
+      <div class="row mb-2">
         <div class="col-12 col-lg-4">
           <div class="mb-3">
             <label for="food" class="form-label">Designation :</label>
@@ -22,13 +23,28 @@
               class="form-control"
               id="designation"
               placeholder="Designation"
+              formControlName="designation"
             />
+
+            <div
+            class="validation-container"
+            *ngIf="
+              designationform?.controls?.['designation']?.touched &&
+              designationform?.controls?.['designation']?.errors?.['required']
+            "
+          >
+            <div
+              *ngIf="designationform?.controls?.['designation']?.errors?.['required']"
+              class="text-danger"
+            >
+              <b>Designation is Required</b>
+            </div>
+          </div>
           </div>
         </div>
-    
-  
+
         <div class="col-12 col-lg-4">
-          <div class="toggle my-1">
+          <div class="toggle my-1 d-flex flex-column justify-content-start">
             <label for="locatonname" class="form-label">Status :</label>
             <div class="form-check form-switch">
               <input
@@ -36,63 +52,129 @@
                 type="checkbox"
                 id="flexSwitchCheckChecked"
                 checked
+                formControlName="status"
               />
+
+        
             </div>
+            <div
+            class="validation-container"
+            *ngIf="
+              designationform?.controls?.['status']?.touched &&
+              designationform?.controls?.['status']?.errors?.['required']
+            "
+          >
+            <div
+              *ngIf="designationform?.controls?.['status']?.errors?.['required']"
+              class="text-danger"
+            >
+              <b>Status is Required</b>
+            </div>
+          </div>
           </div>
         </div>
       </div>
-
-    
     </app-accordian>
 
     <app-accordian
-    [accordianItems]="{
-      heading: 'Access Right',
-      id: 'accessrights',
-      hide:false
-    }"
+      [accordianItems]="{
+        heading: 'Access Right',
+        id: 'accessrights',
+        hide: false
+      }"
+    >
+      <div class="row mb-2" [formArrayName]="'items'">
+        @for (item of items.controls; track $index) {
+
+          <ng-container [formGroupName]="$index">
+
+            <div class="col-12 col-lg-4 mt-2">
+              <div class="selective">
+                <p class="mb-2">Select Component :</p>
+                <select class="form-select" aria-label="Default select example"  formControlName="component">
+                  <option selected disabled>Select Component</option>
+                  <option value="1">Sales</option>
+                  <option value="2">Master</option>
+                  <option value="3">Catalouge</option>
+                </select>
+
+                @if (item.get('component')?.invalid && (item.get('component')?.dirty || item.get('component')?.touched)) {
+                
+                
+                @if (item.get('component')?.hasError('required')) {
+                <div class="validation-container">
+                  <div class="text-danger">
+                    <b>Component is Required</b>
+                  </div>
+                </div>
+                }
+                }
+              </div>
+            </div>
+            <div class="col-12 col-lg-4 mt-2">
+              <div class="selective">
+                <p class="mb-2">Select Rights :</p>
+                <select class="form-select" aria-label="Default select example"  formControlName="right">
+                  <option selected >Select Rights</option>
+                  <option value="1">Add/Edit/View</option>
+                  <option value="2">View Only</option>
+                  <option value="3">View/Edit Only</option>
+                </select>
+
+                @if (item.get('right')?.invalid && (item.get('right')?.dirty || item.get('right')?.touched)) {
+                
+                
+                  @if (item.get('right')?.hasError('required')) {
+                  <div class="validation-container">
+                    <div class="text-danger">
+                      <b>Rights is Required</b>
+                    </div>
+                  </div>
+                  }
+                  }
+
+           
+              </div>
+            </div>
+    
+            <div
+              class="col-12 col-lg-4 d-flex justify-content-start align-items-end"
+            >
+              <app-buttons
+                [buttonText]="{ save: 'Add Access Rights' }"
+                class="mb-0"
+                (click)="addItem()"
+              />
+              @if($index != 0){
+                <app-buttons
+                [buttonText]="{ save: 'Remove' }"
+                class="mb-0"
+                (click)="removeItem($index)"
+                [background]="'bg-danger'"
+              />
+              }
+            
+            </div>
+
+          </ng-container>
+
+
+        }
+     
+      </div>
+
+      <div class="mt-5">
+        <app-buttons
+          [buttonText]="{ cancel: 'Cancel', save: 'Save Designation' }" 
+          (buttonClick)="validateTable($event)"
+        />
+      </div>
+    </app-accordian>
+  </form>
+  <app-table
+    [columns]="columns"
+    [tableData]="tableData"
+    (actionType)="tableAction($event)"
   >
-  <div class="row mb-2">
-    <div class="col-12 col-lg-4">
-        <div class="selective">
-            <p class="mb-2">Select Component :</p>
-            <select class="form-select" aria-label="Default select example">
-              <option selected disabled>Select Component</option>
-              <option value="1">Sales</option>
-              <option value="2">Master</option>
-              <option value="3">Catalouge</option>
-            </select>
-          </div>
-    </div>
-    <div class="col-12 col-lg-4">
-        <div class="selective">
-            <p class="mb-2">Select Rights :</p>
-            <select class="form-select" aria-label="Default select example">
-              <option selected disabled>Select Rights</option>
-              <option value="1">Add/Edit/View</option>
-              <option value="2">View Only</option>
-              <option value="3">View/Edit Only</option>
-            </select>
-          </div>
-    </div>
-
-    <div class="col-12 col-lg-4 d-flex justify-content-start align-items-end">
-        <app-buttons [buttonText]="{ save: 'Add Access Rights' }" class="mb-0"/>
-        <app-buttons [buttonText]="{ save: 'Remove' }" class="mb-0" [background]="'bg-danger'"/>
-
-    </div>
-  </div>
-
-  <div class="mt-5">
-
-  <app-buttons [buttonText]="{ cancel: 'Cancel', save: 'Save Designation' }"  />
-
-</div>
-
-  </app-accordian>
-  
-    <app-table [columns]="columns" [tableData]="tableData" (actionType)="tableAction($event)">
-  
-      </app-table>
-  </section>
-  
+  </app-table>
+</section>
