@@ -1,426 +1,535 @@
 <section>
   <div class="catelogue_online">
     <!-- Top Header -->
-  <app-pageheaders
-  [topHeadingContent]="{
+    <app-pageheaders [topHeadingContent]="{
     heading: 'New Catalogue',
     subitems: 'Create New Catalogue',
-  }"
->
-  <div class="top_header">
-    <div class="top_header_button">
-      <button
-        type="button"
-        class="btn btn-secondary d-flex justify-content-between align-items-center"
-        routerLink="/layout/catalogue/menulist"
-      >
-      <div class="d-flex align-items-center">
-        <i-feather name="arrow-left" class="icons custom-icons"></i-feather> Back to Menu List
+  }">
+      <div class="top_header">
+        <div class="top_header_button">
+          <button type="button" class="btn btn-secondary d-flex justify-content-between align-items-center"
+            routerLink="/layout/catalogue/menulist">
+            <div class="d-flex align-items-center">
+              <i-feather name="arrow-left" class="icons custom-icons"></i-feather> Back to Menu List
+            </div>
+          </button>
+        </div>
       </div>
-      </button>
-    </div>
-  </div>
-</app-pageheaders>
-  <!-- Accordion 1st  -->
-    <app-accordian
-  [accordianItems]="{ heading: 'Item details', id: 'itemdetails' }">
-  <div class="row">
-    <div class="col-lg-4 col-12">
-      <label for="" class="mb-2">Name :</label>
-      <div class="input-group mb-3">
-        <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" placeholder=" Name">
-      </div>
-    </div>
-    <div class="col-lg-4 col-12 ">
-       <label for="" class="mb-2">Category :</label>
-        <select class="form-select" aria-label="Default select example">
-          <option selected disabled>Your Choice</option>
-          <option value="1">One</option>
-          <option value="2">Two</option>
-          <option value="3">Three</option>
-        </select>
-    </div>
-    <div class="col-lg-4 col-12 ">
-     <label for=""class="mb-2">Food Type :</label>
-        <select class="form-select" aria-label="Default select example">
-          <option selected disabled>Vegetarian</option>
-          <option value="1">Veg</option>
-          <option value="2">Non-Veg</option>
-        </select>
-    </div>
+    </app-pageheaders>
 
-    <div class="col-lg-4 col-12 ">
-      <label for=""class="mb-2">Service Type :</label>
-      <select class="form-select mb-3" aria-label="Default select example">
-        <option selected disabled>Your Choice</option>
-        <option value="1">One</option>
-        <option value="2">Two</option>
-        <option value="3">Three</option>
-      </select>
-     </div>
+    <!-- Form start here -->
+    <form class="" [formGroup]="menucomponentform">
 
-     <div class="col-lg-4 col-12 ">
-      <label for=""class="mb-2">Delivery Type :</label>
-      <select class="form-select mb-3" aria-label="Default select example">
-        <option selected disabled>Your Choice</option>
-        <option value="1">One</option>
-        <option value="2">Two</option>
-        <option value="3">Three</option>
-      </select>
-     </div>
-     <div class="col-lg-4 col-12 ">
-      <label for=""class="mb-2">Product Type :</label>
-      <select class="form-select mb-3" aria-label="Default select example">
-        <option selected disabled>Your Choice</option>
-        <option value="1">One</option>
-        <option value="2">Two</option>
-        <option value="3">Three</option>
-      </select>
-     </div>
+      <!-- Accordion 1st  -->
+      <app-accordian [accordianItems]="{ heading: 'Item details', id: 'itemdetails' }">
+        <div class="row">
+          <div class="col-lg-4 col-12">
+            <label for="" class="mb-2">Name :</label>
+            <div class="input-group mb-3">
+              <input type="text" class="form-control" formControlName="name" placeholder="Name">
+            </div>
 
-     <div class="col-lg-4 col-12">
-      <label for="" class="mb-2">Item Code :</label>
-      <div class="input-group mb-3">
-        <input type="number" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" placeholder="Item Code">
-      </div>
-    </div>
+            <div class="mb-2" *ngIf="
+             menucomponentform?.get('name')?.touched &&
+             menucomponentform?.get('name')?.hasError('required')
+             ">
 
-    <div class="col-lg-4 col-12">
-      <label for="" class="mb-2">EAN Code :</label>
-      <div class="input-group mb-3">
-        <input type="number" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" placeholder="EAN Code">
-      </div>
-    </div>
+              <div class="text-danger">
+                <b>Name is Required</b>
+              </div>
+            </div>
 
-    <div class="col-lg-4 col-12">
-      <label for="" class="mb-2">Display Order :</label>
-      <div class="input-group ">
-        <input type="number" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" placeholder="Display Order">
-      </div>
-    </div>
+          </div>
+          <div class="col-lg-4 col-12 ">
+            <label for="" class="mb-2">Category :</label>
+            <select class="form-select" formControlName="category" aria-label="Default select example">
+              <option selected disabled>Your Choice</option>
+              <option value="1">One</option>
+              <option value="2">Two</option>
+              <option value="3">Three</option>
+            </select>
 
-    <div class="col-lg-4 col-12 ">
-      <label for=""class="mb-2">Preparation As :</label>
-      <select class="form-select mb-3" aria-label="Default select example">
-        <option selected disabled>Your Choice</option>
-        <option value="1">One</option>
-        <option value="2">Two</option>
-        <option value="3">Three</option>
-      </select>
-     </div>
+            <div class="mb-2" *ngIf="
+             menucomponentform?.get('category')?.touched &&
+             menucomponentform?.get('category')?.hasError('required')
+             ">
 
-     <div class="col-lg-4 col-12 ">
-      <label for=""class="mb-2">HSN No. :</label>
-      <div class="input-group mb-3">
-        <input type="number" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" placeholder="HSN No.">
-      </div>
-     </div>
-     <div class="col-lg-4 col-12">
-        <div class="toggle">
-          <label for=""class="mb-2">Tax type :</label>
-          <div class="toggle_button">
-            <div class="form-check form-switch">
-              <input
-                class="form-check-input"
-                type="checkbox"
-                role="switch"
-                id="flexSwitchCheckChecked"
-                checked
-              />
-              <label class="form-check-label" for="flexSwitchCheckChecked">
-              </label>
+              <div class="text-danger">
+                <b>Category is Required</b>
+              </div>
+            </div>
+
+          </div>
+          <div class="col-lg-4 col-12 ">
+            <label for="" class="mb-2">Food Type :</label>
+            <select class="form-select" formControlName="foodType" aria-label="Default select example">
+              <option selected disabled>Vegetarian</option>
+              <option value="1">Veg</option>
+              <option value="2">Non-Veg</option>
+            </select>
+
+            <div class="mb-2" *ngIf="
+             menucomponentform?.get('foodType')?.touched &&
+             menucomponentform?.get('foodType')?.hasError('required')
+             ">
+
+              <div class="text-danger">
+                <b>This Field is Required</b>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="col-lg-4 col-12 ">
+            <label for="" class="mb-2">Service Type :</label>
+            <select class="form-select mb-3" formControlName="serviceType" aria-label="Default select example">
+              <option selected disabled>Your Choice</option>
+              <option value="1">One</option>
+              <option value="2">Two</option>
+              <option value="3">Three</option>
+            </select>
+
+            <div class="mb-2" *ngIf="
+             menucomponentform?.get('servicedType')?.touched &&
+             menucomponentform?.get('serviceType')?.hasError('required')
+             ">
+
+              <div class="text-danger">
+                <b>This Field is Required</b>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="col-lg-4 col-12 ">
+            <label for="" class="mb-2">Delivery Type :</label>
+            <select class="form-select mb-3" formControlName="deliveryType" aria-label="Default select example">
+              <option selected disabled>Your Choice</option>
+              <option value="1">One</option>
+              <option value="2">Two</option>
+              <option value="3">Three</option>
+            </select>
+
+            <div class="mb-2" *ngIf="
+             menucomponentform?.get('deliveryType')?.touched &&
+             menucomponentform?.get('deliveryType')?.hasError('required')
+             ">
+
+              <div class="text-danger">
+                <b>This Field is Required</b>
+              </div>
+            </div>
+
+          </div>
+          <div class="col-lg-4 col-12 ">
+            <label for="" class="mb-2">Product Type :</label>
+            <select class="form-select mb-3" formControlName="productType" aria-label="Default select example">
+              <option selected disabled>Your Choice</option>
+              <option value="1">One</option>
+              <option value="2">Two</option>
+              <option value="3">Three</option>
+            </select>
+
+            <div class="mb-2" *ngIf="
+             menucomponentform?.get('productType')?.touched &&
+             menucomponentform?.get('productType')?.hasError('required')
+             ">
+
+              <div class="text-danger">
+                <b>This Field is Required</b>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="col-lg-4 col-12">
+            <label for="" class="mb-2">Item Code :</label>
+            <div class="input-group mb-3">
+              <input type="number" class="form-control" formControlName="itemCode" aria-label="Sizing example input"
+                aria-describedby="inputGroup-sizing-default" placeholder="Item Code">
+
+              <div class="mb-2" *ngIf="
+             menucomponentform?.get('itemCode')?.touched &&
+             menucomponentform?.get('itemCode')?.hasError('required')
+             ">
+
+                <div class="text-danger">
+                  <b>This Field is Required</b>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-12">
+            <label for="" class="mb-2">EAN Code :</label>
+            <div class="input-group mb-3">
+              <input type="number" class="form-control" formControlName="eanCode" aria-label="Sizing example input"
+                aria-describedby="inputGroup-sizing-default" placeholder="EAN Code">
+
+              <div class="mb-2" *ngIf="
+                menucomponentform?.get('eanCode')?.touched &&
+                menucomponentform?.get('eanCode')?.hasError('required')
+                ">
+
+                <div class="text-danger">
+                  <b>This Field is Required</b>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-12">
+            <label for="" class="mb-2">Display Order :</label>
+            <div class="input-group ">
+              <input type="number" class="form-control" formControlName="displayOrder" aria-label="Sizing example input"
+                aria-describedby="inputGroup-sizing-default" placeholder="Display Order">
+
+              <div class="mb-2" *ngIf="
+                menucomponentform?.get('displayOrder')?.touched &&
+                menucomponentform?.get('displayOrder')?.hasError('required')
+                ">
+
+                <div class="text-danger">
+                  <b>This Field is Required</b>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-12 ">
+            <label for="" class="mb-2">Preparation As :</label>
+            <select class="form-select mb-3" formControlName="preparationAs" aria-label="Default select example">
+              <option selected disabled>Your Choice</option>
+              <option value="1">One</option>
+              <option value="2">Two</option>
+              <option value="3">Three</option>
+            </select>
+
+            <div class="mb-2" *ngIf="
+            menucomponentform?.get('preparationAs')?.touched &&
+            menucomponentform?.get('preparationAs')?.hasError('required')
+            ">
+
+              <div class="text-danger">
+                <b>This Field is Required</b>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="col-lg-4 col-12 ">
+            <label for="" class="mb-2">HSN No. :</label>
+            <div class="input-group mb-3">
+              <input type="number" class="form-control" formControlName="hsnNo" aria-label="Sizing example input"
+                aria-describedby="inputGroup-sizing-default" placeholder="HSN No.">
+
+              <div class="mb-2" *ngIf="
+            menucomponentform?.get('hsnNo')?.touched &&
+            menucomponentform?.get('hsnNo')?.hasError('required')
+            ">
+
+                <div class="text-danger">
+                  <b>This Field is Required</b>
+                </div>
+              </div>
+
+            </div>
+          </div>
+          <div class="col-lg-4 col-12">
+            <div class="toggle">
+              <label for="" class="mb-2">Tax type :</label>
+              <div class="toggle_button">
+                <div class="form-check form-switch">
+                  <input class="form-check-input" formControlName="taxType" type="checkbox" role="switch"
+                    id="flexSwitchCheckChecked" checked />
+                  <label class="form-check-label" for="flexSwitchCheckChecked">
+                  </label>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-8 col-12 ">
+            <div>
+              <label for="" class="pb-2">Kitchen Instructions:</label>
+              <textarea class="form-control" formControlName="kitchenInstructions" placeholder="About Kitchens"
+                id="floatingTextarea"></textarea>
+
+              <label for="floatingTextarea"></label>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-12">
+            <div class="toggle">
+              <label for="" class="">Status:</label>
+              <div class="toggle_button">
+                <div class="form-check form-switch">
+                  <input class="form-check-input" formControlName="status" type="checkbox" role="switch"
+                    id="flexSwitchCheckChecked" checked />
+                  <label class="form-check-label" for="flexSwitchCheckChecked">
+                  </label>
+                </div>
+              </div>
             </div>
           </div>
         </div>
-     </div>
+      </app-accordian>
+      <!-- Accordion 2nd -->
+      <app-accordian [accordianItems]="{ heading: 'Inventory', id: 'inventory' }">
+        <div class="row">
 
-     <div class="col-lg-8 col-12 ">
-      <div >
-         <label for="" class="pb-2">Kitchen Instructions:</label>
-          <textarea class="form-control" placeholder="About Kitchens" id="floatingTextarea"></textarea>
-         
-          <label for="floatingTextarea"></label>
-        </div>        
-  </div>
 
-  <div class="col-lg-4 col-12">
-    <div class="toggle">
-      <label for=""class="">Status:</label>
-      <div class="toggle_button">
-        <div class="form-check form-switch">
-          <input
-            class="form-check-input"
-            type="checkbox"
-            role="switch"
-            id="flexSwitchCheckChecked"
-            checked
-          />
-          <label class="form-check-label" for="flexSwitchCheckChecked">
-          </label>
+          <div class="col-lg-4 col-12">
+            <label for="" class="mb-2">Min Qty :</label>
+            <div class="input-group mb-3">
+              <input type="number" class="form-control" formControlName="minQty" aria-label="Sizing example input"
+                aria-describedby="inputGroup-sizing-default" placeholder="Min Qty.">
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-12">
+            <label for="" class="mb-2">Max Qty :</label>
+            <div class="input-group mb-3">
+              <input type="number" class="form-control" formControlName="maxQty" aria-label="Sizing example input"
+                aria-describedby="inputGroup-sizing-default" placeholder="Max Qty.">
+            </div>
+          </div>
         </div>
-      </div>
-    </div>
- </div>
-  </div>
-  </app-accordian>
-    <!-- Accordion 2nd --> 
-    <app-accordian
-    [accordianItems]="{ heading: 'Inventory', id: 'inventory' }">
-   <div class="row">
 
+        <div class="row">
 
-<div class="col-lg-4 col-12"> 
-  <label for=""class="mb-2">Min Qty :</label>
-  <div class="input-group mb-3">
-    <input type="number" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" placeholder="Min Qty.">
-  </div>
-</div>
+          <div class="col-lg-4 col-12">
+            <div class="toggle">
+              <label for="" class="">Inventory Applicable:</label>
+              <div class="toggle_button my-2">
+                <div class="form-check form-switch">
+                  <input class="form-check-input" formControlName="inventoryApplicable" type="checkbox" role="switch"
+                    id="flexSwitchCheckChecked" checked />
+                  <label class="form-check-label" for="flexSwitchCheckChecked">
+                  </label>
+                </div>
+              </div>
+            </div>
 
-<div class="col-lg-4 col-12"> 
-  <label for=""class="mb-2">Max Qty :</label>
-  <div class="input-group mb-3">
-    <input type="number" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" placeholder="Max Qty.">
-  </div>
-</div>
-</div>
+          </div>
 
-<div class="row">
+          <div class="col-lg-4 col-12">
+            <div class="toggle">
+              <label for="" class="">Batch Applicable:</label>
+              <div class="toggle_button my-2">
+                <div class="form-check form-switch">
+                  <input class="form-check-input" formControlName="batchApplicable" type="checkbox" role="switch"
+                    id="flexSwitchCheckChecked" checked />
+                  <label class="form-check-label" for="flexSwitchCheckChecked">
+                  </label>
+                </div>
+              </div>
+            </div>
 
-<div class="col-lg-4 col-12">
-  <div class="toggle">
-    <label for=""class="">Inventory Applicable:</label>
-    <div class="toggle_button my-2">
-      <div class="form-check form-switch">
-        <input
-          class="form-check-input"
-          type="checkbox"
-          role="switch"
-          id="flexSwitchCheckChecked"
-          checked
-        />
-        <label class="form-check-label" for="flexSwitchCheckChecked">
-        </label>
-      </div>
-    </div>
-  </div>
- 
-</div>
+          </div>
 
-<div class="col-lg-4 col-12">
-  <div class="toggle">
-    <label for=""class="">Batch Applicable:</label>
-    <div class="toggle_button my-2">
-      <div class="form-check form-switch">
-        <input
-          class="form-check-input"
-          type="checkbox"
-          role="switch"
-          id="flexSwitchCheckChecked"
-          checked
-        />
-        <label class="form-check-label" for="flexSwitchCheckChecked">
-        </label>
-      </div>
-    </div>
-  </div>
- 
-</div>
+          <div class="col-lg-4 col-12">
+            <div class="toggle">
+              <label for="" class="">Update Change in cost as weighted average:</label>
+              <div class="toggle_button my-2">
+                <div class="form-check form-switch">
+                  <input class="form-check-input" formControlName="updateChangeInCost" type="checkbox" role="switch"
+                    id="flexSwitchCheckChecked" checked />
+                  <label class="form-check-label" for="flexSwitchCheckChecked">
+                  </label>
+                </div>
+              </div>
+            </div>
 
-<div class="col-lg-4 col-12">
-  <div class="toggle">
-    <label for=""class="">Update Change in cost as weighted average:</label>
-    <div class="toggle_button my-2">
-      <div class="form-check form-switch">
-        <input
-          class="form-check-input"
-          type="checkbox"
-          role="switch"
-          id="flexSwitchCheckChecked"
-          checked
-        />
-        <label class="form-check-label" for="flexSwitchCheckChecked">
-        </label>
-      </div>
-    </div>
-  </div>
-  
-</div>
-</div>
-
-   
-</app-accordian>
-<!-- Accordion 3rd -->
-<app-accordian
-[accordianItems]="{ heading: 'Sales', id: 'sales' }">
-<div class="row">
-  <div class="col-lg-4 col-12"> 
-    <label for=""class="mb-2">No. of decimals for fractional Qty :</label>
-    <div class="input-group mb-3">
-      <input type="number" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" placeholder="No. of decimals for fractional Qty">
-    </div>
-  </div>
-
-  <div class="col-lg-4 col-12"> 
-    <label for=""class="mb-2"> Abandent Percentage :</label>
-    <div class="input-group mb-3">
-      <input type="number" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" placeholder="Abandent Percentage">
-    </div>
-  </div>
-
-  <div class="col-lg-4 col-12"> 
-    <label for=""class="mb-2">Discount type :</label>
-    <div class="input-group mb-3">
-      <input type="number" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" placeholder="Percentage">
-    </div>
-  </div>
-</div>
-</app-accordian>
-<!-- Accordion 4th -->
-<app-accordian
-  [accordianItems]="{ heading: 'Pricing', id: 'pricing' }">
- <fieldset>
-  <legend>Half Plate </legend>
- <div class="row">
-  <div class="col-lg-2 col-4">
-    <label for=""class="mb-2"> Cost Price :</label>
-  <div class="input-group mb-3">
-    <input type="number" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" placeholder="₹">
-  </div>
-  </div>
-
-  <div class="col-lg-2 col-4">
-    <label for=""class="mb-2"> Selling Price :</label>
-  <div class="input-group mb-3">
-    <input type="number" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" placeholder="₹">
-  </div>
-  </div>
-  <div class="col-lg-2 col-4">
-    <label for=""class="mb-2"> Discount :</label>
-  <div class="input-group mb-3">
-    <input type="number" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" placeholder="₹">
-  </div>
-  </div>
-  <div class="col-lg-2 col-4">
-    <label for=""class="mb-2"> Packing Amount :</label>
-  <div class="input-group mb-3">
-    <input type="number" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" placeholder="₹">
-  </div>
-  </div>
-  <div class="col-lg-2 col-4">
-    <label for=""class="mb-2"> SKU :</label>
-  <div class="input-group mb-3">
-    <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" placeholder="SKU">
-  </div>
-  </div>
-  <div class="col-lg-2 col-4">
-    <div class="toggle">
-      <label for=""class="mb-2"> Apply For Online :</label>
-      <div class="toggle_button my-2">
-        <div class="form-check form-switch">
-          <input
-            class="form-check-input"
-            type="checkbox"
-            role="switch"
-            id="flexSwitchCheckChecked"
-            checked
-          />
-          <label class="form-check-label" for="flexSwitchCheckChecked">
-          </label>
+          </div>
         </div>
-      </div>
-    </div>
-   
-  </div>
- </div>
- </fieldset>
- <fieldset>
-  <legend>Regular : </legend>
- <div class="row">
-  <div class="col-lg-2 col-4">
-    <label for=""class="mb-2"> Cost Price :</label>
-  <div class="input-group mb-3">
-    <input type="number" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" placeholder="₹">
-  </div>
-  </div>
 
-  <div class="col-lg-2 col-4">
-    <label for=""class="mb-2"> Selling Price :</label>
-  <div class="input-group mb-3">
-    <input type="number" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" placeholder="₹">
-  </div>
-  </div>
-  <div class="col-lg-2 col-4">
-    <label for=""class="mb-2"> Discount :</label>
-  <div class="input-group mb-3">
-    <input type="number" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default"placeholder="₹">
-  </div>
-  </div>
-  <div class="col-lg-2 col-4">
-    <label for=""class="mb-2"> Packing Amount :</label>
-  <div class="input-group mb-3">
-    <input type="number" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default"placeholder="₹">
-  </div>
-  </div>
-  <div class="col-lg-2 col-4">
-    <label for=""class="mb-2"> SKU :</label>
-  <div class="input-group mb-3">
-    <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" placeholder="SKU">
-  </div>
-  </div>
-  <div class="col-lg-2 col-4">
-    <div class="toggle">
-      <label for=""class="mb-2"> Apply For Online :</label>
-      <div class="toggle_button my-2">
-        <div class="form-check form-switch">
-          <input
-            class="form-check-input"
-            type="checkbox"
-            role="switch"
-            id="flexSwitchCheckChecked"
-            checked
-          />
-          <label class="form-check-label" for="flexSwitchCheckChecked">
-          </label>
+
+      </app-accordian>
+      <!-- Accordion 3rd -->
+      <app-accordian [accordianItems]="{ heading: 'Sales', id: 'sales' }">
+        <div class="row">
+          <div class="col-lg-4 col-12">
+            <label for="" class="mb-2">No. of decimals for fractional Qty :</label>
+            <div class="input-group mb-3">
+              <input type="number" class="form-control" formControlName="decimalsForQty"
+                aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default"
+                placeholder="No. of decimals for fractional Qty">
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-12">
+            <label for="" class="mb-2"> Abandent Percentage :</label>
+            <div class="input-group mb-3">
+              <input type="number" class="form-control" formControlName="abandonPercentage"
+                aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default"
+                placeholder="Abandent Percentage">
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-12">
+            <label for="" class="mb-2">Discount type :</label>
+            <div class="input-group mb-3">
+              <input type="number" class="form-control" formControlName="discountType" aria-label="Sizing example input"
+                aria-describedby="inputGroup-sizing-default" placeholder="Percentage">
+            </div>
+          </div>
         </div>
-      </div>
-    </div>
-   
-  </div>
- </div>
- </fieldset>
-</app-accordian>
-<!-- Accordion 5th -->
-<app-accordian
-[accordianItems]="{ heading: 'Item Modifiers', id: 'itemmodifiers' }">
-<div class="row">
-  <div class="col-lg-3 col-12">
-    <div class="form-check">
-      <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-      <label class="form-check-label" for="flexCheckDefault">
-        Extra Toppings
-      </label>
-    </div>
-  </div>
-  <div class="col-lg-3 col-12">
-    <div class="form-check">
-      <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-      <label class="form-check-label" for="flexCheckDefault">
-       Extra Cream
-      </label>
-    </div>
-  </div>
-  <div class="col-lg-3 col-12">
-    <div class="form-check">
-      <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-      <label class="form-check-label" for="flexCheckDefault">
-       Green Salad
-      </label>
-    </div>
+      </app-accordian>
+      <!-- Accordion 4th -->
+      <app-accordian [accordianItems]="{ heading: 'Pricing', id: 'pricing' }">
+        <fieldset>
+          <legend>Half Plate </legend>
+          <div class="row">
+            <div class="col-lg-2 col-4">
+              <label for="" class="mb-2"> Cost Price :</label>
+              <div class="input-group mb-3">
+                <input type="number" class="form-control" formControlName="costPrice" aria-label="Sizing example input"
+                  aria-describedby="inputGroup-sizing-default" placeholder="₹">
+              </div>
+            </div>
+
+            <div class="col-lg-2 col-4">
+              <label for="" class="mb-2"> Selling Price :</label>
+              <div class="input-group mb-3">
+                <input type="number" class="form-control" formControlName="sellingPrice"
+                  aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" placeholder="₹">
+              </div>
+            </div>
+            <div class="col-lg-2 col-4">
+              <label for="" class="mb-2"> Discount :</label>
+              <div class="input-group mb-3">
+                <input type="number" class="form-control" formControlName="discount" aria-label="Sizing example input"
+                  aria-describedby="inputGroup-sizing-default" placeholder="₹">
+              </div>
+            </div>
+            <div class="col-lg-2 col-4">
+              <label for="" class="mb-2"> Packing Amount :</label>
+              <div class="input-group mb-3">
+                <input type="number" class="form-control" formControlName="packingAmount"
+                  aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" placeholder="₹">
+              </div>
+            </div>
+            <div class="col-lg-2 col-4">
+              <label for="" class="mb-2"> SKU :</label>
+              <div class="input-group mb-3">
+                <input type="text" class="form-control" formControlName="sku" aria-label="Sizing example input"
+                  aria-describedby="inputGroup-sizing-default" placeholder="SKU">
+              </div>
+            </div>
+            <div class="col-lg-2 col-4">
+              <div class="toggle">
+                <label for="" class="mb-2"> Apply For Online :</label>
+                <div class="toggle_button my-2">
+                  <div class="form-check form-switch">
+                    <input class="form-check-input" formControlName="applyForOnline" type="checkbox" role="switch"
+                      id="flexSwitchCheckChecked" checked />
+                    <label class="form-check-label" for="flexSwitchCheckChecked">
+                    </label>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </fieldset>
+        <fieldset>
+          <legend>Regular : </legend>
+          <div class="row">
+            <div class="col-lg-2 col-4">
+              <label for="" class="mb-2"> Cost Price :</label>
+              <div class="input-group mb-3">
+                <input type="number" class="form-control" formControlName="costPrice" aria-label="Sizing example input"
+                  aria-describedby="inputGroup-sizing-default" placeholder="₹">
+              </div>
+            </div>
+
+            <div class="col-lg-2 col-4">
+              <label for="" class="mb-2"> Selling Price :</label>
+              <div class="input-group mb-3">
+                <input type="number" class="form-control" formControlName="sellingPrice"
+                  aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" placeholder="₹">
+              </div>
+            </div>
+            <div class="col-lg-2 col-4">
+              <label for="" class="mb-2"> Discount :</label>
+              <div class="input-group mb-3">
+                <input type="number" class="form-control" formControlName="discount" aria-label="Sizing example input"
+                  aria-describedby="inputGroup-sizing-default" placeholder="₹">
+              </div>
+            </div>
+            <div class="col-lg-2 col-4">
+              <label for="" class="mb-2"> Packing Amount :</label>
+              <div class="input-group mb-3">
+                <input type="number" class="form-control" formControlName="packingAmount"
+                  aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" placeholder="₹">
+              </div>
+            </div>
+            <div class="col-lg-2 col-4">
+              <label for="" class="mb-2"> SKU :</label>
+              <div class="input-group mb-3">
+                <input type="text" class="form-control" formControlName="sku" aria-label="Sizing example input"
+                  aria-describedby="inputGroup-sizing-default" placeholder="SKU">
+              </div>
+            </div>
+            <div class="col-lg-2 col-4">
+              <div class="toggle">
+                <label for="" class="mb-2"> Apply For Online :</label>
+                <div class="toggle_button my-2">
+                  <div class="form-check form-switch">
+                    <input class="form-check-input" formControlName="applyForOnline" type="checkbox" role="switch"
+                      id="flexSwitchCheckChecked" checked />
+                    <label class="form-check-label" for="flexSwitchCheckChecked">
+                    </label>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </fieldset>
+      </app-accordian>
+      <!-- Accordion 5th -->
+      <app-accordian [accordianItems]="{ heading: 'Item Modifiers', id: 'itemmodifiers' }">
+        <div class="row">
+          <div class="col-lg-3 col-12">
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" formControlName="extraToppings" value=""
+                id="flexCheckDefault">
+              <label class="form-check-label" for="flexCheckDefault">
+                Extra Toppings
+              </label>
+            </div>
+          </div>
+          <div class="col-lg-3 col-12">
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" formControlName="extraCream" value=""
+                id="flexCheckDefault">
+              <label class="form-check-label" for="flexCheckDefault">
+                Extra Cream
+              </label>
+            </div>
+          </div>
+          <div class="col-lg-3 col-12">
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" formControlName="greenSalad" value=""
+                id="flexCheckDefault">
+              <label class="form-check-label" for="flexCheckDefault">
+                Green Salad
+              </label>
+            </div>
+          </div>
+          <button class="btn btn-secondary w-50 " type="button" (click)="onSave()"> Save</button>
+          <app-buttons [buttonText]="{ cancel: 'Cancel', save: 'Save Product' }" />
+        </div>
+      </app-accordian>
+
+    </form>
+
   </div>
 
-  <app-buttons [buttonText]="{ cancel: 'Cancel', save: 'Save Product' }" />
-</div>
-</app-accordian>
 
-  </div>
 </section>
