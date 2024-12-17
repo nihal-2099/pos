@@ -92,6 +92,25 @@ sideMenuItems:Array<any> =[
     ]
   },
 
+  {
+    main:"Sales",
+    icon:"send",
+    submenu:[
+      {
+        icons:"command",
+        name:"Sale",
+        link:"/layout/sales/sale"
+      },
+      {
+        icons:"crosshair",
+        name:"Receipt",
+        link:"/layout/sales/receipts"
+      }
+    ]
+  },
+
+  
+
 
 ]
 

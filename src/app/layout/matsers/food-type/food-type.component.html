@@ -13,7 +13,7 @@
         id: 'fillfoodtype'
       }"
     >
-      <div class="row">
+      <div class="row" [formGroup]="foodform">
         <div class="col-12 col-lg-4">
           <div class="mb-3">
             <label for="food" class="form-label">Food Type :</label>
@@ -22,7 +22,16 @@
               class="form-control"
               id="food"
               placeholder="Food Type"
+              formControlName="foodtype"
             />
+            <div class="text-danger">
+              @if(foodform.controls['foodtype'].touched)
+              {
+              @if(foodform.controls['foodtype'].errors?.['required']){
+                <span>This field is required</span>
+              }
+              }
+            </div>
           </div>
         </div>
     
@@ -42,7 +51,12 @@
         </div>
       </div>
   
-      <app-buttons [buttonText]="{ cancel: 'Cancel', save: 'Save Food Type' }" />
+      <div class="mt-5">
+        <app-buttons
+          [buttonText]="{ cancel: 'Cancel', save: 'Save Designation' }" 
+          (buttonClick)="validateTable($event)"
+        />
+      </div>
     </app-accordian>
   
     <app-table [columns]="columns" [tableData]="tableData" (actionType)="tableAction($event)">

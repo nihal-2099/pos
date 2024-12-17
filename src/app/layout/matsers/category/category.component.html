@@ -6,14 +6,14 @@
         }"
     >
     </app-pageheaders>
-  
+
     <app-accordian
       [accordianItems]="{
         heading: 'Add New Category Details',
         id: 'fillcategorydetails'
       }"
     >
-      <div class="row">
+      <div class="row" [formGroup]="categorycomponent">
         <div class="col-12 col-lg-4">
           <div class="mb-3">
             <label for="category" class="form-label">Category Name :</label>
@@ -22,11 +22,19 @@
               class="form-control"
               id="category"
               placeholder="Category Name"
+              formControlName="categoryname"
             />
+            <div class="text-danger">
+              @if (categorycomponent.controls['categoryname'].touched)
+              {
+                @if (categorycomponent.controls['categoryname'].errors?.['required'])
+                { 
+                  <span>This is required</span>
+                }
+              }
+            </div>
           </div>
         </div>
-    
-  
         <div class="col-12 col-lg-4">
           <div class="toggle my-1">
             <label for="locatonname" class="form-label">Status :</label>
@@ -41,8 +49,14 @@
           </div>
         </div>
       </div>
-  
-      <app-buttons [buttonText]="{ cancel: 'Cancel', save: 'Save Category' }" />
+      <!-- <app-buttons [buttonText]="{ cancel: 'Cancel', save: 'Save Category' }" /> -->
+      <div class="mt-5">
+        <app-buttons
+          [buttonText]="{ cancel: 'Cancel', save: 'Save Designation' }" 
+          (buttonClick)="validateTable($event)"
+        />
+      </div>
+
     </app-accordian>
   
     <app-table [columns]="columns" [tableData]="tableData" (actionType)="tableAction($event)">

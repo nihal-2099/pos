@@ -12,7 +12,8 @@ const routes: Routes = [
       {  path:'dashboard',  loadChildren:() => import('./dashboard/dashboard.module').then(m => m.DashboardModule)},
       {  path:'catalogue',  loadChildren:() => import('./catalogue/catalogue.module').then(m => m.CatalogueModule)},
       {  path:'inventory',  loadChildren:() => import('./inventory/inventory.module').then(m => m.InventoryModule)},
-      {  path:'master',  loadChildren:() => import('./matsers/matsers.module').then(m => m.MatsersModule)}
+      {  path:'master',  loadChildren:() => import('./matsers/matsers.module').then(m => m.MatsersModule)},
+      {  path:'sales',  loadChildren:() => import('./sales/sales.module').then(m => m.SalesModule)}
 
       // { path: 'home', component: HomeComponent },
       // {path:'aboutus', component:AboutUsComponent},

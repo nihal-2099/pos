@@ -13,7 +13,7 @@
       id: 'filllocationdetails'
     }"
   >
-    <div class="row">
+    <div class="row" [formGroup]="locationform">
       <div class="col-12 col-lg-4">
         <div class="mb-3">
           <label for="locatonname" class="form-label">Location Name :</label>
@@ -22,40 +22,75 @@
             class="form-control"
             id="locatonname"
             placeholder="Location Name"
+            formControlName="locationname"
           />
+          <div class="text-danger">
+            @if(locationform.controls['locationname'].touched)
+            {
+            @if(locationform.controls['locationname'].errors?.['required']){
+              <span>This field is required</span>
+            }
+            }
+          </div>
         </div>
       </div>
       <div class="col-12 col-lg-4">
         <div class="mb-3">
           <label for="state" class="form-label">State :</label>
-          <select class="form-select" aria-label="State">
+          <select class="form-select" aria-label="State" formControlName="state" >
             <option selected>State</option>
             <option value="1">One</option>
             <option value="2">Two</option>
             <option value="3">Three</option>
           </select>
+          <div class="text-danger">
+            @if(locationform.controls['state'].touched)
+            {
+            @if(locationform.controls['state'].errors?.['required']){
+              <span>Please choose state</span>
+            }
+            }
+          </div>
         </div>
       </div>
       <div class="col-12 col-lg-4">
         <div class="mb-3">
           <label for="district" class="form-label">District :</label>
-          <select class="form-select" aria-label="district">
+          <select class="form-select" aria-label="district" formControlName="district">
             <option selected>District</option>
             <option value="1">One</option>
             <option value="2">Two</option>
             <option value="3">Three</option>
           </select>
+          <div class="text-danger">
+            @if(locationform.controls['district'].touched)
+            {
+              @if(locationform.controls['district'].errors?.['required'])
+              {
+                <span>Please choose district</span>
+              }
+            }
+          </div>
         </div>
       </div>
       <div class="col-12 col-lg-4">
         <div class="mb-3">
           <label for="block" class="form-label">Block :</label>
-          <select class="form-select" aria-label="block">
+          <select class="form-select" aria-label="block" formControlName="block">
             <option selected>Block</option>
             <option value="1">One</option>
             <option value="2">Two</option>
             <option value="3">Three</option>
+            
           </select>
+          <div class="text-danger">
+            @if(locationform.controls['block'].touched)
+            {
+            @if(locationform.controls['block'].errors?.['required']){
+              <span>Please Choose block</span>
+            }
+            }
+          </div>
         </div>
       </div>
 
@@ -74,7 +109,14 @@
       </div>
     </div>
 
-    <app-buttons [buttonText]="{ cancel: 'Cancel', save: 'Save Location' }" />
+    <!-- <app-buttons [buttonText]="{ cancel: 'Cancel', save: 'Save Location' }" /> -->
+
+    <div class="mt-5">
+      <app-buttons
+        [buttonText]="{ cancel: 'Cancel', save: 'Save Designation' }" 
+        (buttonClick)="validateTable($event)"
+      />
+    </div>
   </app-accordian>
 
   <app-table [columns]="columns" [tableData]="tableData" (actionType)="tableAction($event)">
