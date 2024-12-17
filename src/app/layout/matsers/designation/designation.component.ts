@@ -4,7 +4,6 @@ import { FormBuilder, FormGroup, FormArray, Validators } from '@angular/forms';
 @Component({
   selector: 'app-designation',
   standalone: false,
-
   templateUrl: './designation.component.html',
   styleUrl: './designation.component.scss',
 })

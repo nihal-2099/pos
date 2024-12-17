@@ -1,13 +1,18 @@
 import { Component } from '@angular/core';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-food-type',
   standalone: false,
-  
   templateUrl: './food-type.component.html',
   styleUrl: './food-type.component.scss'
 })
 export class FoodTypeComponent {
+  foodform: FormGroup = new FormGroup(
+    {
+      foodtype: new FormControl('',[Validators.required])
+    }
+  )
 // Dynamic column definitions
 columns = [
   { key: 'id', label: 'ID' },
@@ -25,5 +30,20 @@ tableData = [
 
 tableAction(event:any){
   console.log(event)
+}
+
+validateTable(type:string){
+  if(type == 'save'){
+    console.log(this.foodform.controls)
+
+    if(this.foodform.invalid){
+      alert("Enter Required Fields!!")
+      this.foodform.markAllAsTouched()
+    }
+    else{
+      alert("done")
+    }
+
+  }
 }
 }

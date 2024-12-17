@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-locations',
@@ -8,6 +9,16 @@ import { Component } from '@angular/core';
   styleUrl: './locations.component.scss'
 })
 export class LocationsComponent {
+
+  locationform : FormGroup = new FormGroup
+  (
+    {
+      locationname: new FormControl ('',[Validators.required]),
+      state : new FormControl('',[Validators.required]),
+      district : new FormControl('',Validators.required),
+      block : new FormControl ('',[Validators.required])
+    }
+  )
 
 // Dynamic column definitions
 columns = [
@@ -31,6 +42,19 @@ tableData = [
 tableAction(event:any){
   console.log(event)
 }
+validateTable(type:string){
+  if(type == 'save'){
+    console.log(this.locationform.controls)
 
+    if(this.locationform.invalid){
+      alert("Enter Required Fields!!")
+      this.locationform.markAllAsTouched()
+    }
+    else{
+      alert("done")
+    }
+
+  }
+}
 
 }

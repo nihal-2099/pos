@@ -25,7 +25,6 @@
               placeholder="Designation"
               formControlName="designation"
             />
-
             <div
             class="validation-container"
             *ngIf="
@@ -122,8 +121,6 @@
                 </select>
 
                 @if (item.get('right')?.invalid && (item.get('right')?.dirty || item.get('right')?.touched)) {
-                
-                
                   @if (item.get('right')?.hasError('required')) {
                   <div class="validation-container">
                     <div class="text-danger">

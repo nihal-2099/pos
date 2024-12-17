@@ -1,14 +1,17 @@
 import { Component } from '@angular/core';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-category',
   standalone: false,
-  
   templateUrl: './category.component.html',
   styleUrl: './category.component.scss'
 })
 export class CategoryComponent {
-
+categorycomponent : FormGroup = new FormGroup
+({
+  categoryname : new FormControl('',[Validators.required])
+})
 // Dynamic column definitions
 columns = [
   { key: 'id', label: 'ID' },
@@ -28,4 +31,21 @@ tableData = [
 tableAction(event:any){
   console.log(event)
 }
+
+validateTable(type:string){
+  if(type == 'save'){
+    console.log(this.categorycomponent.controls)
+
+    if(this.categorycomponent.invalid){
+      alert("Enter Required Fields!!")
+      this.categorycomponent.markAllAsTouched()
+    }
+    else{
+      alert("done")
+    }
+
+  }
 }
+}
+
+
