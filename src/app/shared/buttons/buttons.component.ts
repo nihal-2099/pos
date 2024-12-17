@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'app-buttons',
@@ -10,5 +10,11 @@ import { Component, Input } from '@angular/core';
 export class ButtonsComponent {
   @Input() buttonText:any
   @Input() background:string =''
+  @Output() buttonClick: any = new EventEmitter()
+
+
+  buttonUpdate(item:any){
+    this.buttonClick.emit(item)
+  }
 
 }
