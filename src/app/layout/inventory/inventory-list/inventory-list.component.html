@@ -1,0 +1,20 @@
+<section>
+    <app-pageheaders [topHeadingContent]="{
+        heading: 'Inventory',
+        subitems: 'Inventory List',
+      }">
+      <div class="top_header">
+        <div class="top_header_button">
+          <button type="button" class="btn btn-secondary d-flex justify-content-between align-items-center"
+            routerLink="/layout/inventory/invtlist/add-new">
+            <i-feather name="arrow-left" class="icons custom-icons"></i-feather>
+            <span>Add New Inventory</span>
+          </button>
+        </div>
+      </div>
+    </app-pageheaders>
+
+    <app-table [columns]="columns" [tableData]="tableData" (actionType)="tableAction($event)" />
+
+
+    </section>
