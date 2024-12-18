@@ -14,6 +14,8 @@ export class LocationsComponent {
   (
     {
       locationname: new FormControl ('',[Validators.required]),
+      latitude: new FormControl ('',[Validators.required]),
+      longitude: new FormControl ('',[Validators.required]),
       state : new FormControl('',[Validators.required]),
       district : new FormControl('',Validators.required),
       block : new FormControl ('',[Validators.required])

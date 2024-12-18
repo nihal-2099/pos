@@ -16,7 +16,7 @@
     <div class="row" [formGroup]="locationform">
       <div class="col-12 col-lg-4">
         <div class="mb-3">
-          <label for="locatonname" class="form-label">Location Name :</label>
+          <label for="locationname" class="form-label">Location Name :</label>
           <input
             type="text"
             class="form-control"
@@ -28,7 +28,47 @@
             @if(locationform.controls['locationname'].touched)
             {
             @if(locationform.controls['locationname'].errors?.['required']){
-              <span>This field is required</span>
+              <b>Location Name is required</b>
+            }
+            }
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-lg-4">
+        <div class="mb-3">
+          <label for="locationname" class="form-label">Latitude :</label>
+          <input
+            type="number"
+            class="form-control"
+            id="locatonname"
+            placeholder="Latitude"
+            formControlName="latitude"
+          />
+          <div class="text-danger">
+            @if(locationform.controls['latitude'].touched)
+            {
+            @if(locationform.controls['latitude'].errors?.['required']){
+              <b>Enter here Latitude</b>
+            }
+            }
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-lg-4">
+        <div class="mb-3">
+          <label for="locationname" class="form-label">Longitude :</label>
+          <input
+            type="number"
+            class="form-control"
+            id="locatonname"
+            placeholder="Longitude"
+            formControlName="longitude"
+          />
+          <div class="text-danger">
+            @if(locationform.controls['longitude'].touched)
+            {
+            @if(locationform.controls['longitude'].errors?.['required']){
+              <b>Enter here Longitude</b>
             }
             }
           </div>
@@ -47,7 +87,7 @@
             @if(locationform.controls['state'].touched)
             {
             @if(locationform.controls['state'].errors?.['required']){
-              <span>Please choose state</span>
+              <b>Please choose state</b>
             }
             }
           </div>
@@ -67,7 +107,7 @@
             {
               @if(locationform.controls['district'].errors?.['required'])
               {
-                <span>Please choose district</span>
+                <b>Please choose district</b>
               }
             }
           </div>
@@ -87,7 +127,7 @@
             @if(locationform.controls['block'].touched)
             {
             @if(locationform.controls['block'].errors?.['required']){
-              <span>Please Choose block</span>
+              <b>Please Choose block</b>
             }
             }
           </div>

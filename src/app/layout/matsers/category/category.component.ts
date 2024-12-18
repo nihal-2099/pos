@@ -30,7 +30,7 @@ tableData = [
 
 tableAction(event:any){
   console.log(event)
-}
+}  
 
 validateTable(type:string){
   if(type == 'save'){
