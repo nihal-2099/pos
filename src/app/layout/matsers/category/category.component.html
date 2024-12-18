@@ -24,15 +24,17 @@
               placeholder="Category Name"
               formControlName="categoryname"
             />
-            <div class="text-danger">
+            
               @if (categorycomponent.controls['categoryname'].touched)
               {
+                <div class="text-danger mt-1">
                 @if (categorycomponent.controls['categoryname'].errors?.['required'])
                 { 
                  <b>Category name is required</b> 
                 }
+              </div>
               }
-            </div>
+            
           </div>
         </div>
         <div class="col-12 col-lg-4">
@@ -48,7 +50,7 @@
               />
               @if(categorycomponent.controls['status'].touched)
               {
-                <div class="text-danger">
+                <div class="text-danger mt-1">
               @if(categorycomponent.controls['status'].errors?.['required']){
                 <b> please Select Status </b>
                 

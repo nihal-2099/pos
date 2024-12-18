@@ -24,14 +24,16 @@
             placeholder="Location Name"
             formControlName="locationname"
           />
-          <div class="text-danger">
+          
             @if(locationform.controls['locationname'].touched)
             {
+              <div class="text-danger mt-1">
             @if(locationform.controls['locationname'].errors?.['required']){
               <b>Location Name is required</b>
             }
-            }
           </div>
+            }
+          
         </div>
       </div>
       <div class="col-12 col-lg-4">
@@ -44,14 +46,16 @@
             placeholder="Latitude"
             formControlName="latitude"
           />
-          <div class="text-danger">
+          
             @if(locationform.controls['latitude'].touched)
             {
+              <div class="text-danger mt-1">
             @if(locationform.controls['latitude'].errors?.['required']){
-              <b>Enter here Latitude</b>
-            }
+              <b> Latitude is required</b>
             }
           </div>
+            }
+         
         </div>
       </div>
       <div class="col-12 col-lg-4">
@@ -64,14 +68,16 @@
             placeholder="Longitude"
             formControlName="longitude"
           />
-          <div class="text-danger">
+          
             @if(locationform.controls['longitude'].touched)
             {
+              <div class="text-danger mt-1">
             @if(locationform.controls['longitude'].errors?.['required']){
-              <b>Enter here Longitude</b>
-            }
+              <b> Longitude is required</b>
             }
           </div>
+            }
+          
         </div>
       </div>
       <div class="col-12 col-lg-4">
@@ -83,14 +89,15 @@
             <option value="2">Two</option>
             <option value="3">Three</option>
           </select>
-          <div class="text-danger">
+          
             @if(locationform.controls['state'].touched)
             {
+              <div class="text-danger mt-1">
             @if(locationform.controls['state'].errors?.['required']){
               <b>Please choose state</b>
+            } </div>
             }
-            }
-          </div>
+         
         </div>
       </div>
       <div class="col-12 col-lg-4">
@@ -102,15 +109,17 @@
             <option value="2">Two</option>
             <option value="3">Three</option>
           </select>
-          <div class="text-danger">
+          
             @if(locationform.controls['district'].touched)
             {
+              <div class="text-danger mt-1">
               @if(locationform.controls['district'].errors?.['required'])
               {
                 <b>Please choose district</b>
               }
+            </div>
             }
-          </div>
+          
         </div>
       </div>
       <div class="col-12 col-lg-4">
@@ -123,14 +132,17 @@
             <option value="3">Three</option>
             
           </select>
-          <div class="text-danger">
+          
             @if(locationform.controls['block'].touched)
             {
+              <div class="text-danger mt-1">
             @if(locationform.controls['block'].errors?.['required']){
               <b>Please Choose block</b>
+            } 
+           </div>
+
             }
-            }
-          </div>
+        
         </div>
       </div>
 

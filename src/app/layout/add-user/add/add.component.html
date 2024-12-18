@@ -40,7 +40,7 @@
            
               @if(userform.controls['name'].touched)
               {
-                <div class="text-danger">
+                <div class="text-danger mt-1">
               @if(userform.controls['name'].errors?.['required']){
                 <b> Name is required</b>
               }
@@ -53,7 +53,7 @@
         <div class="col-12 col-lg-4">
           <div class="my-2">
             <label for="exampleFormControlInput1" class="form-label"
-              ><p class="mb-0">Mobile No. :</p></label
+              >Mobile No. :</label
             >
             <input
               type="number"
@@ -77,7 +77,7 @@
         <div class="col-12 col-lg-4">
           <div class="my-2">
             <label for="exampleFormControlInput1" class="form-label"
-              ><p class="mb-0">Email address :</p></label
+              >Email address :</label
             >
             <input
               type="email"
@@ -99,8 +99,9 @@
         </div>
         <!-- Selective -->
         <div class="col-lg-4 col-12 my-2">
-          <div class="selective">
-            <p class="mb-2">Your Designation :</p>
+          <div class="selective ">
+            <label for="" class="mb-2">Your Designation :</label>
+            <!-- <p class="mb-2">Your Designation :</p> -->
             <select class="form-select" aria-label="Default select example" formControlName="designation">
               <option selected disabled>Select One</option>
               <option value="1">One</option>
@@ -121,8 +122,9 @@
         </div>
         <!-- Multiple select option -->
         <div class="col-lg-4 col-12 my-2">
-          <div class="selective">
-            <p class="mb-2">Location :</p>
+          <div class="selective ">
+            <!-- <p class="mb-2">Location :</p> -->
+             <label for="" class="mb-2">Location :</label>
             <select class="form-select" aria-label="Default select example" formControlName="location">
               <option selected disabled>Select One</option>
               <option value="1">Branch 1</option>

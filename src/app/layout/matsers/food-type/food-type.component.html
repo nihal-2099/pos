@@ -24,14 +24,15 @@
               placeholder="Food Type"
               formControlName="foodtype"
             />
-            <div class="text-danger">
+            
               @if(foodform.controls['foodtype'].touched)
               {
+                <div class="text-danger mt-1">
               @if(foodform.controls['foodtype'].errors?.['required']){
-                <b>This field is required</b>
+                <b>Food type is required</b>
+              }</div>
               }
-              }
-            </div>
+            
           </div>
         </div>
     
