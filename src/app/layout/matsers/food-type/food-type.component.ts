@@ -10,7 +10,8 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 export class FoodTypeComponent {
   foodform: FormGroup = new FormGroup(
     {
-      foodtype: new FormControl('',[Validators.required])
+      foodtype: new FormControl('',[Validators.required]),
+      status : new FormControl(true,[Validators.required])
     }
   )
 // Dynamic column definitions
