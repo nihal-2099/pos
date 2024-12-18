@@ -143,7 +143,17 @@
               type="checkbox"
               id="flexSwitchCheckChecked"
               checked
+              formControlName="status"
             />
+            @if(locationform.controls['status'].touched)
+            {
+              <div class="text-danger">
+            @if(locationform.controls['status'].errors?.['required']){
+              <b> please Select Status </b>
+              
+            }
+          </div>
+            }
           </div>
         </div>
       </div>

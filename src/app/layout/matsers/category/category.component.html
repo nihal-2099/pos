@@ -44,7 +44,17 @@
                 type="checkbox"
                 id="flexSwitchCheckChecked"
                 checked
+                formControlName="status"
               />
+              @if(categorycomponent.controls['status'].touched)
+              {
+                <div class="text-danger">
+              @if(categorycomponent.controls['status'].errors?.['required']){
+                <b> please Select Status </b>
+                
+              }
+            </div>
+              }
             </div>
           </div>
         </div>

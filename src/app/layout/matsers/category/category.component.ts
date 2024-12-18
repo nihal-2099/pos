@@ -10,7 +10,8 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 export class CategoryComponent {
 categorycomponent : FormGroup = new FormGroup
 ({
-  categoryname : new FormControl('',[Validators.required])
+  categoryname : new FormControl('',[Validators.required]),
+  status: new FormControl(true,[Validators.required])
 })
 // Dynamic column definitions
 columns = [

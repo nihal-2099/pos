@@ -18,7 +18,8 @@ export class LocationsComponent {
       longitude: new FormControl ('',[Validators.required]),
       state : new FormControl('',[Validators.required]),
       district : new FormControl('',Validators.required),
-      block : new FormControl ('',[Validators.required])
+      block : new FormControl ('',[Validators.required]),
+      status : new FormControl (true,[Validators.required])
     }
   )
 
