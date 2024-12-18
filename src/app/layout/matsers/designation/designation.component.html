@@ -53,15 +53,11 @@
                 checked
                 formControlName="status"
               />
-
-        
             </div>
             <div
             class="validation-container"
             *ngIf="
-              designationform?.controls?.['status']?.touched &&
-              designationform?.controls?.['status']?.errors?.['required']
-            "
+              designationform?.controls?.['status']?.touched"
           >
             <div
               *ngIf="designationform?.controls?.['status']?.errors?.['required']"
