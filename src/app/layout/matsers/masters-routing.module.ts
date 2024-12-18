@@ -5,6 +5,7 @@ import { LocationsComponent } from './locations/locations.component';
 import { CategoryComponent } from './category/category.component';
 import { FoodTypeComponent } from './food-type/food-type.component';
 import { DesignationComponent } from './designation/designation.component';
+import { InventListComponent } from './invent-list/invent-list.component';
 
 
 
@@ -16,7 +17,8 @@ const routes: Routes = [
       { path: 'location', component: LocationsComponent },
       {path:'category', component:CategoryComponent},
       {path:'foodtype', component:FoodTypeComponent},
-      {path:'designation', component:DesignationComponent}
+      {path:'designation', component:DesignationComponent},
+      {path:'inventlist', component:InventListComponent}
     
      
     ]

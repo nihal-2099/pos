@@ -7,6 +7,7 @@ import { MatsersComponent } from './matsers.component';
 import { CategoryComponent } from './category/category.component';
 import { FoodTypeComponent } from './food-type/food-type.component';
 import { DesignationComponent } from './designation/designation.component';
+import { InventListComponent } from './invent-list/invent-list.component';
 
 
 
@@ -16,7 +17,8 @@ import { DesignationComponent } from './designation/designation.component';
     MatsersComponent,
     CategoryComponent,
     FoodTypeComponent,
-    DesignationComponent
+    DesignationComponent,
+    InventListComponent
   ],
   imports: [
     CommonModule,

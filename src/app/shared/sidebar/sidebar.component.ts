@@ -44,6 +44,11 @@ sideMenuItems:Array<any> =[
         name:"Designation",
         link:"/layout/master/designation"
       },
+      {
+        icons:"bookmark",
+        name:"Inventory Type",
+        link:"/layout/master/inventlist"
+      },
       
     ]
   },
@@ -85,10 +90,18 @@ sideMenuItems:Array<any> =[
     icon:"Pocket",
     submenu:[
       {
-        icons:"plus",
-        name:"Add Raw Material",
-        link:"/layout/inventory/addraw"
-      }
+        icons:"list",
+        name:"Inventory List",
+        link:"/layout/inventory/invtlist"
+      },
+      {
+        icons:"list",
+        name:"Panned Inventory",
+        link:"/layout/inventory/plan"
+      },
+  
+
+      
     ]
   },
 

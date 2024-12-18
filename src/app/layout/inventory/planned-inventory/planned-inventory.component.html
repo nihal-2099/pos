@@ -1,0 +1,11 @@
+<section>
+    <app-pageheaders [topHeadingContent]="{
+        heading: 'Inventory',
+        subitems: 'Planned Inventory List',
+      }">
+     
+    </app-pageheaders>
+
+    <app-table [columns]="columns" [tableData]="tableData" (actionType)="tableAction($event)" />
+
+    </section>
