@@ -42,7 +42,7 @@
           </div>
           <div class="col-lg-4 col-12 ">
             <label for="" class="mb-2">Category :</label>
-            <select class="form-select" formControlName="category" aria-label="Default select example">
+            <select class="form-select mb-3" formControlName="category" aria-label="Default select example">
               <option selected disabled>Your Choice</option>
               <option value="1">One</option>
               <option value="2">Two</option>
@@ -62,7 +62,7 @@
           </div>
           <div class="col-lg-4 col-12 ">
             <label for="" class="mb-2">Food Type :</label>
-            <select class="form-select" formControlName="foodType" aria-label="Default select example">
+            <select class="form-select mb-3" formControlName="foodType" aria-label="Default select example">
               <option selected disabled>Vegetarian</option>
               <option value="1">Veg</option>
               <option value="2">Non-Veg</option>
@@ -74,7 +74,7 @@
              ">
 
               <div class="text-danger">
-                <b>This Field is Required</b>
+                <b>Food Type is Required</b>
               </div>
             </div>
 
@@ -90,12 +90,12 @@
             </select>
 
             <div class="mb-2" *ngIf="
-             menucomponentform?.get('servicedType')?.touched &&
+             menucomponentform?.get('serviceType')?.touched &&
              menucomponentform?.get('serviceType')?.hasError('required')
              ">
 
               <div class="text-danger">
-                <b>This Field is Required</b>
+                <b>Service Type is Required</b>
               </div>
             </div>
 
@@ -116,7 +116,7 @@
              ">
 
               <div class="text-danger">
-                <b>This Field is Required</b>
+                <b>Dilivery Type is Required</b>
               </div>
             </div>
 
@@ -136,7 +136,7 @@
              ">
 
               <div class="text-danger">
-                <b>This Field is Required</b>
+                <b>Product Type is Required</b>
               </div>
             </div>
 
@@ -145,61 +145,64 @@
           <div class="col-lg-4 col-12">
             <label for="" class="mb-2">Item Code :</label>
             <div class="input-group mb-3">
-              <input type="number" class="form-control" formControlName="itemCode" aria-label="Sizing example input"
+              <input type="number" class="form-control " formControlName="itemCode" aria-label="Sizing example input"
                 aria-describedby="inputGroup-sizing-default" placeholder="Item Code">
+            </div>
 
-              <div class="mb-2" *ngIf="
+            <div class="mb-2" *ngIf="
              menucomponentform?.get('itemCode')?.touched &&
              menucomponentform?.get('itemCode')?.hasError('required')
              ">
 
                 <div class="text-danger">
-                  <b>This Field is Required</b>
+                  <b>Item Code is Required</b>
                 </div>
               </div>
 
-            </div>
           </div>
 
           <div class="col-lg-4 col-12">
+            <div >
             <label for="" class="mb-2">EAN Code :</label>
-            <div class="input-group mb-3">
-              <input type="number" class="form-control" formControlName="eanCode" aria-label="Sizing example input"
+            <div class="input-group ">
+              <input type="number" class="form-control  mb-3"  formControlName="eanCode" aria-label="Sizing example input"
                 aria-describedby="inputGroup-sizing-default" placeholder="EAN Code">
-
-              <div class="mb-2" *ngIf="
+            </div>
+            <div class="mb-2" *ngIf="
                 menucomponentform?.get('eanCode')?.touched &&
                 menucomponentform?.get('eanCode')?.hasError('required')
                 ">
 
                 <div class="text-danger">
-                  <b>This Field is Required</b>
+                  <b>EAN Code is Required</b>
                 </div>
               </div>
-
             </div>
           </div>
 
           <div class="col-lg-4 col-12">
+            <div>
             <label for="" class="mb-2">Display Order :</label>
             <div class="input-group ">
-              <input type="number" class="form-control" formControlName="displayOrder" aria-label="Sizing example input"
+              <input type="number" class="form-control mb-3" formControlName="displayOrder" aria-label="Sizing example input"
                 aria-describedby="inputGroup-sizing-default" placeholder="Display Order">
-
-              <div class="mb-2" *ngIf="
-                menucomponentform?.get('displayOrder')?.touched &&
-                menucomponentform?.get('displayOrder')?.hasError('required')
-                ">
-
-                <div class="text-danger">
-                  <b>This Field is Required</b>
-                </div>
-              </div>
-
             </div>
           </div>
 
+            <div class="mb-2" *ngIf="
+            menucomponentform?.get('displayOrder')?.touched &&
+            menucomponentform?.get('displayOrder')?.hasError('required')
+            ">
+
+            <div class="text-danger">
+              <b>Display Order is Required</b>
+            </div>
+          </div>
+
+          </div>
+
           <div class="col-lg-4 col-12 ">
+            <div >
             <label for="" class="mb-2">Preparation As :</label>
             <select class="form-select mb-3" formControlName="preparationAs" aria-label="Default select example">
               <option selected disabled>Your Choice</option>
@@ -207,6 +210,7 @@
               <option value="2">Two</option>
               <option value="3">Three</option>
             </select>
+          </div>
 
             <div class="mb-2" *ngIf="
             menucomponentform?.get('preparationAs')?.touched &&
@@ -214,7 +218,7 @@
             ">
 
               <div class="text-danger">
-                <b>This Field is Required</b>
+                <b>Preparation As is Required</b>
               </div>
             </div>
 
@@ -225,18 +229,18 @@
             <div class="input-group mb-3">
               <input type="number" class="form-control" formControlName="hsnNo" aria-label="Sizing example input"
                 aria-describedby="inputGroup-sizing-default" placeholder="HSN No.">
+            </div>
 
-              <div class="mb-2" *ngIf="
-            menucomponentform?.get('hsnNo')?.touched &&
-            menucomponentform?.get('hsnNo')?.hasError('required')
-            ">
+            <div class="mb-2" *ngIf="
+               menucomponentform?.get('hsnNo')?.touched &&
+               menucomponentform?.get('hsnNo')?.hasError('required')
+               ">
 
                 <div class="text-danger">
-                  <b>This Field is Required</b>
+                  <b>HSN No. is Required</b>
                 </div>
               </div>
 
-            </div>
           </div>
           <div class="col-lg-4 col-12">
             <div class="toggle">
@@ -260,6 +264,15 @@
 
               <label for="floatingTextarea"></label>
             </div>
+            <div class="mb-2" *ngIf="
+               menucomponentform?.get('kitchenInstructions')?.touched &&
+               menucomponentform?.get('kitchenInstructions')?.hasError('required')
+               ">
+
+                <div class="text-danger">
+                  <b>Kitchen Instructions is Required</b>
+                </div>
+              </div>
           </div>
 
           <div class="col-lg-4 col-12">
@@ -274,20 +287,43 @@
                 </div>
               </div>
             </div>
+
+            <div class="mb-2" *ngIf="
+            menucomponentform?.get('status')?.touched &&
+            menucomponentform?.get('status')?.hasError('required')
+            ">
+
+             <div class="text-danger">
+               <b>Status is Required</b>
+             </div>
+           </div>
+
           </div>
         </div>
       </app-accordian>
+
+
       <!-- Accordion 2nd -->
       <app-accordian [accordianItems]="{ heading: 'Inventory', id: 'inventory' }">
         <div class="row">
 
-
           <div class="col-lg-4 col-12">
             <label for="" class="mb-2">Min Qty :</label>
             <div class="input-group mb-3">
-              <input type="number" class="form-control" formControlName="minQty" aria-label="Sizing example input"
+              <input type="number" class="form-control " formControlName="minQty" aria-label="Sizing example input"
                 aria-describedby="inputGroup-sizing-default" placeholder="Min Qty.">
             </div>
+
+            <div class="mb-2" *ngIf="
+            menucomponentform?.get('minQty')?.touched &&
+            menucomponentform?.get('minQty')?.hasError('required')
+            ">
+
+             <div class="text-danger">
+               <b>Min Qty is Required</b>
+             </div>
+           </div>
+
           </div>
 
           <div class="col-lg-4 col-12">
@@ -296,6 +332,17 @@
               <input type="number" class="form-control" formControlName="maxQty" aria-label="Sizing example input"
                 aria-describedby="inputGroup-sizing-default" placeholder="Max Qty.">
             </div>
+
+            <div class="mb-2" *ngIf="
+            menucomponentform?.get('maxQty')?.touched &&
+            menucomponentform?.get('maxQty')?.hasError('required')
+            ">
+
+             <div class="text-danger">
+               <b>Max Qty is Required</b>
+             </div>
+           </div>
+
           </div>
         </div>
 
@@ -359,6 +406,17 @@
                 aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default"
                 placeholder="No. of decimals for fractional Qty">
             </div>
+
+            <div class="mb-2" *ngIf="
+            menucomponentform?.get('decimalsForQty')?.touched &&
+            menucomponentform?.get('decimalsForQty')?.hasError('required')
+            ">
+
+             <div class="text-danger">
+               <b>No. of decimals for fractional Qty is Required</b>
+             </div>
+           </div>
+
           </div>
 
           <div class="col-lg-4 col-12">
@@ -368,14 +426,36 @@
                 aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default"
                 placeholder="Abandent Percentage">
             </div>
+
+            <div class="mb-2" *ngIf="
+            menucomponentform?.get('abandonPercentage')?.touched &&
+            menucomponentform?.get('abandonPercentage')?.hasError('required')
+            ">
+
+             <div class="text-danger">
+               <b>Abandent Percentage is Required</b>
+             </div>
+           </div>
+
           </div>
 
           <div class="col-lg-4 col-12">
-            <label for="" class="mb-2">Discount type :</label>
+            <label for="" class="mb-2">Discount Type :</label>
             <div class="input-group mb-3">
               <input type="number" class="form-control" formControlName="discountType" aria-label="Sizing example input"
                 aria-describedby="inputGroup-sizing-default" placeholder="Percentage">
             </div>
+
+            <div class="mb-2" *ngIf="
+            menucomponentform?.get('discountType')?.touched &&
+            menucomponentform?.get('discountType')?.hasError('required')
+            ">
+
+             <div class="text-danger">
+               <b>Discount Type is Required</b>
+             </div>
+           </div>
+
           </div>
         </div>
       </app-accordian>
@@ -390,6 +470,17 @@
                 <input type="number" class="form-control" formControlName="costPrice" aria-label="Sizing example input"
                   aria-describedby="inputGroup-sizing-default" placeholder="₹">
               </div>
+
+              <div class="mb-2" *ngIf="
+              menucomponentform?.get('costPrice')?.touched &&
+              menucomponentform?.get('costPrice')?.hasError('required')
+              ">
+  
+               <div class="text-danger">
+                 <b>Half Plate is Required</b>
+               </div>
+             </div>
+
             </div>
 
             <div class="col-lg-2 col-4">
@@ -398,6 +489,17 @@
                 <input type="number" class="form-control" formControlName="sellingPrice"
                   aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" placeholder="₹">
               </div>
+
+              <div class="mb-2" *ngIf="
+              menucomponentform?.get('sellingPrice')?.touched &&
+              menucomponentform?.get('sellingPrice')?.hasError('required')
+              ">
+  
+               <div class="text-danger">
+                 <b>Selling Price is Required</b>
+               </div>
+             </div>
+
             </div>
             <div class="col-lg-2 col-4">
               <label for="" class="mb-2"> Discount :</label>
@@ -405,6 +507,17 @@
                 <input type="number" class="form-control" formControlName="discount" aria-label="Sizing example input"
                   aria-describedby="inputGroup-sizing-default" placeholder="₹">
               </div>
+
+              <div class="mb-2" *ngIf="
+              menucomponentform?.get('discount')?.touched &&
+              menucomponentform?.get('discount')?.hasError('required')
+              ">
+  
+               <div class="text-danger">
+                 <b>Discount is Required</b>
+               </div>
+             </div>
+             
             </div>
             <div class="col-lg-2 col-4">
               <label for="" class="mb-2"> Packing Amount :</label>
@@ -412,6 +525,17 @@
                 <input type="number" class="form-control" formControlName="packingAmount"
                   aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" placeholder="₹">
               </div>
+
+              <div class="mb-2" *ngIf="
+              menucomponentform?.get('packingAmount')?.touched &&
+              menucomponentform?.get('packingAmount')?.hasError('required')
+              ">
+  
+               <div class="text-danger">
+                 <b>Packing Amount is Required</b>
+               </div>
+             </div>
+
             </div>
             <div class="col-lg-2 col-4">
               <label for="" class="mb-2"> SKU :</label>
@@ -419,6 +543,17 @@
                 <input type="text" class="form-control" formControlName="sku" aria-label="Sizing example input"
                   aria-describedby="inputGroup-sizing-default" placeholder="SKU">
               </div>
+
+              <div class="mb-2" *ngIf="
+              menucomponentform?.get('sku')?.touched &&
+              menucomponentform?.get('sku')?.hasError('required')
+              ">
+  
+               <div class="text-danger">
+                 <b>SKU is Required</b>
+               </div>
+             </div>
+
             </div>
             <div class="col-lg-2 col-4">
               <div class="toggle">
@@ -430,6 +565,17 @@
                     <label class="form-check-label" for="flexSwitchCheckChecked">
                     </label>
                   </div>
+                  
+                  <div class="mb-2" *ngIf="
+                  menucomponentform?.get('applyForOnline')?.touched &&
+                  menucomponentform?.get('applyForOnline')?.hasError('required')
+                  ">
+      
+                   <div class="text-danger">
+                     <b>Apply For Online is Required</b>
+                   </div>
+                 </div>
+
                 </div>
               </div>
 
@@ -442,49 +588,115 @@
             <div class="col-lg-2 col-4">
               <label for="" class="mb-2"> Cost Price :</label>
               <div class="input-group mb-3">
-                <input type="number" class="form-control" formControlName="costPrice" aria-label="Sizing example input"
+                <input type="number" class="form-control" formControlName="regularcostPrice" aria-label="Sizing example input"
                   aria-describedby="inputGroup-sizing-default" placeholder="₹">
               </div>
+
+              <div class="mb-2" *ngIf="
+              menucomponentform?.get('regularcostPrice')?.touched &&
+              menucomponentform?.get('regularcostPrice')?.hasError('required')
+              ">
+  
+               <div class="text-danger">
+                 <b>Cost Price is Required</b>
+               </div>
+             </div>
+
             </div>
 
             <div class="col-lg-2 col-4">
               <label for="" class="mb-2"> Selling Price :</label>
               <div class="input-group mb-3">
-                <input type="number" class="form-control" formControlName="sellingPrice"
+                <input type="number" class="form-control" formControlName="regularsellingPrice"
                   aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" placeholder="₹">
               </div>
+
+              <div class="mb-2" *ngIf="
+              menucomponentform?.get('regularsellingPrice')?.touched &&
+              menucomponentform?.get('regularsellingPrice')?.hasError('required')
+              ">
+  
+               <div class="text-danger">
+                 <b>Selling Price is Required</b>
+               </div>
+             </div>
+
             </div>
             <div class="col-lg-2 col-4">
               <label for="" class="mb-2"> Discount :</label>
               <div class="input-group mb-3">
-                <input type="number" class="form-control" formControlName="discount" aria-label="Sizing example input"
+                <input type="number" class="form-control" formControlName="regulardiscount" aria-label="Sizing example input"
                   aria-describedby="inputGroup-sizing-default" placeholder="₹">
               </div>
+
+              <div class="mb-2" *ngIf="
+              menucomponentform?.get('regulardiscount')?.touched &&
+              menucomponentform?.get('regulardiscount')?.hasError('required')
+              ">
+  
+               <div class="text-danger">
+                 <b>Discount is Required</b>
+               </div>
+             </div>
+
             </div>
             <div class="col-lg-2 col-4">
               <label for="" class="mb-2"> Packing Amount :</label>
               <div class="input-group mb-3">
-                <input type="number" class="form-control" formControlName="packingAmount"
+                <input type="number" class="form-control" formControlName="regularpackingAmount"
                   aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" placeholder="₹">
               </div>
+
+              <div class="mb-2" *ngIf="
+              menucomponentform?.get('regularpackingAmount')?.touched &&
+              menucomponentform?.get('regularpackingAmount')?.hasError('required')
+              ">
+  
+               <div class="text-danger">
+                 <b>Packing Amount is Required</b>
+               </div>
+             </div>
+
             </div>
             <div class="col-lg-2 col-4">
               <label for="" class="mb-2"> SKU :</label>
               <div class="input-group mb-3">
-                <input type="text" class="form-control" formControlName="sku" aria-label="Sizing example input"
+                <input type="text" class="form-control" formControlName="regularsku" aria-label="Sizing example input"
                   aria-describedby="inputGroup-sizing-default" placeholder="SKU">
               </div>
+
+              <div class="mb-2" *ngIf="
+              menucomponentform?.get('regularsku')?.touched &&
+              menucomponentform?.get('regularsku')?.hasError('required')
+              ">
+  
+               <div class="text-danger">
+                 <b>SKU is Required</b>
+               </div>
+             </div>
+
             </div>
             <div class="col-lg-2 col-4">
               <div class="toggle">
                 <label for="" class="mb-2"> Apply For Online :</label>
                 <div class="toggle_button my-2">
                   <div class="form-check form-switch">
-                    <input class="form-check-input" formControlName="applyForOnline" type="checkbox" role="switch"
+                    <input class="form-check-input" formControlName="regularapplyForOnline" type="checkbox" role="switch"
                       id="flexSwitchCheckChecked" checked />
                     <label class="form-check-label" for="flexSwitchCheckChecked">
                     </label>
                   </div>
+
+                  <div class="mb-2" *ngIf="
+                  menucomponentform?.get('regularapplyForOnline')?.touched &&
+                  menucomponentform?.get('regularapplyForOnline')?.hasError('required')
+                  ">
+      
+                   <div class="text-danger">
+                     <b>Apply For Online is Required</b>
+                   </div>
+                 </div>
+
                 </div>
               </div>
 
@@ -503,6 +715,17 @@
                 Extra Toppings
               </label>
             </div>
+
+            <div class="mb-2" *ngIf="
+            menucomponentform?.get('extraToppings')?.touched &&
+            menucomponentform?.get('extraToppings')?.hasError('required')
+            ">
+
+             <div class="text-danger">
+               <b>Extra Toppings is Required</b>
+             </div>
+           </div>
+
           </div>
           <div class="col-lg-3 col-12">
             <div class="form-check">
@@ -512,6 +735,17 @@
                 Extra Cream
               </label>
             </div>
+
+            <div class="mb-2" *ngIf="
+            menucomponentform?.get('extraCream')?.touched &&
+            menucomponentform?.get('extraCream')?.hasError('required')
+            ">
+
+             <div class="text-danger">
+               <b>Extra Cream is Required</b>
+             </div>
+           </div>
+
           </div>
           <div class="col-lg-3 col-12">
             <div class="form-check">
@@ -521,9 +755,21 @@
                 Green Salad
               </label>
             </div>
+
+            <div class="mb-2" *ngIf="
+            menucomponentform?.get('greenSalad')?.touched &&
+            menucomponentform?.get('greenSalad')?.hasError('required')
+            ">
+
+             <div class="text-danger">
+               <b>Green Salad is Required</b>
+             </div>
+           </div>
+
           </div>
-          <button class="btn btn-secondary w-50 " type="button" (click)="onSave()"> Save</button>
-          <app-buttons [buttonText]="{ cancel: 'Cancel', save: 'Save Product' }" />
+          <!-- <button class="btn btn-secondary w-50 " type="button" (click)="onSave()"> Save</button> -->
+           <!-- <button type="submit"> submit</button> -->
+          <app-buttons [buttonText]="{ cancel: 'Cancel', save: 'Save Product' }"  (buttonClick)="submitForm($event)"/>
         </div>
       </app-accordian>
 

@@ -14,6 +14,188 @@
         </div>
     </app-pageheaders>
 
+    <form class="" [formGroup]="addnewinventory">
+
+        <app-accordian [accordianItems]="{ heading: 'Add New Inventory Details', id: 'addNewInventoryDetails' }">
+            <div class="add_section">
+                <div class="body_section">
+                    <!-- fill here accordion -->
+                    <div class="row">
+
+                        <!-- Multiple select option -->
+                        <div class="col-lg-4 col-12 my-2">
+                            <div class="selective">
+                                <p class="mb-2">Branch :</p>
+                                <select class="form-select" aria-label="Default select example"
+                                    formControlName="branch">
+                                    <option selected disabled>Branch</option>
+                                    <option value="1">Branch 1</option>
+                                    <option value="2">Branch 2</option>
+                                    <option value="3">Branch 3</option>
+                                </select>
+
+                                <div class="mb-2" *ngIf="
+                                addnewinventory?.get('branch')?.touched &&
+                                addnewinventory?.get('branch')?.hasError('required') ">
+
+                                    <div class="text-danger">
+                                        <b>Branch is Required</b>
+                                    </div>
+                                </div>
 
 
+
+                                <!-- <mat-form-field appearance="outline" class="w-100 bootstrap-select">
+                    <mat-label>Toppings</mat-label>
+                    <mat-select [formControl]="toppings" multiple>
+                      @for (topping of toppingList; track topping) {
+                        <mat-option [value]="topping">{{topping}}</mat-option>
+                      }
+                    </mat-select>
+                  </mat-form-field> -->
+                            </div>
+                        </div>
+
+                        <!-- Multiple select option -->
+                        <div class="col-lg-4 col-12 my-2">
+                            <div class="selective">
+                                <p class="mb-2">Inventory Type :</p>
+                                <select class="form-select" aria-label="Default select example" formControlName="inventory" >
+                                    <option selected disabled>Inventory Type</option>
+                                    <option value="1">Branch 1</option>
+                                    <option value="2">Branch 2</option>
+                                    <option value="3">Branch 3</option>
+                                </select>
+
+                                <div class="mb-2" *ngIf="
+                                addnewinventory?.get('inventory')?.touched &&
+                                addnewinventory?.get('inventory')?.hasError('required') ">
+
+                                    <div class="text-danger">
+                                        <b>Inventory Type is Required</b>
+                                    </div>
+                                </div>
+
+
+                                
+
+                                <!-- <mat-form-field appearance="outline" class="w-100 bootstrap-select">
+                    <mat-label>Toppings</mat-label>
+                    <mat-select [formControl]="toppings" multiple>
+                      @for (topping of toppingList; track topping) {
+                        <mat-option [value]="topping">{{topping}}</mat-option>
+                      }
+                    </mat-select>
+                  </mat-form-field> -->
+                            </div>
+                        </div>
+
+                        <div class="col-12 col-lg-4">
+                            <div class="my-2">
+                                <div>
+                                <p class="mb-2">Manufacturing Date :</p>
+                                <input type="date" class="form-control" id="exampleFormControlInput1" formControlName="mfg"
+                                    placeholder="Expiry Date" />
+                                </div>
+
+                                <div class="mb-2" *ngIf="
+                                addnewinventory?.get('mfg')?.touched &&
+                                addnewinventory?.get('mfg')?.hasError('required') ">
+
+                                    <div class="text-danger">
+                                        <b>Manufacturing Date is Required</b>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div class="col-12 col-lg-4">
+                            <div class="my-2">
+                                <div>
+                                <p class="mb-2">Expiry Date :</p>
+                                <input type="date" class="form-control" id="exampleFormControlInput1" formControlName="exp"
+                                    placeholder="Expiry Date" />
+                                </div>
+
+                                <div class="mb-2" *ngIf="
+                                addnewinventory?.get('exp')?.touched &&
+                                addnewinventory?.get('exp')?.hasError('required') ">
+
+                                    <div class="text-danger">
+                                        <b>Expiry Date is Required</b>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <!-- Selective -->
+                        <div class="col-lg-4 col-12 my-2">
+                            <div class="selective">
+                                <p class="mb-2">Unit :</p>
+                                <select class="form-select" aria-label="Default select example" formControlName="unit">
+                                    <option selected disabled>Select One</option>
+                                    <option value="1">Kg</option>
+                                    <option value="2">Liter</option>
+                                    <option value="3">Count </option>
+                                </select>
+
+                                <div class="mb-2" *ngIf="
+                                addnewinventory?.get('unit')?.touched &&
+                                addnewinventory?.get('unit')?.hasError('required') ">
+
+                                    <div class="text-danger">
+                                        <b>Unit is Required</b>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="col-12 col-lg-4">
+                            <div class="my-2">
+                                <div>
+                                <p class="mb-2">Quantity :</p>
+                                <input type="number" class="form-control" id="exampleFormControlInput1" formControlName="quantity"
+                                    placeholder="Quantity" />
+                                </div>
+
+                                <div class="mb-2" *ngIf="
+                                addnewinventory?.get('quantity')?.touched &&
+                                addnewinventory?.get('quantity')?.hasError('required') ">
+
+                                    <div class="text-danger">
+                                        <b>Quantity is Required</b>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+                        <!-- Toggle button -->
+                        <div class="col-lg-4 col-12 my-2">
+                            <div class="toggle">
+                                <p class="mb-2">Status :</p>
+                                <div class="toggle_button">
+                                    <div class="form-check form-switch">
+                                        <input class="form-check-input" type="checkbox" role="switch" formControlName="status"
+                                            id="flexSwitchCheckChecked" checked />
+                                        <label class="form-check-label" for="flexSwitchCheckChecked">
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+            <!-- last button -->
+            <app-buttons [buttonText]="{ cancel: 'Reset', save: 'Add Inventory' }" (buttonClick)="submitForm($event)" />
+        </app-accordian>
+
+    </form>
 </section>
