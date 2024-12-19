@@ -26,6 +26,11 @@ sideMenuItems:Array<any> =[
     submenu:[
       {
         icons:"map",
+        name:"Company",
+        link:"/layout/master/company"
+      },
+      {
+        icons:"map",
         name:"Location",
         link:"/layout/master/location"
       },
@@ -49,6 +54,7 @@ sideMenuItems:Array<any> =[
         name:"Inventory Type",
         link:"/layout/master/inventlist"
       },
+     
       
     ]
   },

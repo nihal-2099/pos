@@ -8,6 +8,7 @@ import { CategoryComponent } from './category/category.component';
 import { FoodTypeComponent } from './food-type/food-type.component';
 import { DesignationComponent } from './designation/designation.component';
 import { InventListComponent } from './invent-list/invent-list.component';
+import { CompanyComponent } from './company/company.component';
 
 
 
@@ -18,7 +19,8 @@ import { InventListComponent } from './invent-list/invent-list.component';
     CategoryComponent,
     FoodTypeComponent,
     DesignationComponent,
-    InventListComponent
+    InventListComponent,
+    CompanyComponent,
   ],
   imports: [
     CommonModule,
