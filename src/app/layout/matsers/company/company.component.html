@@ -1,1 +1,195 @@
-<p>company works!</p>
+<section>
+    <app-pageheaders
+    [topHeadingContent]="{
+        heading: 'Company',
+        subitems: 'Create/Company List',
+      }"
+  >
+  </app-pageheaders>
+
+  <app-accordian
+      [accordianItems]="{
+        heading: 'Add Company Details',
+        id: 'fillcompanydetails'
+      }"
+    >
+    <div class="row" [formGroup]="companyform">
+        <div class="col-12 col-lg-4">
+          <div class="mb-3">
+            <label for="Company Name" class="form-label">Company Name :</label>
+            <input
+              type="text"
+              class="form-control"
+              id="company"
+              placeholder="Company Name"
+              formControlName="companyname"
+            />
+            
+              @if(companyform.controls['companyname'].touched)
+              {
+                <div class="text-danger mt-1">
+              @if(companyform.controls['companyname'].errors?.['required']){
+                <b>Company Name is required</b>
+              }
+            </div>
+              }
+            
+          </div>
+        </div>
+       
+        <div class="col-12 col-lg-4">
+            <div class="mb-3">
+              <label for="emaiaddress" class="form-label">Email Address :</label>
+              <input
+                type="email"
+                class="form-control"
+                id="emailaddress"
+                placeholder="Email Address"
+                formControlName="emailaddress"
+              />
+              
+                @if(companyform.controls['emailaddress'].touched)
+                {
+                  <div class="text-danger mt-1">
+                @if(companyform.controls['emailaddress'].errors?.['required']){
+                  <b>Email Address is required</b>
+                }
+              </div>
+                }
+              
+            </div>
+          </div>
+       
+          
+          <div class="col-12 col-lg-4">
+            <div class="mb-3">
+              <label for="contact" class="form-label">Contact No. :</label>
+              <input
+                type="number"
+                class="form-control"
+                id="contact"
+                placeholder="Contact number"
+                formControlName="mobile"
+                 [maxlength]="10"
+              />
+              
+                @if(companyform.controls['mobile'].touched)
+                {
+                  <div class="text-danger mt-1">
+                @if(companyform.controls['mobile'].errors?.['required']){
+                  <b>Contact No. is required</b>
+                }
+              
+                  @if(companyform.controls['mobile'].errors?.['max'] || companyform.controls['mobile'].errors?.['min']){
+                    <b>Invalid Number</b>
+                  }
+              </div>
+                }
+              
+            </div>
+          </div>
+         
+
+
+        <div class="col-12 col-lg-4">
+          <div class="mb-3">
+            <label for="state" class="form-label">State :</label>
+            <select class="form-select" aria-label="State" formControlName="state" >
+              <option selected>State</option>
+              <option value="1">One</option>
+              <option value="2">Two</option>
+              <option value="3">Three</option>
+            </select>
+            
+              @if(companyform.controls['state'].touched)
+              {
+                <div class="text-danger mt-1">
+              @if(companyform.controls['state'].errors?.['required']){
+                <b>Please choose state</b>
+              } </div>
+              }
+           
+          </div>
+        </div>
+        <div class="col-12 col-lg-4">
+          <div class="mb-3">
+            <label for="district" class="form-label">District :</label>
+            <select class="form-select" aria-label="district" formControlName="district">
+              <option selected>District</option>
+              <option value="1">One</option>
+              <option value="2">Two</option>
+              <option value="3">Three</option>
+            </select>
+            
+              @if(companyform.controls['district'].touched)
+              {
+                <div class="text-danger mt-1">
+                @if(companyform.controls['district'].errors?.['required'])
+                {
+                  <b>Please choose district</b>
+                }
+              </div>
+              }
+            
+          </div>
+        </div>
+        <div class="col-12 col-lg-4">
+          <div class="mb-3">
+            <label for="block" class="form-label">Block :</label>
+            <select class="form-select" aria-label="block" formControlName="block">
+              <option selected>Block</option>
+              <option value="1">One</option>
+              <option value="2">Two</option>
+              <option value="3">Three</option>
+              
+            </select>
+            
+              @if(companyform.controls['block'].touched)
+              {
+                <div class="text-danger mt-1">
+              @if(companyform.controls['block'].errors?.['required']){
+                <b>Please Choose block</b>
+              } 
+             </div>
+  
+              }
+          
+          </div>
+        </div>
+  
+        <div class="col-12 col-lg-4">
+          <div class="toggle my-1">
+            <label for="locatonname" class="form-label">Status :</label>
+            <div class="form-check form-switch">
+              <input
+                class="form-check-input"
+                type="checkbox"
+                id="flexSwitchCheckChecked"
+                checked
+                formControlName="status"
+              />
+              @if(companyform.controls['status'].touched)
+              {
+                <div class="text-danger">
+              @if(companyform.controls['status'].errors?.['required']){
+                <b> please Select Status </b>
+                
+              }
+            </div>
+              }
+            </div>
+          </div>
+        </div>
+      </div>
+  
+      <div class="mt-5">
+        <app-buttons
+          [buttonText]="{ cancel: 'Cancel', save: 'Save Company' }" 
+          (buttonClick)="validateTable($event)"
+        />
+      </div>
+  
+    </app-accordian>
+    <app-table [columns]="columns" [tableData]="tableData" (actionType)="tableAction($event)"> </app-table>
+
+</section>

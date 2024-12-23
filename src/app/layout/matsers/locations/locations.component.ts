@@ -19,7 +19,9 @@ export class LocationsComponent {
       state : new FormControl('',[Validators.required]),
       district : new FormControl('',Validators.required),
       block : new FormControl ('',[Validators.required]),
-      status : new FormControl (true,[Validators.required])
+      status : new FormControl (true,[Validators.required]),
+      emailaddress : new FormControl('',[Validators.required]),
+      mobile : new FormControl('',[Validators.required])
     }
   )
 
