@@ -1,26 +1,34 @@
 @import '../../../assets/scss/custom.scss';
-
+@include themify($themes) {
 .add_section{
+
     height: max-content;
+
     p{
-      color: $text_color;
+      color:  themed("text");
     }
   
   
   .body_section{
+    .accordion-item{
+        background:  themed("topheader") !important;
+        color: themed("text");
+    }
+
       .fill_icons{
           color: $orangered_color;
          width: 3rem;
       }
       h5{ 
           font-size: 16px;
-          color: $add_component_buttoncolor;
+          color: themed("accordianheader");
           font-weight: 500;
        }
   
     
       .accordion-button{
           background: none;
+          border-bottom: 1px solid themed("labelcolor");
       }
       input::placeholder{
          color: $placeholder_color;
@@ -44,4 +52,4 @@
    
   }
   }
-  
+}

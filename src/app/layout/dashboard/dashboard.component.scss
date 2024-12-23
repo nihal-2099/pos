@@ -1,0 +1,17 @@
+@import '../../../assets/scss/custom.scss';
+
+@include themify($themes) {
+
+.card{
+    background:  themed("background");
+    h5{
+        color:  themed("text");
+    }
+}
+
+
+
+
+
+
+}

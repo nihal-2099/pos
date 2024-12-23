@@ -1,5 +1,7 @@
 @import "../../../assets/scss/custom.scss";
 
+@include themify($themes) {
+
 .product-wrapper {
   .product-right {
     a {
@@ -63,10 +65,12 @@
 
   .mat-mdc-header-cell {
     border-bottom-color: $table-button-border !important;
+    color: themed("tabletext");
   }
 
   .mat-mdc-cell {
     border-bottom-color: $table-button-border !important;
+    color: themed("tabletext");
   }
 
   .mdc-data-table__cell,
@@ -75,8 +79,24 @@
   }
 
   .mat-mdc-paginator-container {
-    background-color: $white_color;
+    background-color:themed("background");
+    color: themed("tabletext");
   }
+
+  .mat-mdc-select-trigger{
+    color: themed("tabletext");
+  }
+  .mat-mdc-icon-button{
+    color: themed("tabletext") !important;
+    filter: themed("invert");
+    
+  }
+  .mat-icon{
+    color: themed("tabletext") !important;
+    filter: themed("invert");
+  }
+}
+
 }
 
 // .dropdown-menu {

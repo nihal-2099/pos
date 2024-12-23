@@ -1,55 +1,84 @@
-.navbar {
-   
-    border-bottom: 1px solid #dbe0e6;
-    height: 66px;
-    margin: 0;
-    padding: 0;
-    background-color: white !important;
-    left: 258px;
-    right: 0;
-
-    .nav-wrapper {
-        padding: 0 !important;
-    }
-
-    .logo-section {
-        border-right: 1px solid #dbe0e6;
-        display: flex;
-        align-items: center;
-        padding: 0 15px;
-    }
-
-    .nav-search-bar{
-        width: 300px;
-    }
+@import '../../../assets/scss/custom.scss';
 
 
-    ul {
-        li {
-            img {
-                width: 20px;
-                height: auto !important;
-                border-radius: 50%;
+
+
+@include themify($themes) {
+    .navbar {
+
+        border-bottom: 1px solid themed("background");
+        height: 66px !important;
+        margin: 0;
+        padding: 0;
+        left: 258px;
+        right: 0;
+        background-color: themed("topheader") !important;
+        label{
+            color: themed("text")
+
+        }
+    
+
+        .form-check-input{
+            cursor: pointer;
+            &:checked {
+                background-color: black;
+                border-color: themed("text");
+            }
+          }
+
+        .nav-wrapper {
+            padding: 0 !important;
+        }
+    
+        .logo-section {
+            border-right: 1px solid #dbe0e6;
+            display: flex;
+            align-items: center;
+            padding: 0 15px;
+        }
+    
+        .nav-search-bar{
+            width: 300px;
+        }
+    
+    
+        ul {
+            li {
+                img {
+                    width: 20px;
+                    height: auto !important;
+                    border-radius: 50%;
+                }
+            }
+    
+        }
+    
+        .icon-button{
+            border: none;
+            height: 100%;
+            filter: themed("invert");
+        }
+        .cust-profile{
+            line-height: 1;
+            background-color: themed("background") !important;
+            color: themed("text");
+            border-color: themed("background") ;
+            img{
+                width: 34px !important;
+                height: 34px !important;
+                border-radius: 5px !important;
+                outline: 2px solid themed("background") ;
+          
             }
         }
-
     }
 
-    .icon-button{
-        border: none;
-        background-color: #f3f6f9;
-        height: 100%;
+    .dropdown-toggle{
+        color: themed("text");
+        border-color: themed("text") ;
     }
-    .cust-profile{
-        line-height: 1;
 
-        img{
-            width: 34px !important;
-            height: 34px !important;
-            border-radius: 5px !important;
-            outline: 2px solid #f3f6f9;
-        }
-    }
 }
 
 
@@ -63,3 +92,10 @@
    
     }
   }
+
+
+
+
+ 
+  
+  
