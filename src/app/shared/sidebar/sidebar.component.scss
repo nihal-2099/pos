@@ -5,17 +5,19 @@
     width: 258px;
     z-index: 999;
     background-color: themed("background");
-    border-right: 1px solid #ddd;
+    border-right: 1px solid themed("border") !important;
     height: 100vh;
     overflow-y: auto;
     overflow-x: hidden;
     /* Enable vertical scrolling */
     position: fixed;
     /* Keeps the sidebar fixed */
-
-
+.navbar-brand
+{
+   
+}
     .logo-section {
-        border-bottom: 1px solid  themed("background");
+        border-bottom:1px solid themed("border") !important;
         display: flex;
         align-items: center;
         padding: 0 15px;

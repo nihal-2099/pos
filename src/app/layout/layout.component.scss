@@ -19,17 +19,18 @@ main{
     .form-control,
     .form-select{
         background-color: themed("topheader") !important;
-        color:  themed("labelcolor");
+        color:  themed("tabletext");
+        border-color: themed("labelcolor");
     }
     p{
-        color:  themed("labelcolor") !important;
+        color:  themed("tabletext") !important;
     }
 
     input::placeholder,
     select::placeholder {
-        color:  themed("text"); /* Change to your desired color */
+        color:  themed("tabletext") !important; /* Change to your desired color */
       }
       
-
+ 
 
 }

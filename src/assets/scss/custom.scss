@@ -13,6 +13,7 @@ $cancel_button_color:#67748e;
 $cancel_button_color_hover:#424B52;
 $submit_button_color_hover:#FF8510;
 $black:black;
+$dark_text:#97a2d2;
 
 $dark_theme_color:#031727;
 
@@ -22,7 +23,8 @@ $table-button-border: #e8ebed;
 $green_color: green;
 
 $light_shadow_color:rgba(240,228,240,1);
-$dark_shadow_color: rgba(0,0,0,0.75);
+$dark_shadow_color: rgb(68 67 67 / 73%);
+$sale_card_back:#80808094;
 
 
 
@@ -47,18 +49,23 @@ $themes: (
     shadow:$light_shadow_color,
     labelcolor:$table-button-border,
     tabletext:$black,
-    accordianheader:$add_component_buttoncolor
+    accordianheader:$add_component_buttoncolor,
+    border:$card_border,
+    cardbackground:$white_color
 
   ),
   dark-theme: (
     topheader:$dark_theme_color,
     background:$dark_theme_color,
-    text:$white_color,
+    text:$dark_text,
     invert:invert(1),
     shadow:$dark_shadow_color,
-    labelcolor:$white_color,
-    tabletext:$white_color,
-    accordianheader:$white_color
+    labelcolor:$dark_text,
+    tabletext:$dark_text,
+    accordianheader:$dark_text,
+    border:$dark_text,
+    cardbackground:$dark_theme_color
+
 
   ),
 );

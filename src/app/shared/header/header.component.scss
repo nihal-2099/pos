@@ -6,13 +6,13 @@
 @include themify($themes) {
     .navbar {
 
-        border-bottom: 1px solid themed("background");
+        border-bottom: 1px solid themed("border");
         height: 66px !important;
         margin: 0;
         padding: 0;
         left: 258px;
         right: 0;
-        background-color: themed("topheader") !important;
+        background-color: themed("background") !important;
         label{
             color: themed("text")
 

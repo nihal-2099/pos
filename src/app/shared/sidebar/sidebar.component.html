@@ -2,7 +2,7 @@
   <div class="logo-section ps-4 bg-white d-flex justify-content-center align-items-center" style=" height: 66px" [ngStyle]="{ 'width' : !isSlide ? '258px' :'110px' }">
     <a class="navbar-brand">
       <img
-        [src]="isSlide ? 'assets/images/logo-small.png' :'assets/images/logo.png'"
+        [src]="isSlide ? 'assets/images/logo-small.png' :sideBarLogo()"
         alt="Logo"
         [width]="!isSlide ? '110' : '30'"
         [height]="!isSlide ? '35' : '25'"
@@ -37,7 +37,8 @@
           <h2
             class="accordion-header"
             id="headingOne"
-            routerLinkActive="active"
+            
+          
           >
             <button
               class="accordion-button cust-accordian collapsed"
@@ -46,8 +47,10 @@
               [attr.data-bs-target]="'#' + item?.main + $index"
               aria-expanded="true"
               aria-controls="collapseOne"
+
             >
-              <div class="d-flex justify-content-center align-items-center">
+              <div class="d-flex justify-content-center align-items-center"   
+              [routerLinkActive]="'active'">
                 <i-feather [name]="item?.icon" class="icons" [ngStyle]="{'paddingRight': isSlide ? '5px' :'10px'}"></i-feather>
                 @if(!isSlide){    <span> {{ item?.main }}</span>}
               </div>

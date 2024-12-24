@@ -3,7 +3,7 @@
 @include themify($themes) {
 
 .card{
-    background:  themed("background");
+    background:  themed("cardbackground");
     h5{
         color:  themed("text");
     }
