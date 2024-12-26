@@ -6,13 +6,17 @@ import { SalesComponent } from './sales.component';
 import { SaleComponent } from './sale/sale.component';
 import { ReceiptsComponent } from './receipts/receipts.component';
 import { SharedModule } from '../../shared/shared.module';
+import { SaleCardsComponent } from './sale/sale-cards/sale-cards.component';
+import { TableSelectComponent } from './sale/table-select/table-select.component';
 
 
 @NgModule({
   declarations: [
     SalesComponent,
     SaleComponent,
-    ReceiptsComponent
+    ReceiptsComponent,
+    SaleCardsComponent,
+    TableSelectComponent
   ],
   imports: [
     CommonModule,

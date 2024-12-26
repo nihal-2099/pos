@@ -34,8 +34,11 @@ createChart(){
 
 Highcharts.chart(this.antonation?.nativeElement, {
   chart: {
-    type: 'area'
+    type: 'area',
+    styledMode: false
+
   },
+
   title: {
     text: '',
     

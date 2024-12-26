@@ -1,12 +1,14 @@
 @import "../../../assets/scss/custom.scss";
-
+@include themify($themes) {
 .product{
-    
+    &-left{
+        color: themed("text") ;
+    }
     
     &-wrapper{
     
         .btn-outline-secondary{
-            border-color:  $lightgrey;
+            border-color: themed("text") ;
             &:hover{
                 background-color: $lightgrey;
                 color: $black;
@@ -33,5 +35,7 @@
     
 
 
+
+}
 
 }

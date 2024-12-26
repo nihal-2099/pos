@@ -1,88 +1,97 @@
 /* You can add global styles to this file, and also import other style files */
 
-
 @import "./assets/scss/custom.scss";
 
 @font-face {
-    font-family: "NunitoSans";
-    src: url('./assets/fonts/NunitoSans.ttf');
-  }
+  font-family: "NunitoSans";
+  src: url("./assets/fonts/NunitoSans.ttf");
+}
 // body{
 //     // font-family: myFirstFont !important;
 // }
-html, body { height: 100%; }
-body { margin: 0; font-family: "NunitoSans" !important }
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: "NunitoSans" !important;
+}
+.light-theme {
+  background-color: $white_color !important;
+}
 
-
-
+.dark-theme {
+  background-color: $dark_theme_color !important;
+}
 
 .accordion-button::after {
-    content: "";
-    background-image: url("../src/assets/icons/chevrondown.svg") !important;
-    background-color: $lightgrey;
-    border-radius: 50%;
-   
-  
+  content: "";
+  background-image: url("../src/assets/icons/chevrondown.svg") !important;
+  background-color: $lightgrey;
+  border-radius: 50%;
 }
-.icons{
-
-padding-right: 10px ;
+.icons {
+  padding-right: 10px;
 }
 
-.custom-icons{
-    width: 28px !important;
-    height: 28px !important;
+.custom-icons {
+  width: 28px !important;
+  height: 28px !important;
 }
 
-.icon_color{
-    color: $orangered_color;
+.icon_color {
+  color: $orangered_color;
 }
 
 ::ng-deep {
-    .mat-mdc-select-panel-above{
-        background-color: white;
-    }
+  .mat-mdc-select-panel-above {
+    background-color: white;
+  }
 
-    .mat-mdc-form-field-infix{
-        min-height: 33px !important;
-        max-height: 33px !important;
-    }
+  .mat-mdc-form-field-infix {
+    min-height: 33px !important;
+    max-height: 33px !important;
+  }
 }
 
-.top_header{
-
-    &_button{ button{
-       background-color: $add_component_buttoncolor; 
-       
-   } }
-      
-   }
-
-   label{
-    color: $text_color;
- }
- .toggle{
-    
-        .form-check-input {
-   
-            height: 1.5rem;
-            width: 3rem !important;      
-
-            &:checked{
-                background-color: $orangered_color;
-                border-color: $orangered_color;
-            }
-        }
+.top_header {
+  &_button {
+    button {
+      background-color: $add_component_buttoncolor;
     }
-    fieldset, legend {
-        all: revert !important;
-        border-radius: 10px !important;
-        border-color: $orangered_color !important;
-        margin-bottom: 1rem !important;
-     }
+  }
+}
 
-     .validation-container{
-        position: absolute;
-        margin-top: 0.5em;
-        margin-bottom: 0.5em;
-     }
+@include themify($themes) {
+label {
+  color: themed("labelcolor") !important;
+}
+
+
+
+}
+.toggle {
+  .form-check-input {
+    height: 1.5rem;
+    width: 3rem !important;
+
+    &:checked {
+      background-color: $orangered_color;
+      border-color: $orangered_color;
+    }
+  }
+}
+fieldset,
+legend {
+  all: revert !important;
+  border-radius: 10px !important;
+  border-color: $orangered_color !important;
+  margin-bottom: 1rem !important;
+}
+
+.validation-container {
+  position: absolute;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+}

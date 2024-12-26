@@ -1,0 +1,7 @@
+<div class="row">
+    @for (item of tableSelect; track $index) {
+    <div class="col-12 col-lg-2">
+        <app-sale-cards [itemsDetails]="item" (addToCart)="getDetails($event)" [isTableSelect]="true" />
+    </div>
+    }
+</div>

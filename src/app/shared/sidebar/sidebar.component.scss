@@ -1,23 +1,27 @@
 @import "../../../assets/scss/custom.scss";
+@include themify($themes) {
 
 .sidebar {
     width: 258px;
     z-index: 999;
-    background-color: #f8f9fa;
-    border-right: 1px solid #ddd;
+    background-color: themed("background");
+    border-right: 1px solid themed("border") !important;
     height: 100vh;
     overflow-y: auto;
     overflow-x: hidden;
     /* Enable vertical scrolling */
     position: fixed;
     /* Keeps the sidebar fixed */
-
-
+.navbar-brand
+{
+   
+}
     .logo-section {
-        border-bottom: 1px solid #dbe0e6;
+        border-bottom:1px solid themed("border") !important;
         display: flex;
         align-items: center;
         padding: 0 15px;
+        background-color: themed("topheader") !important;
     }
 
     .accordion-item {
@@ -26,8 +30,8 @@
     }
 
     .accordion-button {
-        background-color: #f8f9fa;
-        color: #000;
+        background-color: themed("background");
+        color:  themed("text");
         padding: 10px 35px;
 
         &:focus {
@@ -37,16 +41,16 @@
 
     .cust-accordian {
         // padding-left: 20px !important;
-        color: #5b6670;
+        color:  themed("text");
 
     }
 
     .section-title {
         font-weight: 600;
 
-        color: #1b2950;
+        color:  themed("text");
         margin: 0 0 14px;
-        background-color: #f8f9fa;
+        background-color: themed("background");
         // border-bottom: 1px solid #ddd;
         margin-bottom: 0;
     }
@@ -71,7 +75,7 @@
                 padding: 10px 20px;
                 text-decoration: none;
                 font-size: 0.9em;
-                color: #5b6670;
+                color:  themed("text");
             }
         }
     }
@@ -150,3 +154,5 @@ a:not(.active):hover {
 
     
   }
+
+}

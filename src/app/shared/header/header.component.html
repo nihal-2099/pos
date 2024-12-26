@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light position-absolute slide-up"  [class.show]="isShow" aria-label="Offcanvas navbar large" [ngStyle]="{'left' : isSide ? '80px' :'258px'}">
+<nav class="navbar navbar-expand-lg  position-absolute slide-up"  [class.show]="isShow" aria-label="Offcanvas navbar large" [ngStyle]="{'left' : isSide ? '80px' :'258px'}">
   <div class="nav-wrapper conatiner-fluid w-100">
 
     <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar2"
@@ -49,58 +49,20 @@
             <!-- <a class="nav-link active" aria-current="page" href="#">Home</a> -->
           </li>
 
-          <li class="nav-item me-3" style="padding: 5px 0;">
-            <div class="store-dropdown dropdown ">
-              <button class="btn btn-outline-secondary d-flex justify-content-center align-items-center icon-button" type="button"
-                data-bs-toggle="dropdown">
-                <img src="../../../assets/images/us.png" alt="I">
-                <!-- Select Store -->
-              </button>
-              <ul class="dropdown-menu">
-                <li class="d-flex justify-content-center align-items-center px-3">
-                  <img src="../../../assets/images/us.png" alt="Store">
-                  <a class="dropdown-item" href="#">English</a>
-                </li>
-                <li class="d-flex justify-content-center align-items-center px-3">
-                  <img src="../../../assets/images/fr.png" alt="Store">
-                  <a class="dropdown-item" href="#">French</a>
-                </li>
-                <li class="d-flex justify-content-center align-items-center px-3">
-                  <img src="../../../assets/images/es.png" alt="Store">
-                  <a class="dropdown-item" href="#">Spanish</a>
-                </li>
-                <li class="d-flex justify-content-center align-items-center px-3">
-                  <img src="../../../assets/images/de.png" alt="Store">
-                  <a class="dropdown-item" href="#">German</a>
-                </li>
-              </ul>
-            </div>
-            <!-- <a class="nav-link" href="#">Link</a> -->
-          </li>
-
           <li class="nav-item me-3">
-            <a href="#">
-              <button class="btn btn-outline-secondary d-flex justify-content-center align-items-center icon-button" type="button"
-                data-bs-toggle="dropdown">
-                <img src="../../../assets/images/zoom.svg" alt="I">
+            <div class="d-flex align-items-center">
+              <label class="form-check-label pe-2" for="flexSwitchCheckChecked1"><b>Light</b></label>
 
-              </button>
-            </a>
+        
+          <div class="form-check form-switch d-flex">
+
+            <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckChecked" [(ngModel)]="isDark"  (change)="lightDarkTheme($event)" [ngStyle]="{'height' :'21px'}">
+          </div>
+          <label class="form-check-label ps-1" for="flexSwitchCheckChecked"><b>Dark</b></label>
+
+        </div>
           </li>
-
-          <li class="nav-item me-3">
-            <a href="#">
-              <button class="btn btn-outline-secondary d-flex justify-content-center align-items-center icon-button position-relative" type="button"
-                data-bs-toggle="dropdown">
-                <img src="../../../assets/images/mail-second.png" alt="">
-                <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
-                  1
-                  <span class="visually-hidden">unread messages</span>
-                </span>
-
-              </button>
-            </a>
-          </li>
+      
 
           <li class="nav-item me-3">
             <a href="#">

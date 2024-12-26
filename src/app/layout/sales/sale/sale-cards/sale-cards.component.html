@@ -1,0 +1,29 @@
+<div class="card mt-4"  (click)="addToCart.emit(itemsDetails)" [ngClass]="{'disableCard' : itemsDetails?.status ==  'Serving' || itemsDetails?.status ==  'Reserved'}">
+    @if(!isTableSelect){
+        <img [src]="itemsDetails.image" class="card-img-top" alt="..." [height]="100">
+    }
+    <div class="card-body d-flex justify-content-center flex-column align-items-center py-1">
+      <p class="card-text mb-0">
+       <b> 
+        @if(!isTableSelect){
+        {{itemsDetails.itemname}}
+        }@else {
+            {{itemsDetails?.tableno}} - {{itemsDetails?.area}}
+        }
+
+
+       </b>
+    
+    </p>
+    <p class="mb-0">
+        @if(!isTableSelect){
+        {{ itemsDetails.price | currency: 'INR' }}
+        }@else {
+            {{itemsDetails?.status}}
+        }
+
+    </p>
+    </div>
+  </div>
+
+  <!-- {tableno:'1', area:'Inner', status:'Serving'}, -->
