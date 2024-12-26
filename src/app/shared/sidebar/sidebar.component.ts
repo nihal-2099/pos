@@ -50,6 +50,13 @@ sideMenuItems:Array<any> =[
         name:"Inventory Type",
         link:"/layout/master/inventlist"
       },
+      {
+        icons:"bookmark",
+        name:"Tables",
+        link:"/layout/master/table-data"
+      },
+
+     
       
     ]
   },
