@@ -769,7 +769,7 @@
           </div>
           <!-- <button class="btn btn-secondary w-50 " type="button" (click)="onSave()"> Save</button> -->
            <!-- <button type="submit"> submit</button> -->
-          <app-buttons [buttonText]="{ cancel: 'Cancel', save: 'Save Product' }"  (buttonClick)="submitForm($event)"/>
+          <app-buttons [buttonText]="{ cancel: 'Cancel', save: 'Save Product' }"  (buttonClick)="submitForm($event)" />
         </div>
       </app-accordian>
 
@@ -778,4 +778,14 @@
   </div>
 
 
+ @if(isDataVisible){
+  <app-popup  [text] = "'popup checking' "  (dataEmitter)="handleData($event)" ></app-popup>
+
+ }
+
+ 
+ 
+
+
 </section>
+
