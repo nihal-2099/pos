@@ -6,6 +6,8 @@ import { CategoryComponent } from './category/category.component';
 import { FoodTypeComponent } from './food-type/food-type.component';
 import { DesignationComponent } from './designation/designation.component';
 import { InventListComponent } from './invent-list/invent-list.component';
+import { CompanyComponent } from './company/company.component';
+import { BookingTableComponent } from './booking-table/booking-table.component';
 
 
 
@@ -18,7 +20,9 @@ const routes: Routes = [
       {path:'category', component:CategoryComponent},
       {path:'foodtype', component:FoodTypeComponent},
       {path:'designation', component:DesignationComponent},
-      {path:'inventlist', component:InventListComponent}
+      {path:'inventlist', component:InventListComponent},
+      {path:'company', component:CompanyComponent},
+      {path:'table-data', component:BookingTableComponent}
     
      
     ]

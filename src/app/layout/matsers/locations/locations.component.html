@@ -24,15 +24,61 @@
             placeholder="Location Name"
             formControlName="locationname"
           />
-          <div class="text-danger">
+          
             @if(locationform.controls['locationname'].touched)
             {
+              <div class="text-danger mt-1">
             @if(locationform.controls['locationname'].errors?.['required']){
               <b>Location Name is required</b>
             }
+          </div>
+            }
+          
+        </div>
+      </div>
+      <div class="col-12 col-lg-4">
+        <div class="mb-3">
+          <label for="emailaddress" class="form-label">Email Address :</label>
+          <input
+            type="email"
+            class="form-control"
+            id="emailaddress"
+            placeholder="Email Address"
+            formControlName="emailaddress"
+          />
+          
+            @if(locationform.controls['emailaddress'].touched)
+            {
+              <div class="text-danger mt-1">
+            @if(locationform.controls['emailaddress'].errors?.['required']){
+              <b>Email Address is required</b>
             }
           </div>
-        </div>
+            }
+          
+        </div> 
+      </div>
+      <div class="col-12 col-lg-4">
+        <div class="mb-3">
+          <label for="mobiles" class="form-label">Mobile No. :</label>
+          <input
+            type="number"
+            class="form-control"
+            id="mobiles"
+            placeholder="Mobile No"
+            formControlName="mobile"
+          />
+          
+            @if(locationform.controls['mobile'].touched)
+            {
+              <div class="text-danger mt-1">
+            @if(locationform.controls['mobile'].errors?.['required']){
+              <b>Mobile No. is required</b>
+            }
+          </div>
+            }
+          
+        </div> 
       </div>
       <div class="col-12 col-lg-4">
         <div class="mb-3">
@@ -44,14 +90,16 @@
             placeholder="Latitude"
             formControlName="latitude"
           />
-          <div class="text-danger">
+          
             @if(locationform.controls['latitude'].touched)
             {
+              <div class="text-danger mt-1">
             @if(locationform.controls['latitude'].errors?.['required']){
-              <b>Enter here Latitude</b>
-            }
+              <b> Latitude is required</b>
             }
           </div>
+            }
+         
         </div>
       </div>
       <div class="col-12 col-lg-4">
@@ -64,14 +112,16 @@
             placeholder="Longitude"
             formControlName="longitude"
           />
-          <div class="text-danger">
+          
             @if(locationform.controls['longitude'].touched)
             {
+              <div class="text-danger mt-1">
             @if(locationform.controls['longitude'].errors?.['required']){
-              <b>Enter here Longitude</b>
-            }
+              <b> Longitude is required</b>
             }
           </div>
+            }
+          
         </div>
       </div>
       <div class="col-12 col-lg-4">
@@ -83,14 +133,15 @@
             <option value="2">Two</option>
             <option value="3">Three</option>
           </select>
-          <div class="text-danger">
+          
             @if(locationform.controls['state'].touched)
             {
+              <div class="text-danger mt-1">
             @if(locationform.controls['state'].errors?.['required']){
               <b>Please choose state</b>
+            } </div>
             }
-            }
-          </div>
+         
         </div>
       </div>
       <div class="col-12 col-lg-4">
@@ -102,15 +153,17 @@
             <option value="2">Two</option>
             <option value="3">Three</option>
           </select>
-          <div class="text-danger">
+          
             @if(locationform.controls['district'].touched)
             {
+              <div class="text-danger mt-1">
               @if(locationform.controls['district'].errors?.['required'])
               {
                 <b>Please choose district</b>
               }
+            </div>
             }
-          </div>
+          
         </div>
       </div>
       <div class="col-12 col-lg-4">
@@ -123,14 +176,17 @@
             <option value="3">Three</option>
             
           </select>
-          <div class="text-danger">
+          
             @if(locationform.controls['block'].touched)
             {
+              <div class="text-danger mt-1">
             @if(locationform.controls['block'].errors?.['required']){
               <b>Please Choose block</b>
+            } 
+           </div>
+
             }
-            }
-          </div>
+        
         </div>
       </div>
 
@@ -163,13 +219,13 @@
 
     <div class="mt-5">
       <app-buttons
-        [buttonText]="{ cancel: 'Cancel', save: 'Save Designation' }" 
+        [buttonText]="{ cancel: 'Cancel', save: 'Save Location' }" 
         (buttonClick)="validateTable($event)"
       />
     </div>
   </app-accordian>
 
-  <app-table [columns]="columns" [tableData]="tableData" (actionType)="tableAction($event)">
+  <app-table [columns]="columns" [tableData]="tableData" (actionType)="tableAction($event)"> </app-table>
 
-    </app-table>
+    
 </section>

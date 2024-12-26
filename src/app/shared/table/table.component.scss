@@ -1,5 +1,7 @@
 @import "../../../assets/scss/custom.scss";
 
+@include themify($themes) {
+
 .product-wrapper {
   .product-right {
     a {
@@ -35,7 +37,8 @@
 }
 
 .table-wrapper {
-  border: 1px solid $table-button-border;
+  border: 1px solid  themed("labelcolor");;
+  border-radius: 10px;
   padding: 16px;
 
   .cust-search-bar {
@@ -63,10 +66,12 @@
 
   .mat-mdc-header-cell {
     border-bottom-color: $table-button-border !important;
+    color: themed("tabletext");
   }
 
   .mat-mdc-cell {
     border-bottom-color: $table-button-border !important;
+    color: themed("tabletext");
   }
 
   .mdc-data-table__cell,
@@ -75,8 +80,24 @@
   }
 
   .mat-mdc-paginator-container {
-    background-color: $white_color;
+    background-color:themed("background");
+    color: themed("tabletext");
   }
+
+  .mat-mdc-select-trigger{
+    color: themed("tabletext");
+  }
+  .mat-mdc-icon-button{
+    color: themed("tabletext") !important;
+    filter: themed("invert");
+    
+  }
+  .mat-icon{
+    color: themed("tabletext") !important;
+    filter: themed("invert");
+  }
+}
+
 }
 
 // .dropdown-menu {

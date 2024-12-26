@@ -23,7 +23,13 @@ sideMenuItems:Array<any> =[
   {
     main:"Masters",
     icon:"cloud",
+    route:"/layout/master/",
     submenu:[
+      {
+        icons:"map",
+        name:"Company",
+        link:"/layout/master/company"
+      },
       {
         icons:"map",
         name:"Location",
@@ -49,6 +55,13 @@ sideMenuItems:Array<any> =[
         name:"Inventory Type",
         link:"/layout/master/inventlist"
       },
+      {
+        icons:"bookmark",
+        name:"Tables",
+        link:"/layout/master/table-data"
+      },
+
+     
       
     ]
   },
@@ -146,4 +159,13 @@ ngOnInit() {
 updateHeader() {
   this.showHideBarService.sideMenuClose(this.isSlide = !this.isSlide);
 }
+
+sideBarLogo(){
+ if( document.body.classList.contains('dark-theme')){
+  return 'assets/images/logo-white.png'
+ }else{
+  return 'assets/images/logo.png'
+ }
+}
+
 }

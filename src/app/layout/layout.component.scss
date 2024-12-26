@@ -12,3 +12,25 @@ main{
 .side-container{
     z-index: 999;
 }
+
+@import '../../assets/scss/custom.scss';
+
+@include themify($themes) {
+    .form-control,
+    .form-select{
+        background-color: themed("topheader") !important;
+        color:  themed("tabletext");
+        border-color: themed("labelcolor");
+    }
+    p{
+        color:  themed("tabletext") !important;
+    }
+
+    input::placeholder,
+    select::placeholder {
+        color:  themed("tabletext") !important; /* Change to your desired color */
+      }
+      
+ 
+
+}

@@ -11,10 +11,7 @@ export class ButtonsComponent {
   @Input() buttonText:any
   @Input() background:string =''
   @Output() buttonClick: any = new EventEmitter()
-
-
   buttonUpdate(item:any){
     this.buttonClick.emit(item)
   }
-
 }

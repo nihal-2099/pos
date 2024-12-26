@@ -1,5 +1,5 @@
 @import '../../../../../assets/scss/custom.scss';
-
+@include themify($themes) {
 .raw-material-wrapper{
     .cust-raw-mat-btn-one{
         border: none;
@@ -11,5 +11,16 @@
     .cust-raw-mat-icon{
         width: 20px;
     }
+
+}
+
+
+.card{
+    border-color:themed("border") !important;
+    background-color: themed("topheader") !important;
+    &-body{
+        color: themed("text") !important;;
+    }
+}
 
 }
