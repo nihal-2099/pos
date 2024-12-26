@@ -11,8 +11,6 @@ import { InventListComponent } from './invent-list/invent-list.component';
 import { CompanyComponent } from './company/company.component';
 import { BookingTableComponent } from './booking-table/booking-table.component';
 
-
-
 @NgModule({
   declarations: [
     LocationsComponent,
