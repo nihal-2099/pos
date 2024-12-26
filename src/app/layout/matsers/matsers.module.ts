@@ -8,6 +8,7 @@ import { CategoryComponent } from './category/category.component';
 import { FoodTypeComponent } from './food-type/food-type.component';
 import { DesignationComponent } from './designation/designation.component';
 import { InventListComponent } from './invent-list/invent-list.component';
+import { CompanyComponent } from './company/company.component';
 import { BookingTableComponent } from './booking-table/booking-table.component';
 
 
@@ -20,6 +21,7 @@ import { BookingTableComponent } from './booking-table/booking-table.component';
     FoodTypeComponent,
     DesignationComponent,
     InventListComponent,
+    CompanyComponent,
     BookingTableComponent,
    
   ],
