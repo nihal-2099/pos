@@ -26,6 +26,7 @@ import { FieldsComponent } from './fields/fields.component';
 import {MatIconModule} from '@angular/material/icon';
 import {MatMenuModule} from '@angular/material/menu';
 import {MatButtonModule} from '@angular/material/button';
+import { PopupComponent } from './popup/popup.component';
 @NgModule({
   declarations: [
     HeaderComponent,
@@ -36,6 +37,7 @@ import {MatButtonModule} from '@angular/material/button';
     ButtonsComponent,
     AccordianComponent,
     FieldsComponent,
+    PopupComponent,
     
   ],
   imports: [
@@ -73,6 +75,7 @@ import {MatButtonModule} from '@angular/material/button';
     ButtonsComponent,
     AccordianComponent,
     FieldsComponent,
+    PopupComponent
   ]
 })
 export class SharedModule { }

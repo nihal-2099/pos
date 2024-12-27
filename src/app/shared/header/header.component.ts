@@ -29,7 +29,7 @@ ngOnInit() {
   // Subscribe to the message
  this.isShow=  this.showHideBarService. getCurrentValue()
  this.isSide = this.showHideBarService.getSideCurrentValue()
- this.isDark = JSON.parse(sessionStorage.getItem('isdark') || '')
+ this.isDark =  sessionStorage.getItem('isdark') ? JSON.parse(sessionStorage.getItem('isdark') || '') : false
  this.lightDarkTheme('')
 
 }

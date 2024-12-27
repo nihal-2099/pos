@@ -1,0 +1,26 @@
+
+
+
+<!-- Modal -->
+<div
+  class="modal fade d-block show"
+  tabindex="-1"
+  aria-labelledby="exampleModalLabel"
+  aria-hidden="!isDataVisible"
+>
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" (click)="submitForm('reset')"></button>
+        </div>
+        <div class="modal-body">
+          
+
+        </div>
+        <div class="modal-footer">
+            <app-buttons [buttonText]="{ cancel: 'Cancel', save: 'Save' }"  (buttonClick)="submitForm($event)" />
+        </div>
+      </div>
+    </div>
+  </div>
