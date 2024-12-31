@@ -3,7 +3,7 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'app-sale',
   standalone: false,
-  
+
   templateUrl: './sale.component.html',
   styleUrl: './sale.component.scss'
 })
@@ -22,21 +22,21 @@ export class SaleComponent {
     {itemname:'Risotto alla Milanese', parent_id:2, itemid:"item7", image:'assets/images/item/risotto.webp', price:1700},
 
     {itemname:'Dim Sum', parent_id:3, itemid:"item4", image:'assets/images/item/dimsumb.webp', price:300},
-    
+
     {itemname:'Kadhi Pakora', parent_id:4, itemid:"item4", image:'assets/images/item/kadhi-pakora.webp', price:700},
     {itemname:'Kadai Paneer', parent_id:4, itemid:"item5", image:'assets/images/item/kadai.webp', price:700},
     {itemname:'Palak Paneer', parent_id:4, itemid:"item6", image:'assets/images/item/palak.webp', price:450},
 
-   
+
   ]
   selectCrusine:number = 2
-  selectedTable:any = JSON.parse(sessionStorage.getItem('tableselect')|| '')
+  selectedTable:any =sessionStorage.getItem('tableselect')? JSON.parse(sessionStorage.getItem('tableselect')|| '') :''
   filetredItems:Array<any> =[]
   isTableSelect:boolean = sessionStorage.getItem('tableselect') ? false : true
 
   ngOnInit(){
     this.filterItem(this.selectCrusine)
-    
+
   }
 
 
@@ -52,7 +52,7 @@ export class SaleComponent {
     let food = this.foodItems
     this.filetredItems = food.filter((res:any)=> res?.parent_id == this.selectCrusine)
   }
-  
+
   getDetails(event:any){
     console.log(event)
   }
