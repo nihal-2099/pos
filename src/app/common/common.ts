@@ -6,11 +6,12 @@ export default class Common{
 
         let icon:any ={
             edit:'edit',
-            view:'eye'
+            view:'eye',
+            delete:'trash-2'
         }
 
         return icon[val]
-        
+
     }
 
 }

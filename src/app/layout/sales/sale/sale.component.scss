@@ -1,0 +1,98 @@
+@import '../../../../assets/scss/custom.scss';
+@include themify($themes) {
+  table{
+
+    thead{
+      tr{
+        th{
+          color: $text_color;
+          background: themed('topheader');
+          padding: 1em 6px;
+
+        }
+      }
+    }
+    tbody{
+      tr{
+
+        td{
+          background: themed('topheader');
+          color: themed('text');
+          padding: 1em 6px;
+
+          .in-dec-button{
+            border: none;
+            margin: 0 8px;
+            padding: 0 6px;
+            background: transparent;
+            border: 1px solid themed("border");
+            border-radius: 3px;
+            color: themed('text');
+          }
+          .input-number{
+            width:40px;
+            height: 27px;
+            border: 1px solid themed("border");
+            border-radius: 3px;
+          }
+        }
+      }
+    }
+
+  }
+
+  .btn-group{
+
+    .btn-primary{
+      height: 46px;
+      background-color: $add_component_buttoncolor;
+      border: 1px solid themed("border");
+
+      &.active{
+        background-color: $selectedButton;
+        color: $white_color !important;
+      }
+
+
+    }
+
+  }
+  .main-sale-area{
+    border: 1px solid themed("border");
+    border-radius: 10px;
+    .type-container{
+
+
+
+      &-products{
+        height: 60vh;
+        overflow-y: scroll;
+        padding: 10px;
+      }
+    }
+
+    .total-area{
+      background-color: $dark_theme_color;
+      color: $white_color;
+      font-size: 1.1em;
+      border:  1px solid themed('border');
+    }
+
+    .payment-area{
+      background-color: $add_component_buttoncolor;
+      color: $white_color;
+      font-size: 1.1em;
+      // border-bottom-left-radius: 8px;
+      // border-bottom-right-radius: 8px;
+    }
+  }
+
+  .no-record-image{
+  img{
+    filter: themed('invert');
+  }
+  }
+
+}
+
+
