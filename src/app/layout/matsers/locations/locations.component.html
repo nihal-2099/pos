@@ -14,6 +14,30 @@
     }"
   >
     <div class="row" [formGroup]="locationform">
+
+      <div class="col-12 col-lg-4 ">
+        <div class="selective">
+          <label class="mb-2">Select Company :</label>
+          <select class="form-select" aria-label="Default select example"  formControlName="company">
+            <option selected value="null">Select Company</option>
+            <option value="1">Company 1</option>
+            <option value="2">Company 2</option>
+            <option value="3">Company 3</option>
+          </select>
+
+          @if (locationform.get('company')?.invalid && (locationform.get('company')?.dirty || locationform.get('company')?.touched)) {
+            @if (locationform.get('company')?.hasError('required')) {
+            <div >
+              <div class="text-danger">
+                <b>Company is Required</b>
+              </div>
+            </div>
+            }
+            }
+
+     
+        </div>
+      </div>
       <div class="col-12 col-lg-4">
         <div class="mb-3">
           <label for="locationname" class="form-label">Location Name :</label>
@@ -128,7 +152,7 @@
         <div class="mb-3">
           <label for="state" class="form-label">State :</label>
           <select class="form-select" aria-label="State" formControlName="state" >
-            <option selected>State</option>
+            <option selected value="null">State</option>
             <option value="1">One</option>
             <option value="2">Two</option>
             <option value="3">Three</option>
@@ -148,7 +172,7 @@
         <div class="mb-3">
           <label for="district" class="form-label">District :</label>
           <select class="form-select" aria-label="district" formControlName="district">
-            <option selected>District</option>
+            <option selected value="null">District</option>
             <option value="1">One</option>
             <option value="2">Two</option>
             <option value="3">Three</option>
@@ -170,7 +194,7 @@
         <div class="mb-3">
           <label for="block" class="form-label">Block :</label>
           <select class="form-select" aria-label="block" formControlName="block">
-            <option selected>Block</option>
+            <option selected value="null">Block</option>
             <option value="1">One</option>
             <option value="2">Two</option>
             <option value="3">Three</option>

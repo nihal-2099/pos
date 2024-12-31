@@ -1,1 +1,150 @@
-<p>booking-table works!</p>
+<section>
+    <app-pageheaders
+      [topHeadingContent]="{
+          heading: 'Tables List',
+          subitems: 'Create/List Table List',
+        }"
+    >
+    </app-pageheaders>
+
+    <app-accordian
+      [accordianItems]="{
+        heading: 'Add New table',
+        id: 'filltabledetails'
+      }"
+    >
+      <div class="row" [formGroup]="form">
+        <div class="col-12 col-lg-4">
+          <div class="mb-3">
+            <label for="tablename" class="form-label">Table Name :</label>
+            <input
+              type="text"
+              class="form-control"
+              id="tablename"
+              placeholder="Table Name "
+              formControlName="tablename"
+            />
+            
+              @if (form.controls['tablename'].touched)
+              {
+                <div class="text-danger mt-1">
+                @if (form.controls['tablename'].errors?.['required'])
+                { 
+                 <b>Table Name is required</b> 
+                }
+              </div>
+              }
+            
+          </div>
+        </div>
+
+        <div class="col-12 col-lg-4 ">
+            <div class="selective">
+              <label class="mb-2">Select Area :</label>
+              <select class="form-select"  formControlName="area">
+                <option selected value="null">Select Area</option>
+                <option value="1">A/C</option>
+                <option value="2">Outdoor</option>
+                <option value="3">Gallery</option>
+              </select>
+
+              @if (form.get('area')?.invalid && (form.get('area')?.dirty || form.get('area')?.touched)) {
+                @if (form.get('area')?.hasError('required')) {
+                <div >
+                  <div class="text-danger">
+                    <b>Area is Required</b>
+                  </div>
+                </div>
+                }
+                }
+
+         
+            </div>
+          </div>
+
+        <div class="col-12 col-lg-4 ">
+            <div class="selective">
+              <label class="mb-2">Select Company :</label>
+              <select class="form-select" aria-label="Default select example"  formControlName="company">
+                <option selected value="null">Select Company</option>
+                <option value="1">Company 1</option>
+                <option value="2">Company 2</option>
+                <option value="3">Company 3</option>
+              </select>
+
+              @if (form.get('company')?.invalid && (form.get('company')?.dirty || form.get('company')?.touched)) {
+                @if (form.get('company')?.hasError('required')) {
+                <div >
+                  <div class="text-danger">
+                    <b>Company is Required</b>
+                  </div>
+                </div>
+                }
+                }
+
+         
+            </div>
+          </div>
+
+          <div class="col-12 col-lg-4 ">
+            <div class="selective">
+                <label  class="mb-2">Select Branch :</label>
+              <select class="form-select" aria-label="Default select example"  formControlName="branch">
+                <option selected value="null">Select Branch</option>
+                <option value="1">Branch 1</option>
+                <option value="2">Branch 2</option>
+                <option value="3">Branch 3</option>
+              </select>
+
+              @if (form.get('branch')?.invalid && (form.get('branch')?.dirty || form.get('branch')?.touched)) {
+                @if (form.get('branch')?.hasError('required')) {
+                <div >
+                  <div class="text-danger">
+                    <b>Branch is Required</b>
+                  </div>
+                </div>
+                }
+                }
+
+         
+            </div>
+          </div>
+        <div class="col-12 col-lg-4">
+          <div class="toggle my-1">
+            <label for="locatonname" class="form-label">Status :</label>
+            <div class="form-check form-switch">
+              <input
+                class="form-check-input"
+                type="checkbox"
+                id="flexSwitchCheckChecked"
+                checked
+                formControlName="status"
+              />
+              @if(form.controls['status'].touched)
+              {
+                <div class="text-danger mt-1">
+              @if(form.controls['status'].errors?.['required']){
+                <b> please Select Status </b>
+                
+              }
+            </div>
+              }
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- <app-buttons [buttonText]="{ cancel: 'Cancel', save: 'Save Category' }" /> -->
+      <div class="mt-5">
+        <app-buttons
+          [buttonText]="{ cancel: 'Cancel', save: 'Save Category' }" 
+          (buttonClick)="validateTable($event)"
+        />
+      </div>
+
+    </app-accordian>
+  
+    <app-table [columns]="columns" [tableData]="tableData" (actionType)="tableAction($event)">
+  
+      </app-table>
+  </section>
+  

@@ -74,9 +74,53 @@
                 <button type="button" class="btn btn-primary">Delivery</button>
                 <button type="button" class="btn btn-primary">Pickup</button>
               </div>
+
+
+
+
+
+              
+              <div class="type-container">
+              <form [formGroup]="orderForm">
+                <table class="table">
+                    <thead>
+                      <tr>
+                        <th>Item</th>
+                        <th>Check Items</th>
+                        <th>Qty</th>
+                        <th>Price</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+
+                        <ng-container formArrayName="items">
+
+                            @for (item of items.controls; track $index) {
+
+                      <tr [formGroupName]="$index">
+                        <td>{{$index + 1}}</td>
+                        <td>{{item.get("item")?.value}}</td>
+                        <td>   <button type="button" (click)="decreaseQuantity($index)">-</button>
+                            <input type="number" formControlName="quantity" readonly />
+                            <button type="button" (click)="increaseQuantity($index)">+</button></td>
+                        <td>{{item.get("price")?.value}}</td>
+                      </tr>
+
+                    }
+                    </ng-container>
+                    </tbody>
+                  </table>
+                </form>
+
+
+
+
+                <!-- user -->
+
+              </div>
             </div>
         </div>
     </div>
 }
-
+ 
 

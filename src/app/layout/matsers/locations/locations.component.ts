@@ -13,12 +13,13 @@ export class LocationsComponent {
   locationform : FormGroup = new FormGroup
   (
     {
+      company: new FormControl (null,[Validators.required]),
       locationname: new FormControl ('',[Validators.required]),
       latitude: new FormControl ('',[Validators.required]),
       longitude: new FormControl ('',[Validators.required]),
-      state : new FormControl('',[Validators.required]),
-      district : new FormControl('',Validators.required),
-      block : new FormControl ('',[Validators.required]),
+      state : new FormControl(null,[Validators.required]),
+      district : new FormControl(null,Validators.required),
+      block : new FormControl (null,[Validators.required]),
       status : new FormControl (true,[Validators.required]),
       emailaddress : new FormControl('',[Validators.required]),
       mobile : new FormControl('',[Validators.required])
