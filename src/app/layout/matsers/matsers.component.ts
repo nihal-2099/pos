@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-matsers',
@@ -8,5 +9,16 @@ import { Component } from '@angular/core';
   styleUrl: './matsers.component.scss'
 })
 export class MatsersComponent {
+  headTitle:string =''
+
+  constructor(private route: ActivatedRoute, private router:Router){
+
+  
+
+
+
+  }
+
+
 
 }

@@ -22,7 +22,7 @@ const routes: Routes = [
       {path:'designation', component:DesignationComponent},
       {path:'inventlist', component:InventListComponent},
       {path:'company', component:CompanyComponent},
-      {path:'table-data', component:BookingTableComponent}
+      {path:'table-data', component:BookingTableComponent, data:{title:'Table List', sub:'Create/List Table'}}
     
      
     ]

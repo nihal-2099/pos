@@ -2,81 +2,212 @@
     heading:  'Sale' ,
     subitems: isTableSelect ?'Table Choose': 'Menu Choose',
   }">
-
-@if(!isTableSelect){
-    <div class="top_header">
-        <div class="top_header_button">
-          <button type="button" class="btn btn-secondary d-flex justify-content-between align-items-center"
-            (click)="isTableSelect = !isTableSelect">
-            <i-feather name="arrow-left" class="icons custom-icons"></i-feather>
-            <span>Back to Select Table</span>
-          </button>
-        </div>
-      </div>
-}
-
+  @if(!isTableSelect){
+  <div class="top_header">
+    <div class="top_header_button">
+      <button type="button" class="btn btn-secondary d-flex justify-content-between align-items-center"
+        (click)="selectTable()">
+        <i-feather name="arrow-left" class="icons custom-icons"></i-feather>
+        <span>Back to Select Table</span>
+      </button>
+    </div>
+  </div>
+  }
 </app-pageheaders>
 
-
-
-
 @if(isTableSelect){
-    <app-table-select  (tableSelectDetails)="tableSelectedDetails($event)"/>
-}
-@else{
+<app-table-select (tableSelectDetails)="tableSelectedDetails($event)" />
+} @else{
+<div class="row">
+  <div class="col-12 col-lg-8">
     <div class="row">
+      <div class="col-12 col-lg-4">
+        <select class="form-select" aria-label="Default select example" (change)="filterItem($event)"
+          [(ngModel)]="selectCrusine">
+          <option selected disabled>Select Category</option>
+          @for (item of categoryData; track $index) {
+          <option [value]="item?.id">{{ item?.categoryname }}</option>
+          }
+        </select>
+      </div>
+      <div class="col-12 col-lg-4">
+        <form class="d-flex mx-3 nav-search-bar" role="search">
+          <input class="form-control" type="search" placeholder="Search" aria-label="Search" />
+        </form>
+      </div>
 
-        <div class="col-12 col-lg-8">
-            <div class="row">
-                <div class="col-12 col-lg-4">
-                    <select class="form-select" aria-label="Default select example" (change)="filterItem($event)" [(ngModel)]="selectCrusine">
-                        <option selected disabled>Select Category</option>
-                        @for (item of categoryData; track $index) {
-                        <option [value]="item?.id">{{item?.categoryname}}</option>
-                        }
-                    </select>
-                </div>
-                <div class="col-12 col-lg-4">
-                    <form class="d-flex mx-3 nav-search-bar" role="search">
-                        <input class="form-control" type="search" placeholder="Search" aria-label="Search">
-                      </form>
-                </div>
-
-                <div class="col-12 col-lg-4">
-                    <div class="d-flex justify-content-end align-items-center">
-
-<p class="text-end mb-0"><b>Table No:</b>  {{selectedTable?.tableno}}({{selectedTable?.area}})  - {{selectedTable?.status}}</p>
-</div>
-
-                    </div>
-            </div>
-       
-    
-            <div class="row">
-                @for (item of filetredItems; track $index) {
-                <div class="col-12 col-lg-3">
-                    <app-sale-cards [itemsDetails]="item" (addToCart)="getDetails($event)" />
-                </div>
-                }
-            </div>
-    
-    
-    
-    
-    
+      <div class="col-12 col-lg-4">
+        <div class="d-flex justify-content-end align-items-center">
+          <p class="text-end mb-0">
+            <b>Table No:</b> {{ selectedTable?.tableno }}({{
+            selectedTable?.area
+            }}) - {{ selectedTable?.status }}
+          </p>
         </div>
-    
-    
-        <div class="col-12 col-lg-4">
-            <div class="w-100">
-            <div class="btn-group w-100" role="group" aria-label="Basic example">
-                <button type="button" class="btn btn-primary">Dine In</button>
-                <button type="button" class="btn btn-primary">Delivery</button>
-                <button type="button" class="btn btn-primary">Pickup</button>
+      </div>
+    </div>
+
+    <div class="row">
+      @for (item of filetredItems; track $index) {
+      <div class="col-12 col-lg-3">
+        <app-sale-cards [itemsDetails]="item" (addToCart)="getDetails($event)" />
+      </div>
+      }
+    </div>
+  </div>
+
+  <div class="col-12 col-lg-4">
+
+    <div class="main-sale-area">
+      <div class="w-100">
+        <div class="btn-group btn-group-top w-100" role="group" aria-label="Basic example">
+          <button type="button" class="btn btn-primary active">Dine In</button>
+          <button type="button" class="btn btn-primary">Delivery</button>
+          <button type="button" class="btn btn-primary">Pickup</button>
+        </div>
+
+        <div class="type-container">
+          <div class="type-container-products">
+            <form [formGroup]="orderForm">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th>Item</th>
+                    <th>Check Items</th>
+                    <th>Qty</th>
+                    <th>Price</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <ng-container formArrayName="items">
+                    @if(items.controls.length > 0){
+                      @for (item of items.controls; track $index) {
+
+                        <tr [formGroupName]="$index">
+                          <td>{{ $index + 1 }}</td>
+                          <td>{{ item.get("item")?.value }}</td>
+                          <td >
+                            <div class="d-flex justify-content-start align-items-center">
+                            <button type="button" (click)="decreaseQuantity($index)" class="in-dec-button">
+                              -
+                            </button>
+                            <input type="number" formControlName="quantity" readonly class="text-center input-number" />
+                            <button type="button" (click)="increaseQuantity($index)" class="in-dec-button">
+                              +
+                            </button>
+                          </div>
+                          </td>
+                          <td>{{ item.get("price")?.value * item.get("quantity")?.value | currency:'INR' }}</td>
+
+                          <td>
+                            <i-feather [name]="'trash-2'" [ngStyle]="{ height: '20px', width: '20px' }" class="cursor"
+                              (click)="removeItem($index)"></i-feather>
+                          </td>
+                        </tr>
+
+                        }
+                    }
+                    @else {
+                      <tr >
+                        <td colspan="7" style="width: 75%; vertical-align: middle;" >
+                      <div class="d-flex flex-column align-items-center justify-content-center h-100 no-record-image">
+                      <img src="assets/images/cutlery.png" alt="cutlery" />
+
+                        <h5>Please Select Item from Left Menu</h5>
+                        <p>No Item Selected</p>
+
+                      </div>
+                    </td>
+                    </tr>
+
+                    }
+
+
+
+
+                  </ng-container>
+
+
+                </tbody>
+              </table>
+            </form>
+          </div>
+
+
+
+
+
+          <div class="total-area d-flex justify-content-between align-items-center p-2">
+
+            <div>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
+                <label class="form-check-label" for="flexCheckChecked">
+                  Complimentary
+                </label>
+              </div>
+
+
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
+                <label class="form-check-label" for="flexCheckChecked">
+                  Sales Return
+                </label>
               </div>
             </div>
+
+            <div class="total-panel">
+              Total Amount: <b>{{ calculateTotal() | currency:'INR'}}</b>
+            </div>
+
+
+          </div>
+
+
+          <div class="payment-area d-flex justify-content-between align-items-center p-2">
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+              <label class="form-check-label" for="flexRadioDefault1">
+                Cash
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+              <label class="form-check-label" for="flexRadioDefault1">
+                Card
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+              <label class="form-check-label" for="flexRadioDefault1">
+                Due
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+              <label class="form-check-label" for="flexRadioDefault1">
+                Other
+              </label>
+            </div>
+          </div>
+
+
+          <div class="bottom-area-button mt-2">
+
+            <div class="btn-group w-100 mb-1" role="group" aria-label="Basic example">
+              <button type="button" class="btn btn-danger me-1">Save</button>
+              <button type="button" class="btn btn-danger me-1">Save & Print</button>
+              <button type="button" class="btn btn-primary me-1">Save & E-Bill</button>
+              <button type="button" class="btn btn-primary me-1">KOT</button>
+              <button type="button" class="btn btn-primary me-1">KOT & Print</button>
+              <button type="button" class="btn btn-secondary">Hold</button>
+            </div>
+          </div>
+
         </div>
+      </div>
     </div>
+  </div>
+</div>
 }
-
-
