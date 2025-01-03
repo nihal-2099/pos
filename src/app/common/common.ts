@@ -14,4 +14,14 @@ export default class Common{
 
     }
 
+    public static sideShow(){
+    if( window.location?.pathname == '/layout/sales/sale'){
+        return  true
+    }  
+    else{
+        return false
+    }
+
+    }
+
 }

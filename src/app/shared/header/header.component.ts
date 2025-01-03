@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { ShowHideBarService } from '../../services/show-hide-bar.service';
+import Common from '../../common/common';
 
 @Component({
   selector: 'app-header',
@@ -14,6 +15,7 @@ imagePath: any = 'assets/icon/SiteLogo.png';
 isShow:boolean = false
 isSide:boolean = true
 isDark:boolean = false
+  hideSideBar:boolean = Common.sideShow()
 constructor (public showHideBarService:ShowHideBarService){
   // Subscribe to the shared message
   this.showHideBarService.updateClose.subscribe(

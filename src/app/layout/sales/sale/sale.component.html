@@ -2,17 +2,26 @@
     heading:  'Sale' ,
     subitems: isTableSelect ?'Table Choose': 'Menu Choose',
   }">
-  @if(!isTableSelect){
+
   <div class="top_header">
-    <div class="top_header_button">
-      <button type="button" class="btn btn-secondary d-flex justify-content-between align-items-center"
-        (click)="selectTable()">
-        <i-feather name="arrow-left" class="icons custom-icons"></i-feather>
-        <span>Back to Select Table</span>
-      </button>
+
+
+    <div class="top_header_button d-flex">
+
+        <div class="dropdown">
+            <button class="btn btn-secondary dropdown-toggle text-white" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+              Select Order Type
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+              <li><a class="dropdown-item" (click)="selectTable()">Select Table</a></li>
+              <li><a class="dropdown-item" (click)="selectType('delivery')">Delivery</a></li>
+              <li><a class="dropdown-item" (click)="selectType('take')">Take Away</a></li>
+            </ul>
+          </div>
+     
     </div>
   </div>
-  }
+ 
 </app-pageheaders>
 
 @if(isTableSelect){
@@ -35,16 +44,19 @@
           <input class="form-control" type="search" placeholder="Search" aria-label="Search" />
         </form>
       </div>
-
-      <div class="col-12 col-lg-4">
-        <div class="d-flex justify-content-end align-items-center">
-          <p class="text-end mb-0">
-            <b>Table No:</b> {{ selectedTable?.tableno }}({{
-            selectedTable?.area
-            }}) - {{ selectedTable?.status }}
-          </p>
-        </div>
-      </div>
+ 
+      @if(selectedTable?.tableno){
+        <div class="col-12 col-lg-4">
+            <div class="d-flex justify-content-end align-items-center">
+              <p class="text-end mb-0">
+                <b>Table No:</b> {{ selectedTable?.tableno }}({{
+                selectedTable?.area
+                }}) - {{ selectedTable?.status }}
+              </p>
+            </div>
+          </div>
+      }
+   
     </div>
 
     <div class="row">
@@ -61,9 +73,9 @@
     <div class="main-sale-area">
       <div class="w-100">
         <div class="btn-group btn-group-top w-100" role="group" aria-label="Basic example">
-          <button type="button" class="btn btn-primary active">Dine In</button>
-          <button type="button" class="btn btn-primary">Delivery</button>
-          <button type="button" class="btn btn-primary">Pickup</button>
+          <button type="button" class="btn btn-primary" [class.active]="otherType == ''">Dine In</button>
+          <button type="button" class="btn btn-primary" [class.active]="otherType == 'delivery'">Delivery</button>
+          <button type="button" class="btn btn-primary" [class.active]="otherType == 'take'">Pickup</button>
         </div>
 
         <div class="type-container">
@@ -86,7 +98,7 @@
 
                         <tr [formGroupName]="$index">
                           <td>{{ $index + 1 }}</td>
-                          <td>{{ item.get("item")?.value }}</td>
+                          <td>{{ item.get("itemname")?.value }}</td>
                           <td >
                             <div class="d-flex justify-content-start align-items-center">
                             <button type="button" (click)="decreaseQuantity($index)" class="in-dec-button">
@@ -194,13 +206,12 @@
 
 
           <div class="bottom-area-button mt-2">
-
             <div class="btn-group w-100 mb-1" role="group" aria-label="Basic example">
               <button type="button" class="btn btn-danger me-1">Save</button>
-              <button type="button" class="btn btn-danger me-1">Save & Print</button>
+              <button type="button" class="btn btn-danger me-1" (click)="printMe()">Save & Print</button>
               <button type="button" class="btn btn-primary me-1">Save & E-Bill</button>
               <button type="button" class="btn btn-primary me-1">KOT</button>
-              <button type="button" class="btn btn-primary me-1">KOT & Print</button>
+              <button type="button" class="btn btn-primary me-1" (click)="printMe()">KOT & Print</button>
               <button type="button" class="btn btn-secondary">Hold</button>
             </div>
           </div>
@@ -211,3 +222,133 @@
   </div>
 </div>
 }
+
+<div id="print-section">
+@if(isPrinting){
+  <div  style="display:flex;justify-content:center;align-items:center;"> 
+    <div style="width:302px" class="text-center">
+
+       <h4 style="text-align: center;margin: 0;padding-bottom: 10px;">Dummy Resturant</h4>
+
+       <p style="text-align: center;margin:0">Akshya Nagar 1st Block 1st <br> Cross,Rammurthy nagar,<br> Bangalore-560013</p>
+
+       <div style="border-bottom: 1px solid black;margin-top:10px"></div>
+
+       <h5 [ngStyle]="{margin:'10px'}" style="text-align: center;margin-bottom: 0px;"><b>Tax Invoice</b></h5>
+       <div style="border-bottom: 1px solid black;"></div>
+       <h6 [ngStyle]="{margin:'10px'}" style="text-align: center;"><b>Original 
+        Receipt for Recipient
+       </b></h6>
+       <h6 [ngStyle]="{margin:'10px'}" style="text-align: center;"><b>Order No: 467
+       </b></h6>
+       <div style="border-bottom: 1px solid black;margin-bottom: 10px;"></div>
+
+
+       <table class="table" [ngStyle]="{
+        width:'302px'
+    }">
+     
+      <tbody  [ngStyle]="{
+        width:'302px',
+        marginTop:'100px'
+    }">
+       
+       <tr  [ngStyle]="{textAlign:'left', marginTop:'5px', marginBottom:'5px'}">
+        <th  [ngStyle]="{textAlign:'left', marginTop:'5px', marginBottom:'5px'}">Name</th>
+        <td  [ngStyle]="{textAlign:'right', padding:'0px', marginTop:'5px', marginBottom:'5px', paddingTop:'5px'}">Nihal</td>
+      </tr>
+
+      <tr  [ngStyle]="{textAlign:'left', marginTop:'5px', marginBottom:'5px'}">
+        <th  [ngStyle]="{textAlign:'left', marginTop:'5px', marginBottom:'5px'}">Phone</th>
+        <td  [ngStyle]="{textAlign:'right', padding:'0px', marginTop:'5px', marginBottom:'5px', paddingTop:'5px'}">+91-7838298988</td>
+      </tr>
+
+      <tr  [ngStyle]="{textAlign:'left', marginTop:'5px', marginBottom:'5px'}">
+        <th  [ngStyle]="{textAlign:'left', marginTop:'5px', marginBottom:'5px'}">Order Date</th>
+        <td  [ngStyle]="{textAlign:'right', padding:'0px', marginTop:'5px', marginBottom:'5px', paddingTop:'5px'}">3/01/2025</td>
+      </tr>
+      </tbody>
+     
+    </table>
+
+
+
+    <form [formGroup]="orderForm">
+        <table class="table" [ngStyle]="{
+            width:'302px'
+        }">
+          <thead>
+            <tr  [ngStyle]="{textAlign:'left'}">
+              <th>-</th>
+              <th>Items</th>
+              <th>Qty</th>
+              <th [ngStyle]="{textAlign:'right', marginTop:'5px', marginBottom:'5px'}">Price</th>
+            </tr>
+          </thead>
+          <tbody  [ngStyle]="{
+            width:'302px'
+        }">
+            <ng-container formArrayName="items">
+              @if(items.controls.length > 0){
+                @for (item of items.controls; track $index) {
+
+                  <tr [formGroupName]="$index" [ngStyle]="{textAlign:'left', marginTop:'5px', marginBottom:'5px'}">
+                    <td  [ngStyle]="{textAlign:'left', marginTop:'5px', marginBottom:'5px'}">{{ $index + 1 }}</td>
+                    <td  [ngStyle]="{textAlign:'left', marginTop:'5px', marginBottom:'5px'}">{{ item.get("itemname")?.value }}</td>
+                    <td  [ngStyle]="{textAlign:'left', marginTop:'5px', marginBottom:'5px'}">
+                        {{item.get("quantity")?.value}}
+                    </td>
+                    <td  [ngStyle]="{textAlign:'right', marginTop:'5px', marginBottom:'5px'}">{{ item.get("price")?.value * item.get("quantity")?.value | currency:'INR' }}</td>
+
+                 
+                  </tr>
+
+                  }
+              }
+            </ng-container>
+
+
+          </tbody>
+         
+        </table>
+      </form>
+      <div style="border-bottom: 1px solid black;margin-bottom: 10px;"></div>
+
+
+      <table class="table" [ngStyle]="{
+        width:'302px'
+    }">
+     
+      <tbody  [ngStyle]="{
+        width:'302px',
+        marginTop:'100px'
+    }">
+       
+       <tr  [ngStyle]="{textAlign:'left', marginTop:'5px', marginBottom:'5px'}">
+        <th  [ngStyle]="{textAlign:'left', marginTop:'5px', marginBottom:'5px'}">SGST 9%</th>
+        <td  [ngStyle]="{textAlign:'right', padding:'0px', marginTop:'5px', marginBottom:'5px', paddingTop:'5px'}">{{calculateTotatl() * 9 /100 | currency:'INR' }}</td>
+      </tr>
+
+      <tr  [ngStyle]="{textAlign:'left', marginTop:'5px', marginBottom:'5px'}">
+        <th  [ngStyle]="{textAlign:'left', marginTop:'5px', marginBottom:'5px'}">CGST 9%</th>
+        <td  [ngStyle]="{textAlign:'right', padding:'0px', marginTop:'5px', marginBottom:'5px', paddingTop:'5px'}">{{calculateTotatl() * 9 /100 | currency:'INR' }}</td>
+      </tr>
+
+      <tr  [ngStyle]="{textAlign:'left', marginTop:'5px', marginBottom:'5px'}">
+        <th  [ngStyle]="{textAlign:'left', marginTop:'5px', marginBottom:'5px'}">Total</th>
+        <td  [ngStyle]="{textAlign:'right', padding:'0px', marginTop:'5px', marginBottom:'5px', paddingTop:'5px'}">{{ calculateTotatl() + calculateTotatl() * 18 /100| currency:'INR' }}</td>
+      </tr>
+      </tbody>
+     
+    </table>
+
+
+    <h6 [ngStyle]="{textAlign:'center', margin:'0'}"><b>Disclaimer</b></h6>
+
+    <p [ngStyle]="{fontSize:'14px', marginTop:'5px',textAlign:'center'}">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page.</p>
+  </div>
+
+</div>
+}
+</div>
+  

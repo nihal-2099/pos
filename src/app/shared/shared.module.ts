@@ -27,6 +27,9 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatMenuModule} from '@angular/material/menu';
 import {MatButtonModule} from '@angular/material/button';
 import { PopupComponent } from './popup/popup.component';
+
+import {NgxPrintModule} from 'ngx-print';
+
 @NgModule({
   declarations: [
     HeaderComponent,
@@ -58,7 +61,8 @@ import { PopupComponent } from './popup/popup.component';
     MatFormFieldModule,
     MatMenuModule,
     MatIconModule,
-    MatButtonModule
+    MatButtonModule,
+    NgxPrintModule
   ],
   exports:[
     HeaderComponent,
@@ -75,7 +79,8 @@ import { PopupComponent } from './popup/popup.component';
     ButtonsComponent,
     AccordianComponent,
     FieldsComponent,
-    PopupComponent
+    PopupComponent,
+    NgxPrintModule
   ]
 })
 export class SharedModule { }

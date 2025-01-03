@@ -1,5 +1,6 @@
 import { Component, OnChanges } from '@angular/core';
 import { FormArray, FormBuilder, Validators } from '@angular/forms';
+import { NgxPrintService, PrintOptions } from 'ngx-print';
 
 @Component({
   selector: 'app-sale',
@@ -8,7 +9,7 @@ import { FormArray, FormBuilder, Validators } from '@angular/forms';
   templateUrl: './sale.component.html',
   styleUrl: './sale.component.scss',
 })
-export class SaleComponent implements OnChanges{
+export class SaleComponent implements OnChanges {
   categoryData: Array<any> = [
     { categoryname: 'Italian Cuisine', id: 2 },
     { categoryname: 'Chinese', id: 3 },
@@ -87,11 +88,25 @@ export class SaleComponent implements OnChanges{
     ? JSON.parse(sessionStorage.getItem('tableselect') || '')
     : '';
   filetredItems: Array<any> = [];
-  isTableSelect: boolean = sessionStorage.getItem('tableselect') ? false : true;
+  isTableSelect: boolean =
+    sessionStorage.getItem('tableselect') ||
+    sessionStorage.getItem('delivery') ||
+    sessionStorage.getItem('take')
+      ? false
+      : true;
   orderType: any;
   orderForm: any;
+  tableName: string =
+    this.selectedTable?.tableno?.toString() +
+    this.selectedTable?.area?.toString();
+  otherType: string = sessionStorage.getItem('delivery')
+    ? 'delivery'
+    : sessionStorage.getItem('take')
+    ? 'take'
+    : '';
+    isPrinting:boolean = false
 
-  constructor(private fb: FormBuilder) {
+  constructor(private fb: FormBuilder, private printService: NgxPrintService) {
     this.orderForm = this.fb.group({
       items: this.fb.array([]),
     });
@@ -99,20 +114,19 @@ export class SaleComponent implements OnChanges{
 
   ngOnInit() {
     this.filterItem(this.selectCrusine);
-    this.seOldItems()
-
-
+    this.seOldItems();
+    // console.log(this.tableName)
   }
 
-  ngOnChanges(){
-
-  }
+  ngOnChanges() {}
 
   tableSelectedDetails(event: any) {
+    this.tableName = event?.tableno.toString() + event?.area.toString();
     this.isTableSelect = false;
     this.selectedTable = event;
+    this.otherType = '';
     sessionStorage.setItem('tableselect', JSON.stringify(event));
-    this.seOldItems()
+    this.seOldItems();
   }
 
   filterItem(event: any) {
@@ -131,17 +145,11 @@ export class SaleComponent implements OnChanges{
     let checkAlready = alreadyItems.value.findIndex(
       (item: any) => item.itemid === items?.itemid
     );
-    console.log(checkAlready)
-
-
     if (checkAlready != -1) {
       this.increaseQuantity(checkAlready);
     } else {
       const item = this.fb.group({
-        item: [
-          items?.itemname ? items?.itemname : items?.item,
-          Validators.required,
-        ],
+        itemname: [items?.itemname, Validators.required],
         itemid: [items?.itemid, Validators.required],
         quantity: [1, Validators.required],
         price: [items?.price, Validators.required], // FormArray for multiple items
@@ -159,7 +167,6 @@ export class SaleComponent implements OnChanges{
   getDetails(event: any) {
     this.addItem(event);
     this.sessionUpdate();
-
   }
 
   increaseQuantity(index: number): void {
@@ -185,56 +192,90 @@ export class SaleComponent implements OnChanges{
 
   sessionUpdate() {
     let Itemsvalue = this.items?.value;
-    let tableName = this.selectedTable?.tableno + this.selectedTable?.area;
     let oldItems: any = this.getSession();
+    // oldItems = Itemsvalue
     if (oldItems) {
       oldItems?.forEach((element: any) => {
-        if (element.table == tableName) {
+        if (element.table == this.tableName) {
           oldItems.push(this.items?.value);
         }
       });
     }
 
     // this.selectedTable?.tableno+this.selectedTable?.area
-    sessionStorage.setItem('sales', JSON.stringify(Itemsvalue));
+    sessionStorage.setItem(
+      this.otherType ? this.otherType : this.tableName,
+      JSON.stringify(Itemsvalue)
+    );
   }
 
   getSession() {
-    let session = sessionStorage.getItem('sales')
-      ? JSON.parse(sessionStorage.getItem('sales') || '')
+    let session = sessionStorage.getItem(
+      this.otherType ? this.otherType : this.tableName
+    )
+      ? JSON.parse(
+          sessionStorage.getItem(
+            this.otherType ? this.otherType : this.tableName
+          ) || ''
+        )
       : null;
     return session;
   }
 
-  seOldItems(){
-    this.orderForm.value.items =[]
-    let prefilledTable  =[]
-    this.orderForm.reset()
-    let session = this.getSession()
-
-      if (this.getSession()) {
-         prefilledTable = this.getSession()?.filter(
-          (res: any) =>
-            res.table == this.selectedTable?.tableno + this.selectedTable?.area
-        );
-        prefilledTable?.forEach((element: any) => {
-            this.addItem(element);
-
-        })
-      }
-
+  seOldItems() {
+    let prefilledTable = [];
+    this.orderForm.reset();
+    console.log(this.getSession());
+    this.orderForm = this.fb.group({
+      items: this.fb.array([]),
+    });
+    if (this.getSession()) {
+      prefilledTable = this.otherType
+        ? this.getSession()
+        : this.getSession()?.filter((res: any) => res.table == this.tableName);
+      prefilledTable?.forEach((element: any) => {
+        this.addItem(element);
+      });
+    }
   }
 
-  calculateTotal(){
+  calculateTotal() {
     return this.items.controls.reduce((total, item) => {
       const price = item.get('price')?.value || 0;
       const quantity = item.get('quantity')?.value || 0;
       return total + price * quantity;
     }, 0);
   }
-  selectTable(){
-    this.orderForm.reset()
-    this.isTableSelect = !this.isTableSelect
+  selectTable() {
+    this.orderForm.reset();
+    this.isTableSelect = !this.isTableSelect;
+  }
 
+  selectType(type: string) {
+    this.otherType = type;
+    this.isTableSelect = false;
+    this.selectedTable = '';
+    sessionStorage.removeItem('tableselect');
+    this.seOldItems();
+  }
+
+  calculateTotatl() {
+    let Itemsvalue = this.items?.value;
+    return Itemsvalue.reduce((sum: any, item: any) => sum + item.price, 0);
+  }
+
+  printMe() {
+    this.isPrinting = true
+
+    setTimeout(()=>{
+    const customPrintOptions: PrintOptions = new PrintOptions({
+      printSectionId: 'print-section',
+      // Add any other print options as needed
+    });
+    this.printService.print(customPrintOptions);
+
+   
+      this.isPrinting =false
+    },300)
   }
 }

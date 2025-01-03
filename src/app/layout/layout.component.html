@@ -1,5 +1,9 @@
 <div class="side-container position-fixed end-0 start-0">
-  <app-sidebar />
+  @if(!hideSideBar){
+    <app-sidebar />
+ 
+  }
+
   <app-header />
 
   
@@ -7,6 +11,6 @@
   <!-- <app-footer /> -->
 </div>
 
-<main class="position-absolute end-0 px-4 py-3"  [class.isShow]="!isShow" [ngStyle]="{'left' : !isSide ? '258px' : '100px' }">
+<main class="position-absolute end-0 px-4 py-3"  [class.isShow]="!isShow" [ngStyle]="{'left' :   hideSideBar ? '0px' : !isSide ? '258px' : '100px' }">
     <router-outlet />
   </main>
